@@ -590,8 +590,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 193;
-    var size = 193;
+    var page = 116;
+    var size = 116;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -734,8 +734,8 @@ function getUsages(subscriptionId, itemId, page, size, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 193;
-    var size = 193;
+    var page = 116;
+    var size = 116;
 
     controller.getUsages(subscriptionId, itemId, page, size, function(error, response, context) {
 
@@ -907,8 +907,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 193;
-    var size = 193;
+    var page = 116;
+    var size = 116;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1181,8 +1181,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 193;
-    var size = 193;
+    var page = 116;
+    var size = 116;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1458,8 +1458,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 193;
-    var size = 193;
+    var page = 116;
+    var size = 116;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -1672,8 +1672,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -1706,8 +1706,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -1740,8 +1740,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -1807,8 +1807,8 @@ function getCustomers(name, document, page, size, email, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
     var email = 'email';
 
     controller.getCustomers(name, document, page, size, email, function(error, response, context) {
@@ -2365,8 +2365,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -2479,6 +2479,38 @@ function captureCharge(chargeId, request, callback)
 
 
 
+### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeDueDate") updateChargeDueDate
+
+> Updates the due date from a charge
+
+
+```javascript
+function updateChargeDueDate(chargeId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge Id |
+| request |  ``` Required ```  | Request for updating the due date |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var request = new UpdateChargeDueDateRequest({"key":"value"});
+
+    controller.updateChargeDueDate(chargeId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png ".RecipientsController") RecipientsController
@@ -2581,8 +2613,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2722,8 +2754,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 29;
-    var size = 29;
+    var page = 116;
+    var size = 116;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -2854,8 +2886,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 29;
-    var size = 29;
+    var page = 75;
+    var size = 75;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
