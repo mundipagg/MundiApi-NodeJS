@@ -130,6 +130,7 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [ChargesController](#charges_controller)
 * [RecipientsController](#recipients_controller)
 * [TokensController](#tokens_controller)
+* [SellersController](#sellers_controller)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
 
@@ -590,8 +591,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -734,8 +735,8 @@ function getUsages(subscriptionId, itemId, page, size, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
 
     controller.getUsages(subscriptionId, itemId, page, size, function(error, response, context) {
 
@@ -907,8 +908,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -948,6 +949,198 @@ function updateOrderMetadata(orderId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateOrderMetadata(orderId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
+
+> TODO: Add a method description
+
+
+```javascript
+function deleteAllOrderItems(orderId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+
+    controller.deleteAllOrderItems(orderId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function updateOrderItem(orderId, itemId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+| request |  ``` Required ```  | Item Model |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var request = new UpdateOrderItemRequest({"key":"value"});
+
+    controller.updateOrderItem(orderId, itemId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteOrderItem") deleteOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function deleteOrderItem(orderId, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+
+    controller.deleteOrderItem(orderId, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrderItem") createOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrderItem(orderId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| request |  ``` Required ```  | Order Item Model |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var request = new CreateOrderItemRequest({"key":"value"});
+
+    controller.createOrderItem(orderId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrderItem") getOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function getOrderItem(orderId, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+
+    controller.getOrderItem(orderId, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
+
+> TODO: Add a method description
+
+
+```javascript
+function updateOrderStatus(id, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Order Id |
+| request |  ``` Required ```  | Update Order Model |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var id = 'id';
+    var request = new UpdateOrderStatusRequest({"key":"value"});
+
+    controller.updateOrderStatus(id, request, function(error, response, context) {
 
     
     });
@@ -1181,8 +1374,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1458,8 +1651,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -1672,8 +1865,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -1706,8 +1899,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -1740,8 +1933,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -1807,8 +2000,8 @@ function getCustomers(name, document, page, size, email, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var email = 'email';
 
     controller.getCustomers(name, document, page, size, email, function(error, response, context) {
@@ -2365,8 +2558,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -2613,8 +2806,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 116;
-    var size = 116;
+    var page = 136;
+    var size = 136;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2754,8 +2947,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 116;
-    var size = 116;
+    var page = 227;
+    var size = 227;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -2886,8 +3079,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 75;
-    var size = 75;
+    var page = 227;
+    var size = 227;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3062,6 +3255,218 @@ function createToken(publicKey, request, callback)
     var request = new CreateTokenRequest({"key":"value"});
 
     controller.createToken(publicKey, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SellersController") SellersController
+
+### Get singleton instance
+
+The singleton instance of the ``` SellersController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.SellersController;
+```
+
+### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellerById") getSellerById
+
+> TODO: Add a method description
+
+
+```javascript
+function getSellerById(id, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Seller Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var id = 'id';
+
+    controller.getSellerById(id, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.deleteSeller") deleteSeller
+
+> TODO: Add a method description
+
+
+```javascript
+function deleteSeller(sellerId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| sellerId |  ``` Required ```  | Seller Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var sellerId = 'sellerId';
+
+    controller.deleteSeller(sellerId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.createSeller") createSeller
+
+> TODO: Add a method description
+
+
+```javascript
+function createSeller(request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| request |  ``` Required ```  | Seller Model |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var request = new CreateSellerRequest({"key":"value"});
+
+    controller.createSeller(request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellers") getSellers
+
+> TODO: Add a method description
+
+
+```javascript
+function getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | TODO: Add a parameter description |
+| document |  ``` Optional ```  | TODO: Add a parameter description |
+| code |  ``` Optional ```  | TODO: Add a parameter description |
+| status |  ``` Optional ```  | TODO: Add a parameter description |
+| type |  ``` Optional ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var page = 227;
+    var size = 227;
+    var name = 'name';
+    var document = 'document';
+    var code = 'code';
+    var status = 'status';
+    var type = 'type';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+
+    controller.getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSeller") updateSeller
+
+> TODO: Add a method description
+
+
+```javascript
+function updateSeller(id, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Update Seller model |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var id = 'id';
+    var request = new UpdateSellerRequest({"key":"value"});
+
+    controller.updateSeller(id, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSellerMetadata") updateSellerMetadata
+
+> TODO: Add a method description
+
+
+```javascript
+function updateSellerMetadata(sellerId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| sellerId |  ``` Required ```  | Seller Id |
+| request |  ``` Required ```  | Request for updating the charge metadata |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var sellerId = seller_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+
+    controller.updateSellerMetadata(sellerId, request, function(error, response, context) {
 
     
     });
