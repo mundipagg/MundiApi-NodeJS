@@ -591,8 +591,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 246;
-    var size = 246;
+    var page = 179;
+    var size = 179;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -735,8 +735,8 @@ function getUsages(subscriptionId, itemId, page, size, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 204;
-    var size = 204;
+    var page = 179;
+    var size = 179;
 
     controller.getUsages(subscriptionId, itemId, page, size, function(error, response, context) {
 
@@ -842,6 +842,40 @@ function getDiscountById(subscriptionId, discountId, callback)
 
 
 
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
+
+> TODO: Add a method description
+
+
+```javascript
+function getDiscounts(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 179;
+    var size = 179;
+
+    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
@@ -940,8 +974,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 204;
-    var size = 204;
+    var page = 179;
+    var size = 179;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1406,8 +1440,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 204;
-    var size = 204;
+    var page = 179;
+    var size = 179;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1683,8 +1717,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 204;
-    var size = 204;
+    var page = 179;
+    var size = 179;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -1897,8 +1931,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 204;
-    var size = 204;
+    var page = 15;
+    var size = 15;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -1931,8 +1965,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 204;
-    var size = 204;
+    var page = 15;
+    var size = 15;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -1965,8 +1999,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 204;
-    var size = 204;
+    var page = 15;
+    var size = 15;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2386,8 +2420,8 @@ function getCustomers(code, name, document, page, size, email, callback)
     var code = 'Code';
     var name = 'name';
     var document = 'document';
-    var page = 204;
-    var size = 204;
+    var page = 15;
+    var size = 15;
     var email = 'email';
 
     controller.getCustomers(code, name, document, page, size, email, function(error, response, context) {
@@ -2592,8 +2626,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 204;
-    var size = 204;
+    var page = 15;
+    var size = 15;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -2840,8 +2874,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 41;
-    var size = 41;
+    var page = 15;
+    var size = 15;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2981,8 +3015,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 41;
-    var size = 41;
+    var page = 15;
+    var size = 15;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3113,8 +3147,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 41;
-    var size = 41;
+    var page = 15;
+    var size = 15;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3426,8 +3460,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 41;
-    var size = 41;
+    var page = 15;
+    var size = 15;
     var name = 'name';
     var document = 'document';
     var code = 'code';
