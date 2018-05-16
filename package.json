@@ -1,6 +1,6 @@
 {
   "name": "mundiapilib",
-  "version": "0.13.16",
+  "version": "0.13.18",
   "description": "Mundipagg API",
   "main": "./lib/index.js",
   "scripts": {
