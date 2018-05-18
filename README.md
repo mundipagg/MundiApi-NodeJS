@@ -122,15 +122,945 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
+* [SubscriptionsController](#subscriptions_controller)
 * [ChargesController](#charges_controller)
 * [CustomersController](#customers_controller)
 * [InvoicesController](#invoices_controller)
 * [PlansController](#plans_controller)
-* [SubscriptionsController](#subscriptions_controller)
 * [OrdersController](#orders_controller)
 * [TokensController](#tokens_controller)
 * [RecipientsController](#recipients_controller)
 * [SellersController](#sellers_controller)
+
+## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
+
+### Get singleton instance
+
+The singleton instance of the ``` SubscriptionsController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.SubscriptionsController;
+```
+
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
+
+> TODO: Add a method description
+
+
+```javascript
+function getIncrementById(subscriptionId, incrementId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription Id |
+| incrementId |  ``` Required ```  | The increment Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
+
+    controller.getIncrementById(subscriptionId, incrementId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionItem") updateSubscriptionItem
+
+> Updates a subscription item
+
+
+```javascript
+function updateSubscriptionItem(subscriptionId, itemId, body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| itemId |  ``` Required ```  | Item id |
+| body |  ``` Required ```  | Request for updating a subscription item |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var body = new UpdateSubscriptionItemRequest({"key":"value"});
+
+    controller.updateSubscriptionItem(subscriptionId, itemId, body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createUsage") createUsage
+
+> Creates a usage
+
+
+```javascript
+function createUsage(subscriptionId, itemId, body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| itemId |  ``` Required ```  | Item id |
+| body |  ``` Required ```  | Request for creating a usage |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var body = new CreateUsageRequest({"key":"value"});
+
+    controller.createUsage(subscriptionId, itemId, body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
+
+> Updates the billing date from a subscription
+
+
+```javascript
+function updateSubscriptionBillingDate(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription billing date |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
+
+    controller.updateSubscriptionBillingDate(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
+
+> Updates the credit card from a subscription
+
+
+```javascript
+function updateSubscriptionCard(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for updating a card |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionCardRequest({"key":"value"});
+
+    controller.updateSubscriptionCard(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
+
+> Creates a new subscription
+
+
+```javascript
+function createSubscription(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a subscription |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CreateSubscriptionRequest({"key":"value"});
+
+    controller.createSubscription(body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscriptionItem") createSubscriptionItem
+
+> Creates a new Subscription item
+
+
+```javascript
+function createSubscriptionItem(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a subscription item |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateSubscriptionItemRequest({"key":"value"});
+
+    controller.createSubscriptionItem(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createDiscount") createDiscount
+
+> Creates a discount
+
+
+```javascript
+function createDiscount(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a discount |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateDiscountRequest({"key":"value"});
+
+    controller.createDiscount(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
+
+> Gets a subscription
+
+
+```javascript
+function getSubscription(subscriptionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+
+    controller.getSubscription(subscriptionId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
+
+> Updates the payment method from a subscription
+
+
+```javascript
+function updateSubscriptionPaymentMethod(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionPaymentMethodRequest({"key":"value"});
+
+    controller.updateSubscriptionPaymentMethod(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
+
+> Deletes a discount
+
+
+```javascript
+function deleteDiscount(subscriptionId, discountId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| discountId |  ``` Required ```  | Discount Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = discount_id;
+
+    controller.deleteDiscount(subscriptionId, discountId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
+
+> Cancels a subscription
+
+
+```javascript
+function cancelSubscription(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Optional ```  | Request for cancelling a subscription |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateCancelSubscriptionRequest({"key":"value"});
+
+    controller.cancelSubscription(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteSubscriptionItem") deleteSubscriptionItem
+
+> Deletes a subscription item
+
+
+```javascript
+function deleteSubscriptionItem(subscriptionId, subscriptionItemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| subscriptionItemId |  ``` Required ```  | Subscription item id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var subscriptionItemId = subscription_item_id;
+
+    controller.deleteSubscriptionItem(subscriptionId, subscriptionItemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
+
+> Deletes a usage
+
+
+```javascript
+function deleteUsage(subscriptionId, itemId, usageId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var usageId = usage_id;
+
+    controller.deleteUsage(subscriptionId, itemId, usageId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
+
+> Updates the metadata from a subscription
+
+
+```javascript
+function updateSubscriptionMetadata(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscrption metadata |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+
+    controller.updateSubscriptionMetadata(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptions") getSubscriptions
+
+> Gets all subscriptions
+
+
+```javascript
+function getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for subscription's code |
+| billingType |  ``` Optional ```  | Filter for subscription's billing type |
+| customerId |  ``` Optional ```  | Filter for subscription's customer id |
+| planId |  ``` Optional ```  | Filter for subscription's plan id |
+| cardId |  ``` Optional ```  | Filter for subscription's card id |
+| status |  ``` Optional ```  | Filter for subscription's status |
+| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
+| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
+| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var page = 126;
+    var size = 126;
+    var code = 'code';
+    var billingType = billing_type;
+    var customerId = customer_id;
+    var planId = plan_id;
+    var cardId = card_id;
+    var status = 'status';
+    var nextBillingSince = date("D M d, Y G:i");
+    var nextBillingUntil = date("D M d, Y G:i");
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+
+    controller.getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createAnUsage") createAnUsage
+
+> Create Usage
+
+
+```javascript
+function createAnUsage(subscriptionId, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| itemId |  ``` Required ```  | Item id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+
+    controller.createAnUsage(subscriptionId, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
+
+> Get Subscription Item
+
+
+```javascript
+function getSubscriptionItem(subscriptionId, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| itemId |  ``` Required ```  | Item id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+
+    controller.getSubscriptionItem(subscriptionId, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
+
+> TODO: Add a method description
+
+
+```javascript
+function updateSubscriptionAffiliationId(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Request for updating a subscription affiliation id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionAffiliationIdRequest({"key":"value"});
+
+    controller.updateSubscriptionAffiliationId(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
+
+> TODO: Add a method description
+
+
+```javascript
+function getDiscountById(subscriptionId, discountId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = 'discountId';
+
+    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
+
+> TODO: Add a method description
+
+
+```javascript
+function getDiscounts(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 126;
+    var size = 126;
+
+    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createIncrement") createIncrement
+
+> Creates a increment
+
+
+```javascript
+function createIncrement(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a increment |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateIncrementRequest({"key":"value"});
+
+    controller.createIncrement(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
+
+> TODO: Add a method description
+
+
+```javascript
+function getIncrements(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 126;
+    var size = 126;
+
+    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
+
+> Deletes a increment
+
+
+```javascript
+function deleteIncrement(subscriptionId, incrementId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| incrementId |  ``` Required ```  | Increment id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
+
+    controller.deleteIncrement(subscriptionId, incrementId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsagesDetails") getUsagesDetails
+
+> TODO: Add a method description
+
+
+```javascript
+function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Identifier |
+| cycleId |  ``` Optional ```  | Cycle id |
+| size |  ``` Optional ```  | Page size |
+| page |  ``` Optional ```  | Page number |
+| itemId |  ``` Optional ```  | Identificador do item |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var cycleId = cycle_id;
+    var size = 126;
+    var page = 126;
+    var itemId = item_id;
+
+    controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
+
+> Lists all usages from a subscription item
+
+
+```javascript
+function getUsages(subscriptionId, itemId, page, size, code, group, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Identification code in the client system |
+| group |  ``` Optional ```  | Identification group in the client system |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var page = 126;
+    var size = 126;
+    var code = 'code';
+    var group = 'group';
+
+    controller.getUsages(subscriptionId, itemId, page, size, code, group, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItems") getSubscriptionItems
+
+> Get Subscription Items
+
+
+```javascript
+function getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | The item name |
+| code |  ``` Optional ```  | Identification code in the client system |
+| status |  ``` Optional ```  | The item statis |
+| description |  ``` Optional ```  | The item description |
+| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 126;
+    var size = 126;
+    var name = 'name';
+    var code = 'code';
+    var status = 'status';
+    var description = 'description';
+    var createdSince = created_since;
+    var createdUntil = created_until;
+
+    controller.getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ChargesController") ChargesController
 
@@ -420,8 +1350,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1015,8 +1945,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -1049,8 +1979,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -1083,8 +2013,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -1121,8 +2051,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
     var email = 'email';
     var code = 'Code';
 
@@ -1267,8 +2197,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -1672,8 +2602,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 21;
-    var size = 21;
+    var page = 126;
+    var size = 126;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1681,904 +2611,6 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
     var createdUntil = date("D M d, Y G:i");
 
     controller.getPlans(page, size, name, status, billingType, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
-
-### Get singleton instance
-
-The singleton instance of the ``` SubscriptionsController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.SubscriptionsController;
-```
-
-### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionItem") updateSubscriptionItem
-
-> Updates a subscription item
-
-
-```javascript
-function updateSubscriptionItem(subscriptionId, itemId, body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for updating a subscription item |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var body = new UpdateSubscriptionItemRequest({"key":"value"});
-
-    controller.updateSubscriptionItem(subscriptionId, itemId, body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createUsage") createUsage
-
-> Creates a usage
-
-
-```javascript
-function createUsage(subscriptionId, itemId, body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for creating a usage |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var body = new CreateUsageRequest({"key":"value"});
-
-    controller.createUsage(subscriptionId, itemId, body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
-
-> Updates the billing date from a subscription
-
-
-```javascript
-function updateSubscriptionBillingDate(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscription billing date |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
-
-    controller.updateSubscriptionBillingDate(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
-
-> Updates the credit card from a subscription
-
-
-```javascript
-function updateSubscriptionCard(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for updating a card |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionCardRequest({"key":"value"});
-
-    controller.updateSubscriptionCard(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
-
-> Creates a new subscription
-
-
-```javascript
-function createSubscription(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a subscription |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CreateSubscriptionRequest({"key":"value"});
-
-    controller.createSubscription(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscriptionItem") createSubscriptionItem
-
-> Creates a new Subscription item
-
-
-```javascript
-function createSubscriptionItem(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a subscription item |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new CreateSubscriptionItemRequest({"key":"value"});
-
-    controller.createSubscriptionItem(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createDiscount") createDiscount
-
-> Creates a discount
-
-
-```javascript
-function createDiscount(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a discount |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new CreateDiscountRequest({"key":"value"});
-
-    controller.createDiscount(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
-
-> Gets a subscription
-
-
-```javascript
-function getSubscription(subscriptionId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-
-    controller.getSubscription(subscriptionId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
-
-> Updates the payment method from a subscription
-
-
-```javascript
-function updateSubscriptionPaymentMethod(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionPaymentMethodRequest({"key":"value"});
-
-    controller.updateSubscriptionPaymentMethod(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
-
-> Deletes a discount
-
-
-```javascript
-function deleteDiscount(subscriptionId, discountId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var discountId = discount_id;
-
-    controller.deleteDiscount(subscriptionId, discountId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
-
-> Cancels a subscription
-
-
-```javascript
-function cancelSubscription(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Optional ```  | Request for cancelling a subscription |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new CreateCancelSubscriptionRequest({"key":"value"});
-
-    controller.cancelSubscription(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteSubscriptionItem") deleteSubscriptionItem
-
-> Deletes a subscription item
-
-
-```javascript
-function deleteSubscriptionItem(subscriptionId, subscriptionItemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| subscriptionItemId |  ``` Required ```  | Subscription item id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var subscriptionItemId = subscription_item_id;
-
-    controller.deleteSubscriptionItem(subscriptionId, subscriptionItemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
-
-> Deletes a usage
-
-
-```javascript
-function deleteUsage(subscriptionId, itemId, usageId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| usageId |  ``` Required ```  | The usage id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var usageId = usage_id;
-
-    controller.deleteUsage(subscriptionId, itemId, usageId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
-
-> Updates the metadata from a subscription
-
-
-```javascript
-function updateSubscriptionMetadata(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscrption metadata |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateMetadataRequest({"key":"value"});
-
-    controller.updateSubscriptionMetadata(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptions") getSubscriptions
-
-> Gets all subscriptions
-
-
-```javascript
-function getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for subscription's code |
-| billingType |  ``` Optional ```  | Filter for subscription's billing type |
-| customerId |  ``` Optional ```  | Filter for subscription's customer id |
-| planId |  ``` Optional ```  | Filter for subscription's plan id |
-| cardId |  ``` Optional ```  | Filter for subscription's card id |
-| status |  ``` Optional ```  | Filter for subscription's status |
-| nextBillingSince |  ``` Optional ```  | Filter for subscription's next billing date start range |
-| nextBillingUntil |  ``` Optional ```  | Filter for subscription's next billing date end range |
-| createdSince |  ``` Optional ```  | Filter for subscription's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for subscriptions creation date end range |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var page = 21;
-    var size = 21;
-    var code = 'code';
-    var billingType = billing_type;
-    var customerId = customer_id;
-    var planId = plan_id;
-    var cardId = card_id;
-    var status = 'status';
-    var nextBillingSince = date("D M d, Y G:i");
-    var nextBillingUntil = date("D M d, Y G:i");
-    var createdSince = date("D M d, Y G:i");
-    var createdUntil = date("D M d, Y G:i");
-
-    controller.getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createAnUsage") createAnUsage
-
-> Create Usage
-
-
-```javascript
-function createAnUsage(subscriptionId, itemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| itemId |  ``` Required ```  | Item id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-
-    controller.createAnUsage(subscriptionId, itemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
-
-> Get Subscription Item
-
-
-```javascript
-function getSubscriptionItem(subscriptionId, itemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-
-    controller.getSubscriptionItem(subscriptionId, itemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
-
-> TODO: Add a method description
-
-
-```javascript
-function updateSubscriptionAffiliationId(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Request for updating a subscription affiliation id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionAffiliationIdRequest({"key":"value"});
-
-    controller.updateSubscriptionAffiliationId(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
-
-> TODO: Add a method description
-
-
-```javascript
-function getDiscountById(subscriptionId, discountId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var discountId = 'discountId';
-
-    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
-
-> TODO: Add a method description
-
-
-```javascript
-function getDiscounts(subscriptionId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 21;
-    var size = 21;
-
-    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createIncrement") createIncrement
-
-> Creates a increment
-
-
-```javascript
-function createIncrement(subscriptionId, request, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a increment |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new CreateIncrementRequest({"key":"value"});
-
-    controller.createIncrement(subscriptionId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
-
-> TODO: Add a method description
-
-
-```javascript
-function getIncrements(subscriptionId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 21;
-    var size = 21;
-
-    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
-
-> Deletes a increment
-
-
-```javascript
-function deleteIncrement(subscriptionId, incrementId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| incrementId |  ``` Required ```  | Increment id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var incrementId = increment_id;
-
-    controller.deleteIncrement(subscriptionId, incrementId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsagesDetails") getUsagesDetails
-
-> TODO: Add a method description
-
-
-```javascript
-function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Identifier |
-| cycleId |  ``` Optional ```  | Cycle id |
-| size |  ``` Optional ```  | Page size |
-| page |  ``` Optional ```  | Page number |
-| itemId |  ``` Optional ```  | Identificador do item |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var cycleId = cycle_id;
-    var size = 21;
-    var page = 21;
-    var itemId = item_id;
-
-    controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
-
-> Lists all usages from a subscription item
-
-
-```javascript
-function getUsages(subscriptionId, itemId, page, size, code, group, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Identification code in the client system |
-| group |  ``` Optional ```  | Identification group in the client system |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var page = 21;
-    var size = 21;
-    var code = 'code';
-    var group = 'group';
-
-    controller.getUsages(subscriptionId, itemId, page, size, code, group, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItems") getSubscriptionItems
-
-> Get Subscription Items
-
-
-```javascript
-function getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | The item name |
-| code |  ``` Optional ```  | Identification code in the client system |
-| status |  ``` Optional ```  | The item statis |
-| description |  ``` Optional ```  | The item description |
-| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 21;
-    var size = 21;
-    var name = 'name';
-    var code = 'code';
-    var status = 'status';
-    var description = 'description';
-    var createdSince = created_since;
-    var createdUntil = created_until;
-
-    controller.getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, function(error, response, context) {
 
     
     });
@@ -2716,8 +2748,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 235;
-    var size = 235;
+    var page = 126;
+    var size = 126;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -3161,8 +3193,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 235;
-    var size = 235;
+    var page = 176;
+    var size = 176;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3292,8 +3324,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 235;
-    var size = 235;
+    var page = 176;
+    var size = 176;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3433,8 +3465,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 235;
-    var size = 235;
+    var page = 176;
+    var size = 176;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3612,8 +3644,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 235;
-    var size = 235;
+    var page = 176;
+    var size = 176;
     var name = 'name';
     var document = 'document';
     var code = 'code';
