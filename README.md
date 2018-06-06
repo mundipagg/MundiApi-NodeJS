@@ -655,8 +655,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -827,8 +827,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -893,8 +893,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -962,8 +962,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, callback)
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 126;
-    var page = 126;
+    var size = 96;
+    var page = 96;
     var itemId = item_id;
 
     controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, function(error, response, context) {
@@ -1001,8 +1001,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var code = 'code';
     var group = 'group';
 
@@ -1043,8 +1043,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1350,8 +1350,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1945,8 +1945,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -1979,8 +1979,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2013,8 +2013,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2051,8 +2051,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var email = 'email';
     var code = 'Code';
 
@@ -2197,8 +2197,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 126;
-    var size = 126;
+    var page = 96;
+    var size = 96;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2602,8 +2602,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 126;
-    var size = 126;
+    var page = 187;
+    var size = 187;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2748,8 +2748,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 126;
-    var size = 126;
+    var page = 187;
+    var size = 187;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -3193,8 +3193,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 176;
-    var size = 176;
+    var page = 187;
+    var size = 187;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3324,8 +3324,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 176;
-    var size = 176;
+    var page = 187;
+    var size = 187;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3465,8 +3465,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 176;
-    var size = 176;
+    var page = 187;
+    var size = 187;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3507,6 +3507,38 @@ function updateRecipientMetadata(recipientId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateRecipientMetadata(recipientId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientTransferSettings") updateRecipientTransferSettings
+
+> TODO: Add a method description
+
+
+```javascript
+function updateRecipientTransferSettings(recipientId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient Identificator |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var request = new UpdateTransferSettingsRequest({"key":"value"});
+
+    controller.updateRecipientTransferSettings(recipientId, request, function(error, response, context) {
 
     
     });
@@ -3644,8 +3676,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 176;
-    var size = 176;
+    var page = 187;
+    var size = 187;
     var name = 'name';
     var document = 'document';
     var code = 'code';
