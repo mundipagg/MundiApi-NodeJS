@@ -1,6 +1,6 @@
 {
   "name": "mundiapilib",
-  "version": "0.13.26",
+  "version": "0.13.27",
   "description": "Mundipagg API",
   "main": "./lib/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3"
   },
-  "dependencies": {
+    "dependencies": {
     "request": "^2.55.0",
     "moment": "^2.17.1"
   },
