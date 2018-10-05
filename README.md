@@ -196,7 +196,7 @@ function updateSubscriptionStartAt(subscriptionId, request, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionStartDateRequest({"key":"value"});
+    var request = new UpdateSubscriptionStartAtRequest({"key":"value"});
 
     controller.updateSubscriptionStartAt(subscriptionId, request, function(error, response, context) {
 
@@ -589,8 +589,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 86;
-    var size = 86;
+    var page = 24;
+    var size = 24;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -827,8 +827,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -893,8 +893,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -963,8 +963,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 177;
-    var page = 177;
+    var size = 24;
+    var page = 24;
     var itemId = item_id;
     var group = 'group';
 
@@ -1003,8 +1003,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
     var code = 'code';
     var group = 'group';
 
@@ -1045,8 +1045,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1119,6 +1119,70 @@ function updateSubscriptionMiniumPrice(subscriptionId, request, callback)
     var request = new UpdateSubscriptionMinimumPriceRequest({"key":"value"});
 
     controller.updateSubscriptionMiniumPrice(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
+
+> Updates the billing date from a subscription
+
+
+```javascript
+function updateSubscriptionBillingDate(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription billing date |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
+
+    controller.updateSubscriptionBillingDate(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_current_cycle_end_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleEndDate") updateCurrentCycleEndDate
+
+> TODO: Add a method description
+
+
+```javascript
+function updateCurrentCycleEndDate(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Request for updating the end date of the current signature cycle |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleEndDateRequest({"key":"value"});
+
+    controller.updateCurrentCycleEndDate(subscriptionId, request, function(error, response, context) {
 
     
     });
@@ -1224,8 +1288,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1690,8 +1754,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 177;
-    var size = 177;
+    var page = 24;
+    var size = 24;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1967,8 +2031,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2181,8 +2245,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2215,8 +2279,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2249,8 +2313,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2669,8 +2733,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
     var email = 'email';
     var code = 'Code';
 
@@ -2908,8 +2972,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -3188,8 +3252,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 177;
-    var size = 177;
+    var page = 115;
+    var size = 115;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3329,8 +3393,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 14;
-    var size = 14;
+    var page = 115;
+    var size = 115;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3461,8 +3525,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 14;
-    var size = 14;
+    var page = 207;
+    var size = 207;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3806,8 +3870,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 14;
-    var size = 14;
+    var page = 207;
+    var size = 207;
     var name = 'name';
     var document = 'document';
     var code = 'code';
