@@ -589,8 +589,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 253;
-    var size = 253;
+    var page = 27;
+    var size = 27;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -827,8 +827,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -893,8 +893,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -963,8 +963,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 161;
-    var page = 161;
+    var size = 27;
+    var page = 27;
     var itemId = item_id;
     var group = 'group';
 
@@ -1003,8 +1003,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
     var code = 'code';
     var group = 'group';
 
@@ -1045,8 +1045,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1190,6 +1190,38 @@ function updateCurrentCycleEndDate(subscriptionId, request, callback)
 
 
 
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
+
+> TODO: Add a method description
+
+
+```javascript
+function updateCurrentCycleStatus(subscriptionId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | Request for updating the end date of the subscription current status |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleStatusRequest({"key":"value"});
+
+    controller.updateCurrentCycleStatus(subscriptionId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
@@ -1288,8 +1320,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1754,8 +1786,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 161;
-    var size = 161;
+    var page = 27;
+    var size = 27;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2031,8 +2063,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2075,6 +2107,68 @@ function updateInvoiceMetadata(invoiceId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateInvoiceMetadata(invoiceId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="remove_invoice_usage"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.removeInvoiceUsage") removeInvoiceUsage
+
+> Remove a usage from an invoice
+
+
+```javascript
+function removeInvoiceUsage(invoiceId, usageId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+| usageId |  ``` Required ```  | Usage Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var invoiceId = invoice_id;
+    var usageId = usage_id;
+
+    controller.removeInvoiceUsage(invoiceId, usageId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="remove_invoice_usages"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.removeInvoiceUsages") removeInvoiceUsages
+
+> Remove usages from an invoice
+
+
+```javascript
+function removeInvoiceUsages(invoiceId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var invoiceId = invoice_id;
+
+    controller.removeInvoiceUsages(invoiceId, function(error, response, context) {
 
     
     });
@@ -2245,8 +2339,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2279,8 +2373,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2313,8 +2407,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2733,8 +2827,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
     var email = 'email';
     var code = 'Code';
 
@@ -2972,8 +3066,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -3252,8 +3346,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3393,8 +3487,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3525,8 +3619,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 161;
-    var size = 161;
+    var page = 119;
+    var size = 119;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3870,8 +3964,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 70;
-    var size = 70;
+    var page = 77;
+    var size = 77;
     var name = 'name';
     var document = 'document';
     var code = 'code';
