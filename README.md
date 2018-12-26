@@ -131,6 +131,7 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [RecipientsController](#recipients_controller)
 * [TokensController](#tokens_controller)
 * [SellersController](#sellers_controller)
+* [TransactionsController](#transactions_controller)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
 
@@ -589,8 +590,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -827,8 +828,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -893,8 +894,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -963,8 +964,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 27;
-    var page = 27;
+    var size = 61;
+    var page = 61;
     var itemId = item_id;
     var group = 'group';
 
@@ -1003,8 +1004,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
     var code = 'code';
     var group = 'group';
 
@@ -1045,8 +1046,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1320,8 +1321,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1786,8 +1787,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 27;
-    var size = 27;
+    var page = 61;
+    var size = 61;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2063,8 +2064,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 119;
-    var size = 119;
+    var page = 61;
+    var size = 61;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2339,8 +2340,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2373,8 +2374,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2407,8 +2408,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2827,8 +2828,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
     var email = 'email';
     var code = 'Code';
 
@@ -3066,8 +3067,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -3244,6 +3245,40 @@ function confirmPayment(chargeId, request, callback)
 
 
 
+### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getChargeTransactions") getChargeTransactions
+
+> TODO: Add a method description
+
+
+```javascript
+function getChargeTransactions(chargeId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var page = 20;
+    var size = 20;
+
+    controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png ".RecipientsController") RecipientsController
@@ -3346,8 +3381,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 119;
-    var size = 119;
+    var page = 20;
+    var size = 20;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3487,8 +3522,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 119;
-    var size = 119;
+    var page = 111;
+    var size = 111;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3619,8 +3654,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 119;
-    var size = 119;
+    var page = 111;
+    var size = 111;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3964,8 +3999,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 111;
+    var size = 111;
     var name = 'name';
     var document = 'document';
     var code = 'code';
@@ -4039,6 +4074,48 @@ function updateSellerMetadata(sellerId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateSellerMetadata(sellerId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransactionsController") TransactionsController
+
+### Get singleton instance
+
+The singleton instance of the ``` TransactionsController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.TransactionsController;
+```
+
+### <a name="get_transaction"></a>![Method: ](https://apidocs.io/img/method.png ".TransactionsController.getTransaction") getTransaction
+
+> TODO: Add a method description
+
+
+```javascript
+function getTransaction(transactionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| transactionId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var transactionId = transaction_id;
+
+    controller.getTransaction(transactionId, function(error, response, context) {
 
     
     });
