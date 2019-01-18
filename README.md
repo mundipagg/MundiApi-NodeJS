@@ -590,8 +590,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -828,8 +828,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -894,8 +894,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -964,8 +964,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 61;
-    var page = 61;
+    var size = 151;
+    var page = 151;
     var itemId = item_id;
     var group = 'group';
 
@@ -1004,8 +1004,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var code = 'code';
     var group = 'group';
 
@@ -1046,8 +1046,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1321,8 +1321,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1787,8 +1787,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -1977,7 +1977,7 @@ function getInvoice(invoiceId, callback)
 
 
 ```javascript
-function createInvoice(subscriptionId, cycleId, callback)
+function createInvoice(subscriptionId, cycleId, request, callback)
 ```
 #### Parameters
 
@@ -1985,6 +1985,7 @@ function createInvoice(subscriptionId, cycleId, callback)
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
 | cycleId |  ``` Required ```  | Cycle Id |
+| request |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -1994,8 +1995,9 @@ function createInvoice(subscriptionId, cycleId, callback)
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
+    var request = new CreateInvoiceRequest({"key":"value"});
 
-    controller.createInvoice(subscriptionId, cycleId, function(error, response, context) {
+    controller.createInvoice(subscriptionId, cycleId, request, function(error, response, context) {
 
     
     });
@@ -2064,8 +2066,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 61;
-    var size = 61;
+    var page = 151;
+    var size = 151;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2108,68 +2110,6 @@ function updateInvoiceMetadata(invoiceId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateInvoiceMetadata(invoiceId, request, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="remove_invoice_usage"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.removeInvoiceUsage") removeInvoiceUsage
-
-> Remove a usage from an invoice
-
-
-```javascript
-function removeInvoiceUsage(invoiceId, usageId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-| usageId |  ``` Required ```  | Usage Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var invoiceId = invoice_id;
-    var usageId = usage_id;
-
-    controller.removeInvoiceUsage(invoiceId, usageId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="remove_invoice_usages"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.removeInvoiceUsages") removeInvoiceUsages
-
-> Remove usages from an invoice
-
-
-```javascript
-function removeInvoiceUsages(invoiceId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var invoiceId = invoice_id;
-
-    controller.removeInvoiceUsages(invoiceId, function(error, response, context) {
 
     
     });
@@ -2340,8 +2280,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2374,8 +2314,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2408,8 +2348,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2828,8 +2768,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
     var email = 'email';
     var code = 'Code';
 
@@ -3067,8 +3007,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -3268,8 +3208,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 20;
-    var size = 20;
+    var page = 151;
+    var size = 151;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -3381,8 +3321,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 20;
-    var size = 20;
+    var page = 59;
+    var size = 59;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3522,8 +3462,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 111;
-    var size = 111;
+    var page = 59;
+    var size = 59;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3654,8 +3594,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 59;
+    var size = 59;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -3999,8 +3939,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 59;
+    var size = 59;
     var name = 'name';
     var document = 'document';
     var code = 'code';
