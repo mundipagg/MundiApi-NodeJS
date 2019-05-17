@@ -590,8 +590,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 51;
+    var size = 51;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -828,8 +828,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 215;
-    var size = 215;
+    var page = 51;
+    var size = 51;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -894,8 +894,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 215;
-    var size = 215;
+    var page = 51;
+    var size = 51;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -964,8 +964,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 215;
-    var page = 215;
+    var size = 51;
+    var page = 51;
     var itemId = item_id;
     var group = 'group';
 
@@ -1004,8 +1004,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 215;
-    var size = 215;
+    var page = 51;
+    var size = 51;
     var code = 'code';
     var group = 'group';
 
@@ -1046,8 +1046,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 215;
-    var size = 215;
+    var page = 51;
+    var size = 51;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1159,13 +1159,13 @@ function updateSubscriptionBillingDate(subscriptionId, request, callback)
 
 
 
-### <a name="update_current_cycle_end_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleEndDate") updateCurrentCycleEndDate
+### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
 
 > TODO: Add a method description
 
 
 ```javascript
-function updateCurrentCycleEndDate(subscriptionId, request, callback)
+function updateLatestPeriodEndAt(subscriptionId, request, callback)
 ```
 #### Parameters
 
@@ -1183,7 +1183,7 @@ function updateCurrentCycleEndDate(subscriptionId, request, callback)
     var subscriptionId = subscription_id;
     var request = new UpdateCurrentCycleEndDateRequest({"key":"value"});
 
-    controller.updateCurrentCycleEndDate(subscriptionId, request, function(error, response, context) {
+    controller.updateLatestPeriodEndAt(subscriptionId, request, function(error, response, context) {
 
     
     });
@@ -1289,6 +1289,36 @@ function getSubscriptionCycleById(subscriptionId, cycleId, callback)
 
 
 
+### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
+
+> TODO: Add a method description
+
+
+```javascript
+function renewSubscription(subscriptionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+
+    controller.renewSubscription(subscriptionId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
@@ -1387,8 +1417,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -1853,8 +1883,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2132,8 +2162,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2176,6 +2206,36 @@ function updateInvoiceMetadata(invoiceId, request, callback)
     var request = new UpdateMetadataRequest({"key":"value"});
 
     controller.updateInvoiceMetadata(invoiceId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getPartialInvoice") getPartialInvoice
+
+> TODO: Add a method description
+
+
+```javascript
+function getPartialInvoice(subscriptionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+
+    controller.getPartialInvoice(subscriptionId, function(error, response, context) {
 
     
     });
@@ -2346,8 +2406,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2380,8 +2440,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2414,8 +2474,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 52;
-    var size = 52;
+    var page = 51;
+    var size = 51;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2834,8 +2894,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 52;
-    var size = 52;
+    var page = 143;
+    var size = 143;
     var email = 'email';
     var code = 'Code';
 
@@ -3073,8 +3133,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 52;
-    var size = 52;
+    var page = 143;
+    var size = 143;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
