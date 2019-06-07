@@ -30,17 +30,18 @@ request.billing_address.country = 'US';
 request.options = new mundipagg.CreateCardOptionsRequest();
 request.options.verify_card = true;
 
-customersController.createCustomer(customerRequest)
+customersController
+    .createCustomer(customerRequest)
     .then(customer => {
-        console.log(`CustomerId: ${customer.id}`);
+        console.log(`Customer Id: ${customer.id}`);
         return customersController.createCard(customer.id, request);
     })
     .then(card => {
-        console.log(`CardId: ${card.id}`);
+        console.log(`Card Id: ${card.id}`);
         console.log(card.id);
     })
     .catch(error => {
-        console.log(`StatusCode: ${error.errorCode}`);
+        console.log(`Status Code: ${error.errorCode}`);
         if (error.errorResponse instanceof mundipagg.ErrorException) {
             console.log(error.errorResponse.message);
             console.log(error.errorResponse.errors);

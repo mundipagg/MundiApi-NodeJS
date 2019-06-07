@@ -4,7 +4,7 @@ mundipagg.Configuration.basicAuthUserName = 'YOUR SECRET KEY';
 
 const customersController = mundipagg.CustomersController;
 
-const customerId = 'cus_PzRyp10FeNca2rVB';
+const customerId = 'cus_G6gwy4xtJIOyNbrK';
 
 const request = new mundipagg.CreateAddressRequest();
 request.line_1 = '10880, Malibu Point, Malibu Central';
@@ -16,12 +16,13 @@ request.country = 'US';
 request.metadata = new mundipagg.UpdateMetadataRequest();
 request.metadata.id = 'my_address_id';
 
-customersController.createAddress(customerId, request)
+customersController
+    .createAddress(customerId, request)
     .then(address => {
-        console.log(address.id);
+        console.log(`Address Id: ${address.id}`);
     })
     .catch(error => {
-        console.log(`StatusCode: ${error.errorCode}`);
+        console.log(`Status Code: ${error.errorCode}`);
         if (error.errorResponse instanceof mundipagg.ErrorException) {
             console.log(error.errorResponse.message);
             console.log(error.errorResponse.errors);

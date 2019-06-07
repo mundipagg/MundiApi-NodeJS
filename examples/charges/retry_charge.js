@@ -1,17 +1,18 @@
 const mundipagg = require('mundipagg-nodejs');
 
-mundipagg.Configuration.basicAuthUserName = 'sk_test_v7gb4lnTWjcVbVoA';
+mundipagg.Configuration.basicAuthUserName = 'YOUR SECRET KEY';
 
 const chargesController = mundipagg.ChargesController;
 
-const chargeId = 'ch_4PAVPy2tAuxxq1aX';
+const chargeId = 'ch_8YQ1JeTLzF8zlqWy';
 
-chargesController.retryCharge(chargeId)
+chargesController
+    .retryCharge(chargeId)
     .then(() => {
         console.log('Charge retried!');
     })
     .catch(error => {
-        console.log(`StatusCode: ${error.errorCode}`);
+        console.log(`Status Code: ${error.errorCode}`);
         if (error.errorResponse instanceof mundipagg.ErrorException) {
             console.log(error.errorResponse.message);
             console.log(error.errorResponse.errors);
