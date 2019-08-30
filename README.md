@@ -122,8 +122,8 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [OrdersController](#orders_controller)
 * [SubscriptionsController](#subscriptions_controller)
+* [OrdersController](#orders_controller)
 * [PlansController](#plans_controller)
 * [InvoicesController](#invoices_controller)
 * [CustomersController](#customers_controller)
@@ -132,358 +132,6 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [TokensController](#tokens_controller)
 * [SellersController](#sellers_controller)
 * [TransactionsController](#transactions_controller)
-
-## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
-
-### Get singleton instance
-
-The singleton instance of the ``` OrdersController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.OrdersController;
-```
-
-### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrderItem") getOrderItem
-
-> TODO: Add a method description
-
-
-```javascript
-function getOrderItem(orderId, itemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var itemId = 'itemId';
-
-    controller.getOrderItem(orderId, itemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
-
-> TODO: Add a method description
-
-
-```javascript
-function updateOrderStatus(id, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Order Id |
-| request |  ``` Required ```  | Update Order Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var id = 'id';
-    var request = new UpdateOrderStatusRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateOrderStatus(id, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteOrderItem") deleteOrderItem
-
-> TODO: Add a method description
-
-
-```javascript
-function deleteOrderItem(orderId, itemId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var itemId = 'itemId';
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteOrderItem(orderId, itemId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrderItem") createOrderItem
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrderItem(orderId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| request |  ``` Required ```  | Order Item Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var request = new CreateOrderItemRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createOrderItem(orderId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
-
-> TODO: Add a method description
-
-
-```javascript
-function updateOrderItem(orderId, itemId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-| request |  ``` Required ```  | Item Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var itemId = 'itemId';
-    var request = new UpdateOrderItemRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateOrderItem(orderId, itemId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderMetadata") updateOrderMetadata
-
-> Updates the metadata from an order
-
-
-```javascript
-function updateOrderMetadata(orderId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | The order id |
-| request |  ``` Required ```  | Request for updating the order metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = order_id;
-    var request = new UpdateMetadataRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateOrderMetadata(orderId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
-
-> TODO: Add a method description
-
-
-```javascript
-function deleteAllOrderItems(orderId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteAllOrderItems(orderId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrders") getOrders
-
-> Gets all orders
-
-
-```javascript
-function getOrders(page, size, code, status, createdSince, createdUntil, customerId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for order's code |
-| status |  ``` Optional ```  | Filter for order's status |
-| createdSince |  ``` Optional ```  | Filter for order's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for order's creation date end range |
-| customerId |  ``` Optional ```  | Filter for order's customer id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var page = 208;
-    var size = 208;
-    var code = 'code';
-    var status = 'status';
-    var createdSince = date("D M d, Y G:i");
-    var createdUntil = date("D M d, Y G:i");
-    var customerId = customer_id;
-
-    controller.getOrders(page, size, code, status, createdSince, createdUntil, customerId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
-
-> Gets an order
-
-
-```javascript
-function getOrder(orderId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = order_id;
-
-    controller.getOrder(orderId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
-
-> Creates a new Order
-
-
-```javascript
-function createOrder(body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating an order |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CreateOrderRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createOrder(body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
 
@@ -495,437 +143,20 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 var controller = lib.SubscriptionsController;
 ```
 
-### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycleById") getSubscriptionCycleById
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
 
 > TODO: Add a method description
 
 
 ```javascript
-function getSubscriptionCycleById(subscriptionId, cycleId, callback)
+function getIncrementById(subscriptionId, incrementId, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| cycleId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var cycleId = 'cycleId';
-
-    controller.getSubscriptionCycleById(subscriptionId, cycleId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
-
-> TODO: Add a method description
-
-
-```javascript
-function renewSubscription(subscriptionId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.renewSubscription(subscriptionId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
-
-> TODO: Add a method description
-
-
-```javascript
-function updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | Request for updating the end date of the subscription current status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateCurrentCycleStatusRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycles") getSubscriptionCycles
-
-> TODO: Add a method description
-
-
-```javascript
-function getSubscriptionCycles(subscriptionId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 'page';
-    var size = 'size';
-
-    controller.getSubscriptionCycles(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
-
-> Updates the billing date from a subscription
-
-
-```javascript
-function updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscription billing date |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
-
-> TODO: Add a method description
-
-
-```javascript
-function updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Request for updating the end date of the current signature cycle |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateCurrentCycleEndDateRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionDueDays") updateSubscriptionDueDays
-
-> Updates the boleto due days from a subscription
-
-
-```javascript
-function updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionDueDaysRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMiniumPrice") updateSubscriptionMiniumPrice
-
-> Atualização do valor mínimo da assinatura
-
-
-```javascript
-function updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionMinimumPriceRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
-
-> Lists all usages from a subscription item
-
-
-```javascript
-function getUsages(subscriptionId, itemId, page, size, code, group, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Identification code in the client system |
-| group |  ``` Optional ```  | Identification group in the client system |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var page = 208;
-    var size = 208;
-    var code = 'code';
-    var group = 'group';
-
-    controller.getUsages(subscriptionId, itemId, page, size, code, group, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsagesDetails") getUsagesDetails
-
-> TODO: Add a method description
-
-
-```javascript
-function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Identifier |
-| cycleId |  ``` Optional ```  | Cycle id |
-| size |  ``` Optional ```  | Page size |
-| page |  ``` Optional ```  | Page number |
-| itemId |  ``` Optional ```  | Identificador do item |
-| group |  ``` Optional ```  | identificador da loja (account) de cada item |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var cycleId = cycle_id;
-    var size = 208;
-    var page = 208;
-    var itemId = item_id;
-    var group = 'group';
-
-    controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
-
-> TODO: Add a method description
-
-
-```javascript
-function getIncrements(subscriptionId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 208;
-    var size = 208;
-
-    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createIncrement") createIncrement
-
-> Creates a increment
-
-
-```javascript
-function createIncrement(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a increment |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new CreateIncrementRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createIncrement(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
-
-> Deletes a increment
-
-
-```javascript
-function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| incrementId |  ``` Required ```  | Increment id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| subscriptionId |  ``` Required ```  | The subscription Id |
+| incrementId |  ``` Required ```  | The increment Id |
 
 
 
@@ -935,9 +166,8 @@ function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
 
     var subscriptionId = subscription_id;
     var incrementId = increment_id;
-    var idempotencyKey = 'idempotency-key';
 
-    controller.deleteIncrement(subscriptionId, incrementId, idempotencyKey, function(error, response, context) {
+    controller.getIncrementById(subscriptionId, incrementId, function(error, response, context) {
 
     
     });
@@ -945,21 +175,21 @@ function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
 
 
 
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
+### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionStartAt") updateSubscriptionStartAt
 
-> TODO: Add a method description
+> Updates the start at date from a subscription
 
 
 ```javascript
-function getDiscounts(subscriptionId, page, size, callback)
+function updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
+| request |  ``` Required ```  | Request for updating the subscription start date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -968,10 +198,10 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 208;
-    var size = 208;
+    var request = new UpdateSubscriptionStartAtRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
+    controller.updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -979,20 +209,20 @@ function getDiscounts(subscriptionId, page, size, callback)
 
 
 
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
+### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
 
-> Cancels a subscription
+> Updates the credit card from a subscription
 
 
 ```javascript
-function cancelSubscription(subscriptionId, request, idempotencyKey, callback)
+function updateSubscriptionCard(subscriptionId, request, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Optional ```  | Request for cancelling a subscription |
+| request |  ``` Required ```  | Request for updating a card |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1002,10 +232,10 @@ function cancelSubscription(subscriptionId, request, idempotencyKey, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var request = new CreateCancelSubscriptionRequest({"key":"value"});
+    var request = new UpdateSubscriptionCardRequest({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.cancelSubscription(subscriptionId, request, idempotencyKey, function(error, response, context) {
+    controller.updateSubscriptionCard(subscriptionId, request, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1013,217 +243,13 @@ function cancelSubscription(subscriptionId, request, idempotencyKey, callback)
 
 
 
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
+### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionItem") updateSubscriptionItem
 
-> TODO: Add a method description
-
-
-```javascript
-function getDiscountById(subscriptionId, discountId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var discountId = 'discountId';
-
-    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
-
-> Deletes a usage
+> Updates a subscription item
 
 
 ```javascript
-function deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| usageId |  ``` Required ```  | The usage id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var usageId = usage_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteSubscriptionItem") deleteSubscriptionItem
-
-> Deletes a subscription item
-
-
-```javascript
-function deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| subscriptionItemId |  ``` Required ```  | Subscription item id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var subscriptionItemId = subscription_item_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
-
-> Deletes a discount
-
-
-```javascript
-function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var discountId = discount_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteDiscount(subscriptionId, discountId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createAnUsage") createAnUsage
-
-> Create Usage
-
-
-```javascript
-function createAnUsage(subscriptionId, itemId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| itemId |  ``` Required ```  | Item id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createAnUsage(subscriptionId, itemId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
-
-> Updates the metadata from a subscription
-
-
-```javascript
-function updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscrption metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateMetadataRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
-
-> Get Subscription Item
-
-
-```javascript
-function getSubscriptionItem(subscriptionId, itemId, callback)
+function updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, callback)
 ```
 #### Parameters
 
@@ -1231,38 +257,7 @@ function getSubscriptionItem(subscriptionId, itemId, callback)
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
 | itemId |  ``` Required ```  | Item id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-
-    controller.getSubscriptionItem(subscriptionId, itemId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
-
-> TODO: Add a method description
-
-
-```javascript
-function updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Request for updating a subscription affiliation id |
+| body |  ``` Required ```  | Request for updating a subscription item |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1272,10 +267,143 @@ function updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey
 ```javascript
 
     var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionAffiliationIdRequest({"key":"value"});
+    var itemId = item_id;
+    var body = new UpdateSubscriptionItemRequest({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, function(error, response, context) {
+    controller.updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createUsage") createUsage
+
+> Creates a usage
+
+
+```javascript
+function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| itemId |  ``` Required ```  | Item id |
+| body |  ``` Required ```  | Request for creating a usage |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var body = new CreateUsageRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createUsage(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
+
+> Gets a subscription
+
+
+```javascript
+function getSubscription(subscriptionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+
+    controller.getSubscription(subscriptionId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
+
+> Updates the payment method from a subscription
+
+
+```javascript
+function updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionPaymentMethodRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
+
+> Creates a new subscription
+
+
+```javascript
+function createSubscription(body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CreateSubscriptionRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createSubscription(body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1351,79 +479,13 @@ function createDiscount(subscriptionId, request, idempotencyKey, callback)
 
 
 
-### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
+### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
 
-> Updates the payment method from a subscription
-
-
-```javascript
-function updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionPaymentMethodRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
-
-> Creates a new subscription
+> Get Subscription Item
 
 
 ```javascript
-function createSubscription(body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CreateSubscriptionRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createSubscription(body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createUsage") createUsage
-
-> Creates a usage
-
-
-```javascript
-function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
+function getSubscriptionItem(subscriptionId, itemId, callback)
 ```
 #### Parameters
 
@@ -1431,8 +493,6 @@ function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
 | itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for creating a usage |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -1442,10 +502,8 @@ function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var body = new CreateUsageRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
 
-    controller.createUsage(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
+    controller.getSubscriptionItem(subscriptionId, itemId, function(error, response, context) {
 
     
     });
@@ -1453,152 +511,20 @@ function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
 
 
 
-### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionItem") updateSubscriptionItem
-
-> Updates a subscription item
-
-
-```javascript
-function updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for updating a subscription item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var body = new UpdateSubscriptionItemRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
-
-> Updates the credit card from a subscription
-
-
-```javascript
-function updateSubscriptionCard(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for updating a card |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionCardRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionCard(subscriptionId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
-
-> Gets a subscription
-
-
-```javascript
-function getSubscription(subscriptionId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-
-    controller.getSubscription(subscriptionId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
 
 > TODO: Add a method description
 
 
 ```javascript
-function getIncrementById(subscriptionId, incrementId, callback)
+function updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription Id |
-| incrementId |  ``` Required ```  | The increment Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var incrementId = increment_id;
-
-    controller.getIncrementById(subscriptionId, incrementId, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionStartAt") updateSubscriptionStartAt
-
-> Updates the start at date from a subscription
-
-
-```javascript
-function updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscription start date |
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Request for updating a subscription affiliation id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1608,10 +534,44 @@ function updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, call
 ```javascript
 
     var subscriptionId = subscription_id;
-    var request = new UpdateSubscriptionStartAtRequest({"key":"value"});
+    var request = new UpdateSubscriptionAffiliationIdRequest({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
+    controller.updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createAnUsage") createAnUsage
+
+> Create Usage
+
+
+```javascript
+function createAnUsage(subscriptionId, itemId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| itemId |  ``` Required ```  | Item id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createAnUsage(subscriptionId, itemId, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1650,8 +610,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -1664,6 +624,426 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
     var createdUntil = date("D M d, Y G:i");
 
     controller.getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
+
+> Updates the metadata from a subscription
+
+
+```javascript
+function updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscrption metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteSubscriptionItem") deleteSubscriptionItem
+
+> Deletes a subscription item
+
+
+```javascript
+function deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| subscriptionItemId |  ``` Required ```  | Subscription item id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var subscriptionItemId = subscription_item_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
+
+> Deletes a usage
+
+
+```javascript
+function deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var usageId = usage_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
+
+> Deletes a discount
+
+
+```javascript
+function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| discountId |  ``` Required ```  | Discount Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = discount_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteDiscount(subscriptionId, discountId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
+
+> Cancels a subscription
+
+
+```javascript
+function cancelSubscription(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Optional ```  | Request for cancelling a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateCancelSubscriptionRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.cancelSubscription(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
+
+> TODO: Add a method description
+
+
+```javascript
+function getDiscountById(subscriptionId, discountId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = 'discountId';
+
+    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
+
+> TODO: Add a method description
+
+
+```javascript
+function getDiscounts(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 5;
+    var size = 5;
+
+    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createIncrement") createIncrement
+
+> Creates a increment
+
+
+```javascript
+function createIncrement(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a increment |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new CreateIncrementRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createIncrement(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
+
+> TODO: Add a method description
+
+
+```javascript
+function getIncrements(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 5;
+    var size = 5;
+
+    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
+
+> Deletes a increment
+
+
+```javascript
+function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| incrementId |  ``` Required ```  | Increment id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteIncrement(subscriptionId, incrementId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsagesDetails") getUsagesDetails
+
+> TODO: Add a method description
+
+
+```javascript
+function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Identifier |
+| cycleId |  ``` Optional ```  | Cycle id |
+| size |  ``` Optional ```  | Page size |
+| page |  ``` Optional ```  | Page number |
+| itemId |  ``` Optional ```  | Identificador do item |
+| group |  ``` Optional ```  | identificador da loja (account) de cada item |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var cycleId = cycle_id;
+    var size = 5;
+    var page = 5;
+    var itemId = item_id;
+    var group = 'group';
+
+    controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
+
+> Lists all usages from a subscription item
+
+
+```javascript
+function getUsages(subscriptionId, itemId, page, size, code, group, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Identification code in the client system |
+| group |  ``` Optional ```  | Identification group in the client system |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var page = 5;
+    var size = 5;
+    var code = 'code';
+    var group = 'group';
+
+    controller.getUsages(subscriptionId, itemId, page, size, code, group, function(error, response, context) {
 
     
     });
@@ -1700,8 +1080,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1710,6 +1090,626 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
     var createdUntil = created_until;
 
     controller.getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionDueDays") updateSubscriptionDueDays
+
+> Updates the boleto due days from a subscription
+
+
+```javascript
+function updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionDueDaysRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMiniumPrice") updateSubscriptionMiniumPrice
+
+> Atualização do valor mínimo da assinatura
+
+
+```javascript
+function updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionMinimumPriceRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
+
+> Updates the billing date from a subscription
+
+
+```javascript
+function updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription billing date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
+
+> TODO: Add a method description
+
+
+```javascript
+function updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Request for updating the end date of the current signature cycle |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleEndDateRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
+
+> TODO: Add a method description
+
+
+```javascript
+function updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | Request for updating the end date of the subscription current status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycles") getSubscriptionCycles
+
+> TODO: Add a method description
+
+
+```javascript
+function getSubscriptionCycles(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 'page';
+    var size = 'size';
+
+    controller.getSubscriptionCycles(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycleById") getSubscriptionCycleById
+
+> TODO: Add a method description
+
+
+```javascript
+function getSubscriptionCycleById(subscriptionId, cycleId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| cycleId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var cycleId = 'cycleId';
+
+    controller.getSubscriptionCycleById(subscriptionId, cycleId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
+
+> TODO: Add a method description
+
+
+```javascript
+function renewSubscription(subscriptionId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.renewSubscription(subscriptionId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
+
+### Get singleton instance
+
+The singleton instance of the ``` OrdersController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.OrdersController;
+```
+
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
+
+> Gets an order
+
+
+```javascript
+function getOrder(orderId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = order_id;
+
+    controller.getOrder(orderId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
+
+> Creates a new Order
+
+
+```javascript
+function createOrder(body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating an order |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CreateOrderRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createOrder(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrders") getOrders
+
+> Gets all orders
+
+
+```javascript
+function getOrders(page, size, code, status, createdSince, createdUntil, customerId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for order's code |
+| status |  ``` Optional ```  | Filter for order's status |
+| createdSince |  ``` Optional ```  | Filter for order's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for order's creation date end range |
+| customerId |  ``` Optional ```  | Filter for order's customer id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var page = 5;
+    var size = 5;
+    var code = 'code';
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+    var customerId = customer_id;
+
+    controller.getOrders(page, size, code, status, createdSince, createdUntil, customerId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderMetadata") updateOrderMetadata
+
+> Updates the metadata from an order
+
+
+```javascript
+function updateOrderMetadata(orderId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | The order id |
+| request |  ``` Required ```  | Request for updating the order metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = order_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateOrderMetadata(orderId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
+
+> TODO: Add a method description
+
+
+```javascript
+function deleteAllOrderItems(orderId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteAllOrderItems(orderId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function updateOrderItem(orderId, itemId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+| request |  ``` Required ```  | Item Model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var request = new UpdateOrderItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateOrderItem(orderId, itemId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteOrderItem") deleteOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function deleteOrderItem(orderId, itemId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteOrderItem(orderId, itemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrderItem") createOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrderItem(orderId, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| request |  ``` Required ```  | Order Item Model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var request = new CreateOrderItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createOrderItem(orderId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrderItem") getOrderItem
+
+> TODO: Add a method description
+
+
+```javascript
+function getOrderItem(orderId, itemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+
+    controller.getOrderItem(orderId, itemId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
+
+> TODO: Add a method description
+
+
+```javascript
+function updateOrderStatus(id, request, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Order Id |
+| request |  ``` Required ```  | Update Order Model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var id = 'id';
+    var request = new UpdateOrderStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateOrderStatus(id, request, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1953,8 +1953,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2242,8 +2242,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -2462,8 +2462,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -2496,8 +2496,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -2530,8 +2530,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -2966,8 +2966,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 208;
-    var size = 208;
+    var page = 5;
+    var size = 5;
     var email = 'email';
     var code = 'Code';
 
@@ -3247,8 +3247,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -3458,8 +3458,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -3573,8 +3573,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -3716,8 +3716,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -3852,8 +3852,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -4209,8 +4209,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 44;
-    var size = 44;
+    var page = 5;
+    var size = 5;
     var name = 'name';
     var document = 'document';
     var code = 'code';
