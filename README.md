@@ -132,6 +132,7 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [TokensController](#tokens_controller)
 * [PlansController](#plans_controller)
 * [TransactionsController](#transactions_controller)
+* [TransfersController](#transfers_controller)
 
 ## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CustomersController") CustomersController
 
@@ -294,8 +295,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -528,8 +529,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -666,8 +667,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -738,8 +739,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
     var email = 'email';
     var code = 'Code';
 
@@ -989,8 +990,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1264,8 +1265,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -1442,8 +1443,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -1512,8 +1513,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -1685,8 +1686,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -1826,6 +1827,110 @@ function getAnticipationLimits(recipientId, timeframe, paymentDate, callback)
     var paymentDate = date("D M d, Y G:i");
 
     controller.getAnticipationLimits(recipientId, timeframe, paymentDate, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createWithdraw") createWithdraw
+
+> TODO: Add a method description
+
+
+```javascript
+function createWithdraw(recipientId, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var request = new CreateWithdrawRequest({"key":"value"});
+
+    controller.createWithdraw(recipientId, request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawById") getWithdrawById
+
+> TODO: Add a method description
+
+
+```javascript
+function getWithdrawById(recipientId, withdrawalId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var withdrawalId = withdrawal_id;
+
+    controller.getWithdrawById(recipientId, withdrawalId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
+
+> Gets a paginated list of transfers for the recipient
+
+
+```javascript
+function getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| page |  ``` Optional ```  | TODO: Add a parameter description |
+| size |  ``` Optional ```  | TODO: Add a parameter description |
+| status |  ``` Optional ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var page = 241;
+    var size = 241;
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+
+    controller.getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
 
     
     });
@@ -2208,8 +2313,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 42;
-    var page = 42;
+    var size = 241;
+    var page = 241;
     var itemId = item_id;
     var group = 'group';
 
@@ -2412,8 +2517,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -2520,8 +2625,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 42;
-    var size = 42;
+    var page = 241;
+    var size = 241;
     var code = 'code';
     var group = 'group';
 
@@ -2858,8 +2963,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -2934,8 +3039,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -3016,8 +3121,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -3336,8 +3441,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3493,8 +3598,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -3813,8 +3918,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var name = 'name';
     var document = 'document';
     var code = 'code';
@@ -4117,8 +4222,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 0;
-    var size = 0;
+    var page = 77;
+    var size = 77;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -4396,6 +4501,100 @@ function getTransaction(transactionId, callback)
     var transactionId = transaction_id;
 
     controller.getTransaction(transactionId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransfersController") TransfersController
+
+### Get singleton instance
+
+The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.TransfersController;
+```
+
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.createTransfer") createTransfer
+
+> TODO: Add a method description
+
+
+```javascript
+function createTransfer(request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var request = new CreateTransfer({"key":"value"});
+
+    controller.createTransfer(request, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransferById") getTransferById
+
+> TODO: Add a method description
+
+
+```javascript
+function getTransferById(transferId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| transferId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var transferId = transfer_id;
+
+    controller.getTransferById(transferId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransfers") getTransfers
+
+> Gets all transfers
+
+
+```javascript
+function getTransfers(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getTransfers(function(error, response, context) {
 
     
     });
