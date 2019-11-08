@@ -2313,8 +2313,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 241;
-    var page = 241;
+    var size = 78;
+    var page = 78;
     var itemId = item_id;
     var group = 'group';
 
@@ -2517,8 +2517,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 241;
-    var size = 241;
+    var page = 78;
+    var size = 78;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -2625,8 +2625,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, callback)
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 241;
-    var size = 241;
+    var page = 78;
+    var size = 78;
     var code = 'code';
     var group = 'group';
 
@@ -2963,8 +2963,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -3039,8 +3039,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -3121,8 +3121,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -3441,8 +3441,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3598,8 +3598,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -3918,8 +3918,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var name = 'name';
     var document = 'document';
     var code = 'code';
@@ -4222,8 +4222,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 77;
-    var size = 77;
+    var page = 78;
+    var size = 78;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
