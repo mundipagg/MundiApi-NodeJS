@@ -4,103 +4,116 @@ Mundipagg API
 
 ## How to Build
 
+The generated SDK relies on [Node Package Manager](https://www.npmjs.com/) (NPM) being available to resolve dependencies. If you don't already have NPM installed, please go ahead and follow instructions to install NPM from [here](https://nodejs.org/en/download/).
+The SDK also requires Node to be installed. If Node isn't already installed, please install it from [here](https://nodejs.org/en/download/)
+> NPM is installed by default when Node is installed
 
-You must have Python ```2 >=2.7.9``` or Python ```3 >=3.4``` installed on your system to install and run this SDK. This SDK package depends on other Python packages like nose, jsonpickle etc. 
-These dependencies are defined in the ```requirements.txt``` file that comes with the SDK.
-To resolve these dependencies, you can use the PIP Dependency manager. Install it by following steps at [https://pip.pypa.io/en/stable/installing/](https://pip.pypa.io/en/stable/installing/).
+To check if node and npm have been successfully installed, write the following commands in command prompt:
 
-Python and PIP executables should be defined in your PATH. Open command prompt and type ```pip --version```.
-This should display the version of the PIP Dependency Manager installed if your installation was successful and the paths are properly defined.
+* `node --version`
+* `npm -version`
 
-* Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
-* Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=MundiAPI-Node)
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=MundiAPI-Python)
+Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 
+```bash
+npm install
+```
+
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=MundiAPI-Node)
+
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
+
+This will install all dependencies in the `node_modules` folder.
+
+Once dependencies are resolved, you will need to move the folder `MundiAPILib ` in to your `node_modules` folder.
 
 ## How to Use
 
-The following section explains how to use the Mundiapi SDK package in a new project.
+The following section explains how to use the library in a new project.
 
-### 1. Open Project in an IDE
+### 1. Open Project Folder
+Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-Open up a Python IDE like PyCharm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
+Click on `File` and select `Open Folder`.
 
-![Open project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=pyCharm)
+![Open Folder](https://apidocs.io/illustration/nodejs?step=openFolder)
 
-Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
+Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=MundiAPI-Python)     
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=MundiAPI-Node)
 
-The project files will be displayed in the side bar as follows:
+### 2. Creating a Test File
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=MundiAPI-Python&projectName=mundiapi)     
+Now right click on the folder name and select the `New File` option to create a new test file. Save it as `index.js` Now import the generated NodeJS library using the following lines of code:
 
-### 2. Add a new Test Project
-
-Create a new directory by right clicking on the solution name as shown below:
-
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=MundiAPI-Python&projectName=mundiapi)
-
-Name the directory as "test"
-
-![Add a new project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=nameDirectory)
-   
-Add a python file to this project with the name "testsdk"
-
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=MundiAPI-Python&projectName=mundiapi)
-
-Name it "testsdk"
-
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=nameFile)
-
-In your python file you will be required to import the generated python library using the following code lines
-
-```Python
-from mundiapi.mundiapi_client import MundiapiClient
+```js
+var lib = require('lib');
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=MundiAPI-Python&libraryName=mundiapi.mundiapi_client&projectName=mundiapi&className=MundiapiClient)
+Save changes.
 
-After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=MundiAPI-Node)
 
-### 3. Run the Test Project
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=MundiAPI-Node)
 
-To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
+### 3. Running The Test File
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=MundiAPI-Python&libraryName=mundiapi.mundiapi_client&projectName=mundiapi&className=MundiapiClient)
+To run the `index.js` file, open up the command prompt and navigate to the Path where the SDK folder resides. Type the following command to run the file:
+
+```
+node index.js
+```
+
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=MundiAPI-Node)
 
 
 ## How to Test
 
-You can test the generated SDK and the server with automatically generated test
-cases. unittest is used as the testing framework and nose is used as the test
-runner. You can run the tests as follows:
+These tests use Mocha framework for testing, coupled with Chai for assertions. These dependencies need to be installed for tests to run.
+Tests can be run in a number of ways:
 
-  1. From terminal/cmd navigate to the root directory of the SDK.
-  2. Invoke ```pip install -r test-requirements.txt```
-  3. Invoke ```nosetests```
+### Method 1 (Run all tests)
+
+1. Navigate to the root directory of the SDK folder from command prompt.
+2. Type `mocha --recursive` to run all the tests.
+
+### Method 2 (Run all tests)
+
+1. Navigate to the `../test/Controllers/` directory from command prompt.
+2. Type `mocha *` to run all the tests.
+
+### Method 3 (Run specific controller's tests)
+
+1. Navigate to the `../test/Controllers/` directory from command prompt.
+2. Type `mocha  MundiAPIController`  to run all the tests in that controller file.
+
+> To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
+
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=MundiAPIController)
 
 ## Initialization
 
 ### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
+In order to setup authentication in the API client, you need the following information.
 
 | Parameter | Description |
 |-----------|-------------|
-| basic_auth_user_name | The username to use with basic authentication |
-| basic_auth_password | The password to use with basic authentication |
+| basicAuthUserName | The username to use with basic authentication |
+| basicAuthPassword | The password to use with basic authentication |
 
 
 
-API client can be initialized as following.
+API client can be initialized as following:
 
-```python
-# Configuration parameters and credentials
-basic_auth_user_name = 'basic_auth_user_name' # The username to use with basic authentication
-basic_auth_password = 'basic_auth_password' # The password to use with basic authentication
+```JavaScript
+const lib = require('lib');
 
-client = MundiapiClient(basic_auth_user_name, basic_auth_password)
+// Configuration parameters and credentials
+lib.Configuration.basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
+lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
+
 ```
 
 
@@ -123,24 +136,22 @@ client = MundiapiClient(basic_auth_user_name, basic_auth_password)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` SubscriptionsController ``` class can be accessed from the API Client.
+The singleton instance of the ``` SubscriptionsController ``` class can be accessed from the API Client.
 
-```python
- subscriptions_controller = client.subscriptions
+```javascript
+var controller = lib.SubscriptionsController;
 ```
 
-### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_increment_by_id") get_increment_by_id
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
 
 > TODO: Add a method description
 
-```python
-def get_increment_by_id(self,
-                            subscription_id,
-                            increment_id)
-```
 
+```javascript
+function getIncrementById(subscriptionId, incrementId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -152,26 +163,27 @@ def get_increment_by_id(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-increment_id = 'increment_id'
+```javascript
 
-result = subscriptions_controller.get_increment_by_id(subscription_id, increment_id)
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
 
+    controller.getIncrementById(subscriptionId, incrementId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_start_at") update_subscription_start_at
+
+### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionStartAt") updateSubscriptionStartAt
 
 > Updates the start at date from a subscription
 
-```python
-def update_subscription_start_at(self,
-                                     subscription_id,
-                                     request,
-                                     idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -184,27 +196,28 @@ def update_subscription_start_at(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionStartAtRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_start_at(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionStartAtRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionStartAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_card") update_subscription_card
+
+### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
 
 > Updates the credit card from a subscription
 
-```python
-def update_subscription_card(self,
-                                 subscription_id,
-                                 request,
-                                 idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionCard(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -217,28 +230,28 @@ def update_subscription_card(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionCardRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_card(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionCardRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionCard(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_item") update_subscription_item
+
+### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionItem") updateSubscriptionItem
 
 > Updates a subscription item
 
-```python
-def update_subscription_item(self,
-                                 subscription_id,
-                                 item_id,
-                                 body,
-                                 idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -252,29 +265,29 @@ def update_subscription_item(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
-body = UpdateSubscriptionItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_item(subscription_id, item_id, body, idempotency_key)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var body = new UpdateSubscriptionItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_usage") create_usage
+
+### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createUsage") createUsage
 
 > Creates a usage
 
-```python
-def create_usage(self,
-                     subscription_id,
-                     item_id,
-                     body,
-                     idempotency_key=None)
-```
 
+```javascript
+function createUsage(subscriptionId, itemId, body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -288,26 +301,29 @@ def create_usage(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
-body = CreateUsageRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_usage(subscription_id, item_id, body, idempotency_key)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var body = new CreateUsageRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createUsage(subscriptionId, itemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscription") get_subscription
+
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
 
 > Gets a subscription
 
-```python
-def get_subscription(self,
-                         subscription_id)
-```
 
+```javascript
+function getSubscription(subscriptionId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -318,25 +334,26 @@ def get_subscription(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
+```javascript
 
-result = subscriptions_controller.get_subscription(subscription_id)
+    var subscriptionId = subscription_id;
 
+    controller.getSubscription(subscriptionId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_payment_method") update_subscription_payment_method
+
+### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
 
 > Updates the payment method from a subscription
 
-```python
-def update_subscription_payment_method(self,
-                                           subscription_id,
-                                           request,
-                                           idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -349,26 +366,28 @@ def update_subscription_payment_method(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionPaymentMethodRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_payment_method(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionPaymentMethodRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionPaymentMethod(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_subscription") create_subscription
+
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
 
 > Creates a new subscription
 
-```python
-def create_subscription(self,
-                            body,
-                            idempotency_key=None)
-```
 
+```javascript
+function createSubscription(body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -380,26 +399,27 @@ def create_subscription(self,
 
 #### Example Usage
 
-```python
-body = CreateSubscriptionRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_subscription(body, idempotency_key)
+    var body = new CreateSubscriptionRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createSubscription(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_subscription_item") create_subscription_item
+
+### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscriptionItem") createSubscriptionItem
 
 > Creates a new Subscription item
 
-```python
-def create_subscription_item(self,
-                                 subscription_id,
-                                 request,
-                                 idempotency_key=None)
-```
 
+```javascript
+function createSubscriptionItem(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -412,27 +432,28 @@ def create_subscription_item(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = CreateSubscriptionItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_subscription_item(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new CreateSubscriptionItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createSubscriptionItem(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_discount") create_discount
+
+### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createDiscount") createDiscount
 
 > Creates a discount
 
-```python
-def create_discount(self,
-                        subscription_id,
-                        request,
-                        idempotency_key=None)
-```
 
+```javascript
+function createDiscount(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -445,26 +466,28 @@ def create_discount(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = CreateDiscountRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_discount(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new CreateDiscountRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createDiscount(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscription_item") get_subscription_item
+
+### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
 
 > Get Subscription Item
 
-```python
-def get_subscription_item(self,
-                              subscription_id,
-                              item_id)
-```
 
+```javascript
+function getSubscriptionItem(subscriptionId, itemId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -476,26 +499,27 @@ def get_subscription_item(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
+```javascript
 
-result = subscriptions_controller.get_subscription_item(subscription_id, item_id)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
 
+    controller.getSubscriptionItem(subscriptionId, itemId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_affiliation_id") update_subscription_affiliation_id
+
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
 
 > TODO: Add a method description
 
-```python
-def update_subscription_affiliation_id(self,
-                                           subscription_id,
-                                           request,
-                                           idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -508,27 +532,28 @@ def update_subscription_affiliation_id(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionAffiliationIdRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_affiliation_id(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionAffiliationIdRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_an_usage") create_an_usage
+
+### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createAnUsage") createAnUsage
 
 > Create Usage
 
-```python
-def create_an_usage(self,
-                        subscription_id,
-                        item_id,
-                        idempotency_key=None)
-```
 
+```javascript
+function createAnUsage(subscriptionId, itemId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -541,36 +566,28 @@ def create_an_usage(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_an_usage(subscription_id, item_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createAnUsage(subscriptionId, itemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscriptions") get_subscriptions
+
+### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptions") getSubscriptions
 
 > Gets all subscriptions
 
-```python
-def get_subscriptions(self,
-                          page=None,
-                          size=None,
-                          code=None,
-                          billing_type=None,
-                          customer_id=None,
-                          plan_id=None,
-                          card_id=None,
-                          status=None,
-                          next_billing_since=None,
-                          next_billing_until=None,
-                          created_since=None,
-                          created_until=None)
-```
 
+```javascript
+function getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -592,36 +609,37 @@ def get_subscriptions(self,
 
 #### Example Usage
 
-```python
-page = 204
-size = 204
-code = 'code'
-billing_type = 'billing_type'
-customer_id = 'customer_id'
-plan_id = 'plan_id'
-card_id = 'card_id'
-status = 'status'
-next_billing_since = datetime.now()
-next_billing_until = datetime.now()
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = subscriptions_controller.get_subscriptions(page, size, code, billing_type, customer_id, plan_id, card_id, status, next_billing_since, next_billing_until, created_since, created_until)
+    var page = 223;
+    var size = 223;
+    var code = 'code';
+    var billingType = billing_type;
+    var customerId = customer_id;
+    var planId = plan_id;
+    var cardId = card_id;
+    var status = 'status';
+    var nextBillingSince = date("D M d, Y G:i");
+    var nextBillingUntil = date("D M d, Y G:i");
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_metadata") update_subscription_metadata
+
+### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
 
 > Updates the metadata from a subscription
 
-```python
-def update_subscription_metadata(self,
-                                     subscription_id,
-                                     request,
-                                     idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -634,27 +652,28 @@ def update_subscription_metadata(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_metadata(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionMetadata(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.delete_subscription_item") delete_subscription_item
+
+### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteSubscriptionItem") deleteSubscriptionItem
 
 > Deletes a subscription item
 
-```python
-def delete_subscription_item(self,
-                                 subscription_id,
-                                 subscription_item_id,
-                                 idempotency_key=None)
-```
 
+```javascript
+function deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -667,28 +686,28 @@ def delete_subscription_item(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-subscription_item_id = 'subscription_item_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.delete_subscription_item(subscription_id, subscription_item_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var subscriptionItemId = subscription_item_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteSubscriptionItem(subscriptionId, subscriptionItemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.delete_usage") delete_usage
+
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
 
 > Deletes a usage
 
-```python
-def delete_usage(self,
-                     subscription_id,
-                     item_id,
-                     usage_id,
-                     idempotency_key=None)
-```
 
+```javascript
+function deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -702,28 +721,29 @@ def delete_usage(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
-usage_id = 'usage_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.delete_usage(subscription_id, item_id, usage_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var usageId = usage_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.delete_discount") delete_discount
+
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
 
 > Deletes a discount
 
-```python
-def delete_discount(self,
-                        subscription_id,
-                        discount_id,
-                        idempotency_key=None)
-```
 
+```javascript
+function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -736,27 +756,28 @@ def delete_discount(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-discount_id = 'discount_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.delete_discount(subscription_id, discount_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var discountId = discount_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteDiscount(subscriptionId, discountId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancel_subscription") cancel_subscription
+
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
 
 > Cancels a subscription
 
-```python
-def cancel_subscription(self,
-                            subscription_id,
-                            request=None,
-                            idempotency_key=None)
-```
 
+```javascript
+function cancelSubscription(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -769,26 +790,28 @@ def cancel_subscription(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = CreateCancelSubscriptionRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.cancel_subscription(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new CreateCancelSubscriptionRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.cancelSubscription(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_discount_by_id") get_discount_by_id
+
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
 
 > TODO: Add a method description
 
-```python
-def get_discount_by_id(self,
-                           subscription_id,
-                           discount_id)
-```
 
+```javascript
+function getDiscountById(subscriptionId, discountId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -800,26 +823,27 @@ def get_discount_by_id(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-discount_id = 'discountId'
+```javascript
 
-result = subscriptions_controller.get_discount_by_id(subscription_id, discount_id)
+    var subscriptionId = subscription_id;
+    var discountId = 'discountId';
 
+    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_discounts") get_discounts
+
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
 
 > TODO: Add a method description
 
-```python
-def get_discounts(self,
-                      subscription_id,
-                      page,
-                      size)
-```
 
+```javascript
+function getDiscounts(subscriptionId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -832,27 +856,28 @@ def get_discounts(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-page = 204
-size = 204
+```javascript
 
-result = subscriptions_controller.get_discounts(subscription_id, page, size)
+    var subscriptionId = subscription_id;
+    var page = 223;
+    var size = 223;
 
+    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.create_increment") create_increment
+
+### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createIncrement") createIncrement
 
 > Creates a increment
 
-```python
-def create_increment(self,
-                         subscription_id,
-                         request,
-                         idempotency_key=None)
-```
 
+```javascript
+function createIncrement(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -865,27 +890,28 @@ def create_increment(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = CreateIncrementRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.create_increment(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new CreateIncrementRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createIncrement(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_increments") get_increments
+
+### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
 
 > TODO: Add a method description
 
-```python
-def get_increments(self,
-                       subscription_id,
-                       page=None,
-                       size=None)
-```
 
+```javascript
+function getIncrements(subscriptionId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -898,27 +924,28 @@ def get_increments(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-page = 204
-size = 204
+```javascript
 
-result = subscriptions_controller.get_increments(subscription_id, page, size)
+    var subscriptionId = subscription_id;
+    var page = 223;
+    var size = 223;
 
+    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.delete_increment") delete_increment
+
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
 
 > Deletes a increment
 
-```python
-def delete_increment(self,
-                         subscription_id,
-                         increment_id,
-                         idempotency_key=None)
-```
 
+```javascript
+function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -931,30 +958,28 @@ def delete_increment(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-increment_id = 'increment_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.delete_increment(subscription_id, increment_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteIncrement(subscriptionId, incrementId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_usages_details") get_usages_details
+
+### <a name="get_usages_details"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsagesDetails") getUsagesDetails
 
 > TODO: Add a method description
 
-```python
-def get_usages_details(self,
-                           subscription_id,
-                           cycle_id=None,
-                           size=None,
-                           page=None,
-                           item_id=None,
-                           group=None)
-```
 
+```javascript
+function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -970,33 +995,31 @@ def get_usages_details(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-cycle_id = 'cycle_id'
-size = 204
-page = 204
-item_id = 'item_id'
-group = 'group'
+```javascript
 
-result = subscriptions_controller.get_usages_details(subscription_id, cycle_id, size, page, item_id, group)
+    var subscriptionId = subscription_id;
+    var cycleId = cycle_id;
+    var size = 223;
+    var page = 223;
+    var itemId = item_id;
+    var group = 'group';
 
+    controller.getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_usages") get_usages
+
+### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
 
 > Lists all usages from a subscription item
 
-```python
-def get_usages(self,
-                   subscription_id,
-                   item_id,
-                   page=None,
-                   size=None,
-                   code=None,
-                   group=None)
-```
 
+```javascript
+function getUsages(subscriptionId, itemId, page, size, code, group, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1012,36 +1035,31 @@ def get_usages(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-item_id = 'item_id'
-page = 204
-size = 204
-code = 'code'
-group = 'group'
+```javascript
 
-result = subscriptions_controller.get_usages(subscription_id, item_id, page, size, code, group)
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var page = 223;
+    var size = 223;
+    var code = 'code';
+    var group = 'group';
 
+    controller.getUsages(subscriptionId, itemId, page, size, code, group, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscription_items") get_subscription_items
+
+### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItems") getSubscriptionItems
 
 > Get Subscription Items
 
-```python
-def get_subscription_items(self,
-                               subscription_id,
-                               page=None,
-                               size=None,
-                               name=None,
-                               code=None,
-                               status=None,
-                               description=None,
-                               created_since=None,
-                               created_until=None)
-```
 
+```javascript
+function getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1060,33 +1078,34 @@ def get_subscription_items(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-page = 204
-size = 204
-name = 'name'
-code = 'code'
-status = 'status'
-description = 'description'
-created_since = 'created_since'
-created_until = 'created_until'
+```javascript
 
-result = subscriptions_controller.get_subscription_items(subscription_id, page, size, name, code, status, description, created_since, created_until)
+    var subscriptionId = subscription_id;
+    var page = 223;
+    var size = 223;
+    var name = 'name';
+    var code = 'code';
+    var status = 'status';
+    var description = 'description';
+    var createdSince = created_since;
+    var createdUntil = created_until;
 
+    controller.getSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_due_days") update_subscription_due_days
+
+### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionDueDays") updateSubscriptionDueDays
 
 > Updates the boleto due days from a subscription
 
-```python
-def update_subscription_due_days(self,
-                                     subscription_id,
-                                     request,
-                                     idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1099,27 +1118,28 @@ def update_subscription_due_days(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionDueDaysRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_due_days(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionDueDaysRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionDueDays(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_minium_price") update_subscription_minium_price
+
+### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMiniumPrice") updateSubscriptionMiniumPrice
 
 > Atualização do valor mínimo da assinatura
 
-```python
-def update_subscription_minium_price(self,
-                                         subscription_id,
-                                         request,
-                                         idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1132,27 +1152,28 @@ def update_subscription_minium_price(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionMinimumPriceRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_minium_price(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionMinimumPriceRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_subscription_billing_date") update_subscription_billing_date
+
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionBillingDate") updateSubscriptionBillingDate
 
 > Updates the billing date from a subscription
 
-```python
-def update_subscription_billing_date(self,
-                                         subscription_id,
-                                         request,
-                                         idempotency_key=None)
-```
 
+```javascript
+function updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1165,27 +1186,28 @@ def update_subscription_billing_date(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateSubscriptionBillingDateRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_subscription_billing_date(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateSubscriptionBillingDateRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSubscriptionBillingDate(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_latest_period_end_at") update_latest_period_end_at
+
+### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
 
 > TODO: Add a method description
 
-```python
-def update_latest_period_end_at(self,
-                                    subscription_id,
-                                    request,
-                                    idempotency_key=None)
-```
 
+```javascript
+function updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1198,27 +1220,28 @@ def update_latest_period_end_at(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateCurrentCycleEndDateRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.update_latest_period_end_at(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleEndDateRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateLatestPeriodEndAt(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.update_current_cycle_status") update_current_cycle_status
+
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
 
 > TODO: Add a method description
 
-```python
-def update_current_cycle_status(self,
-                                    subscription_id,
-                                    request,
-                                    idempotency_key=None)
-```
 
+```javascript
+function updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1231,27 +1254,28 @@ def update_current_cycle_status(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-request = UpdateCurrentCycleStatusRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-subscriptions_controller.update_current_cycle_status(subscription_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var request = new UpdateCurrentCycleStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateCurrentCycleStatus(subscriptionId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscription_cycles") get_subscription_cycles
+
+### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycles") getSubscriptionCycles
 
 > TODO: Add a method description
 
-```python
-def get_subscription_cycles(self,
-                                subscription_id,
-                                page,
-                                size)
-```
 
+```javascript
+function getSubscriptionCycles(subscriptionId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1264,26 +1288,28 @@ def get_subscription_cycles(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-page = 'page'
-size = 'size'
+```javascript
 
-result = subscriptions_controller.get_subscription_cycles(subscription_id, page, size)
+    var subscriptionId = subscription_id;
+    var page = 'page';
+    var size = 'size';
 
+    controller.getSubscriptionCycles(subscriptionId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_subscription_cycle_by_id") get_subscription_cycle_by_id
+
+### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycleById") getSubscriptionCycleById
 
 > TODO: Add a method description
 
-```python
-def get_subscription_cycle_by_id(self,
-                                     subscription_id,
-                                     cycle_id)
-```
 
+```javascript
+function getSubscriptionCycleById(subscriptionId, cycleId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1295,25 +1321,27 @@ def get_subscription_cycle_by_id(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-cycle_id = 'cycleId'
+```javascript
 
-result = subscriptions_controller.get_subscription_cycle_by_id(subscription_id, cycle_id)
+    var subscriptionId = subscription_id;
+    var cycleId = 'cycleId';
 
+    controller.getSubscriptionCycleById(subscriptionId, cycleId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renew_subscription") renew_subscription
+
+### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
 
 > TODO: Add a method description
 
-```python
-def renew_subscription(self,
-                           subscription_id,
-                           idempotency_key=None)
-```
 
+```javascript
+function renewSubscription(subscriptionId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1325,25 +1353,27 @@ def renew_subscription(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = subscriptions_controller.renew_subscription(subscription_id, idempotency_key)
+    var subscriptionId = subscription_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.renewSubscription(subscriptionId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_usage_report"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.get_usage_report") get_usage_report
+
+### <a name="get_usage_report"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsageReport") getUsageReport
 
 > TODO: Add a method description
 
-```python
-def get_usage_report(self,
-                         subscription_id,
-                         period_id)
-```
 
+```javascript
+function getUsageReport(subscriptionId, periodId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1355,36 +1385,39 @@ def get_usage_report(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-period_id = 'period_id'
+```javascript
 
-result = subscriptions_controller.get_usage_report(subscription_id, period_id)
+    var subscriptionId = subscription_id;
+    var periodId = period_id;
 
+    controller.getUsageReport(subscriptionId, periodId, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OrdersController") OrdersController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` OrdersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` OrdersController ``` class can be accessed from the API Client.
 
-```python
- orders_controller = client.orders
+```javascript
+var controller = lib.OrdersController;
 ```
 
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order") get_order
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
 
 > Gets an order
 
-```python
-def get_order(self,
-                  order_id)
-```
 
+```javascript
+function getOrder(orderId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1395,24 +1428,26 @@ def get_order(self,
 
 #### Example Usage
 
-```python
-order_id = 'order_id'
+```javascript
 
-result = orders_controller.get_order(order_id)
+    var orderId = order_id;
 
+    controller.getOrder(orderId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order") create_order
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
 
 > Creates a new Order
 
-```python
-def create_order(self,
-                     body,
-                     idempotency_key=None)
-```
 
+```javascript
+function createOrder(body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1424,30 +1459,27 @@ def create_order(self,
 
 #### Example Usage
 
-```python
-body = CreateOrderRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.create_order(body, idempotency_key)
+    var body = new CreateOrderRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createOrder(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_orders") get_orders
+
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrders") getOrders
 
 > Gets all orders
 
-```python
-def get_orders(self,
-                   page=None,
-                   size=None,
-                   code=None,
-                   status=None,
-                   created_since=None,
-                   created_until=None,
-                   customer_id=None)
-```
 
+```javascript
+function getOrders(page, size, code, status, createdSince, createdUntil, customerId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1464,31 +1496,32 @@ def get_orders(self,
 
 #### Example Usage
 
-```python
-page = 40
-size = 40
-code = 'code'
-status = 'status'
-created_since = datetime.now()
-created_until = datetime.now()
-customer_id = 'customer_id'
+```javascript
 
-result = orders_controller.get_orders(page, size, code, status, created_since, created_until, customer_id)
+    var page = 223;
+    var size = 223;
+    var code = 'code';
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+    var customerId = customer_id;
 
+    controller.getOrders(page, size, code, status, createdSince, createdUntil, customerId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.update_order_metadata") update_order_metadata
+
+### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderMetadata") updateOrderMetadata
 
 > Updates the metadata from an order
 
-```python
-def update_order_metadata(self,
-                              order_id,
-                              request,
-                              idempotency_key=None)
-```
 
+```javascript
+function updateOrderMetadata(orderId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1501,26 +1534,28 @@ def update_order_metadata(self,
 
 #### Example Usage
 
-```python
-order_id = 'order_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.update_order_metadata(order_id, request, idempotency_key)
+    var orderId = order_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateOrderMetadata(orderId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.delete_all_order_items") delete_all_order_items
+
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
 
 > TODO: Add a method description
 
-```python
-def delete_all_order_items(self,
-                               order_id,
-                               idempotency_key=None)
-```
 
+```javascript
+function deleteAllOrderItems(orderId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1532,27 +1567,27 @@ def delete_all_order_items(self,
 
 #### Example Usage
 
-```python
-order_id = 'orderId'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.delete_all_order_items(order_id, idempotency_key)
+    var orderId = 'orderId';
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteAllOrderItems(orderId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.update_order_item") update_order_item
+
+### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
 
 > TODO: Add a method description
 
-```python
-def update_order_item(self,
-                          order_id,
-                          item_id,
-                          request,
-                          idempotency_key=None)
-```
 
+```javascript
+function updateOrderItem(orderId, itemId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1566,28 +1601,29 @@ def update_order_item(self,
 
 #### Example Usage
 
-```python
-order_id = 'orderId'
-item_id = 'itemId'
-request = UpdateOrderItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.update_order_item(order_id, item_id, request, idempotency_key)
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var request = new UpdateOrderItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateOrderItem(orderId, itemId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.delete_order_item") delete_order_item
+
+### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteOrderItem") deleteOrderItem
 
 > TODO: Add a method description
 
-```python
-def delete_order_item(self,
-                          order_id,
-                          item_id,
-                          idempotency_key=None)
-```
 
+```javascript
+function deleteOrderItem(orderId, itemId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1600,27 +1636,28 @@ def delete_order_item(self,
 
 #### Example Usage
 
-```python
-order_id = 'orderId'
-item_id = 'itemId'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.delete_order_item(order_id, item_id, idempotency_key)
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteOrderItem(orderId, itemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.create_order_item") create_order_item
+
+### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrderItem") createOrderItem
 
 > TODO: Add a method description
 
-```python
-def create_order_item(self,
-                          order_id,
-                          request,
-                          idempotency_key=None)
-```
 
+```javascript
+function createOrderItem(orderId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1633,26 +1670,28 @@ def create_order_item(self,
 
 #### Example Usage
 
-```python
-order_id = 'orderId'
-request = CreateOrderItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.create_order_item(order_id, request, idempotency_key)
+    var orderId = 'orderId';
+    var request = new CreateOrderItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createOrderItem(orderId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.get_order_item") get_order_item
+
+### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrderItem") getOrderItem
 
 > TODO: Add a method description
 
-```python
-def get_order_item(self,
-                       order_id,
-                       item_id)
-```
 
+```javascript
+function getOrderItem(orderId, itemId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1664,26 +1703,27 @@ def get_order_item(self,
 
 #### Example Usage
 
-```python
-order_id = 'orderId'
-item_id = 'itemId'
+```javascript
 
-result = orders_controller.get_order_item(order_id, item_id)
+    var orderId = 'orderId';
+    var itemId = 'itemId';
 
+    controller.getOrderItem(orderId, itemId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.update_order_status") update_order_status
+
+### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
 
 > TODO: Add a method description
 
-```python
-def update_order_status(self,
-                            id,
-                            request,
-                            idempotency_key=None)
-```
 
+```javascript
+function updateOrderStatus(id, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1696,39 +1736,40 @@ def update_order_status(self,
 
 #### Example Usage
 
-```python
-id = 'id'
-request = UpdateOrderStatusRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = orders_controller.update_order_status(id, request, idempotency_key)
+    var id = 'id';
+    var request = new UpdateOrderStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateOrderStatus(id, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PlansController") PlansController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` PlansController ``` class can be accessed from the API Client.
+The singleton instance of the ``` PlansController ``` class can be accessed from the API Client.
 
-```python
- plans_controller = client.plans
+```javascript
+var controller = lib.PlansController;
 ```
 
-### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.create_plan_item") create_plan_item
+### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.createPlanItem") createPlanItem
 
 > Adds a new item to a plan
 
-```python
-def create_plan_item(self,
-                         plan_id,
-                         request,
-                         idempotency_key=None)
-```
 
+```javascript
+function createPlanItem(planId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1741,28 +1782,28 @@ def create_plan_item(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-request = CreatePlanItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.create_plan_item(plan_id, request, idempotency_key)
+    var planId = plan_id;
+    var request = new CreatePlanItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createPlanItem(planId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.update_plan_item") update_plan_item
+
+### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.updatePlanItem") updatePlanItem
 
 > Updates a plan item
 
-```python
-def update_plan_item(self,
-                         plan_id,
-                         plan_item_id,
-                         body,
-                         idempotency_key=None)
-```
 
+```javascript
+function updatePlanItem(planId, planItemId, body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1776,26 +1817,29 @@ def update_plan_item(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-plan_item_id = 'plan_item_id'
-body = UpdatePlanItemRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.update_plan_item(plan_id, plan_item_id, body, idempotency_key)
+    var planId = plan_id;
+    var planItemId = plan_item_id;
+    var body = new UpdatePlanItemRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updatePlanItem(planId, planItemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.get_plan") get_plan
+
+### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlan") getPlan
 
 > Gets a plan
 
-```python
-def get_plan(self,
-                 plan_id)
-```
 
+```javascript
+function getPlan(planId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1806,24 +1850,26 @@ def get_plan(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
+```javascript
 
-result = plans_controller.get_plan(plan_id)
+    var planId = plan_id;
 
+    controller.getPlan(planId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.delete_plan") delete_plan
+
+### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlan") deletePlan
 
 > Deletes a plan
 
-```python
-def delete_plan(self,
-                    plan_id,
-                    idempotency_key=None)
-```
 
+```javascript
+function deletePlan(planId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1835,26 +1881,27 @@ def delete_plan(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.delete_plan(plan_id, idempotency_key)
+    var planId = plan_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deletePlan(planId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.update_plan") update_plan
+
+### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.updatePlan") updatePlan
 
 > Updates a plan
 
-```python
-def update_plan(self,
-                    plan_id,
-                    request,
-                    idempotency_key=None)
-```
 
+```javascript
+function updatePlan(planId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1867,26 +1914,28 @@ def update_plan(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-request = UpdatePlanRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.update_plan(plan_id, request, idempotency_key)
+    var planId = plan_id;
+    var request = new UpdatePlanRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updatePlan(planId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.create_plan") create_plan
+
+### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.createPlan") createPlan
 
 > Creates a new plan
 
-```python
-def create_plan(self,
-                    body,
-                    idempotency_key=None)
-```
 
+```javascript
+function createPlan(body, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1898,30 +1947,27 @@ def create_plan(self,
 
 #### Example Usage
 
-```python
-body = CreatePlanRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.create_plan(body, idempotency_key)
+    var body = new CreatePlanRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createPlan(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.get_plans") get_plans
+
+### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlans") getPlans
 
 > Gets all plans
 
-```python
-def get_plans(self,
-                  page=None,
-                  size=None,
-                  name=None,
-                  status=None,
-                  billing_type=None,
-                  created_since=None,
-                  created_until=None)
-```
 
+```javascript
+function getPlans(page, size, name, status, billingType, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1938,31 +1984,32 @@ def get_plans(self,
 
 #### Example Usage
 
-```python
-page = 40
-size = 40
-name = 'name'
-status = 'status'
-billing_type = 'billing_type'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = plans_controller.get_plans(page, size, name, status, billing_type, created_since, created_until)
+    var page = 223;
+    var size = 223;
+    var name = 'name';
+    var status = 'status';
+    var billingType = billing_type;
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getPlans(page, size, name, status, billingType, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.update_plan_metadata") update_plan_metadata
+
+### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.updatePlanMetadata") updatePlanMetadata
 
 > Updates the metadata from a plan
 
-```python
-def update_plan_metadata(self,
-                             plan_id,
-                             request,
-                             idempotency_key=None)
-```
 
+```javascript
+function updatePlanMetadata(planId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -1975,26 +2022,28 @@ def update_plan_metadata(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.update_plan_metadata(plan_id, request, idempotency_key)
+    var planId = plan_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updatePlanMetadata(planId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.get_plan_item") get_plan_item
+
+### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlanItem") getPlanItem
 
 > Gets a plan item
 
-```python
-def get_plan_item(self,
-                      plan_id,
-                      plan_item_id)
-```
 
+```javascript
+function getPlanItem(planId, planItemId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2006,26 +2055,27 @@ def get_plan_item(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-plan_item_id = 'plan_item_id'
+```javascript
 
-result = plans_controller.get_plan_item(plan_id, plan_item_id)
+    var planId = plan_id;
+    var planItemId = plan_item_id;
 
+    controller.getPlanItem(planId, planItemId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.delete_plan_item") delete_plan_item
+
+### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlanItem") deletePlanItem
 
 > Removes an item from a plan
 
-```python
-def delete_plan_item(self,
-                         plan_id,
-                         plan_item_id,
-                         idempotency_key=None)
-```
 
+```javascript
+function deletePlanItem(planId, planItemId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2038,38 +2088,40 @@ def delete_plan_item(self,
 
 #### Example Usage
 
-```python
-plan_id = 'plan_id'
-plan_item_id = 'plan_item_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = plans_controller.delete_plan_item(plan_id, plan_item_id, idempotency_key)
+    var planId = plan_id;
+    var planItemId = plan_item_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deletePlanItem(planId, planItemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png ".InvoicesController") InvoicesController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` InvoicesController ``` class can be accessed from the API Client.
+The singleton instance of the ``` InvoicesController ``` class can be accessed from the API Client.
 
-```python
- invoices_controller = client.invoices
+```javascript
+var controller = lib.InvoicesController;
 ```
 
-### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.cancel_invoice") cancel_invoice
+### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.cancelInvoice") cancelInvoice
 
 > Cancels an invoice
 
-```python
-def cancel_invoice(self,
-                       invoice_id,
-                       idempotency_key=None)
-```
 
+```javascript
+function cancelInvoice(invoiceId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2081,24 +2133,27 @@ def cancel_invoice(self,
 
 #### Example Usage
 
-```python
-invoice_id = 'invoice_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = invoices_controller.cancel_invoice(invoice_id, idempotency_key)
+    var invoiceId = invoice_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.cancelInvoice(invoiceId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.get_invoice") get_invoice
+
+### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoice") getInvoice
 
 > Gets an invoice
 
-```python
-def get_invoice(self,
-                    invoice_id)
-```
 
+```javascript
+function getInvoice(invoiceId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2109,26 +2164,26 @@ def get_invoice(self,
 
 #### Example Usage
 
-```python
-invoice_id = 'invoice_id'
+```javascript
 
-result = invoices_controller.get_invoice(invoice_id)
+    var invoiceId = invoice_id;
 
+    controller.getInvoice(invoiceId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.create_invoice") create_invoice
+
+### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.createInvoice") createInvoice
 
 > Create an Invoice
 
-```python
-def create_invoice(self,
-                       subscription_id,
-                       cycle_id,
-                       request=None,
-                       idempotency_key=None)
-```
 
+```javascript
+function createInvoice(subscriptionId, cycleId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2142,28 +2197,29 @@ def create_invoice(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
-cycle_id = 'cycle_id'
-request = CreateInvoiceRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = invoices_controller.create_invoice(subscription_id, cycle_id, request, idempotency_key)
+    var subscriptionId = subscription_id;
+    var cycleId = cycle_id;
+    var request = new CreateInvoiceRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createInvoice(subscriptionId, cycleId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.update_invoice_status") update_invoice_status
+
+### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceStatus") updateInvoiceStatus
 
 > Updates the status from an invoice
 
-```python
-def update_invoice_status(self,
-                              invoice_id,
-                              request,
-                              idempotency_key=None)
-```
 
+```javascript
+function updateInvoiceStatus(invoiceId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2176,34 +2232,28 @@ def update_invoice_status(self,
 
 #### Example Usage
 
-```python
-invoice_id = 'invoice_id'
-request = UpdateInvoiceStatusRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = invoices_controller.update_invoice_status(invoice_id, request, idempotency_key)
+    var invoiceId = invoice_id;
+    var request = new UpdateInvoiceStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateInvoiceStatus(invoiceId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.get_invoices") get_invoices
+
+### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoices") getInvoices
 
 > Gets all invoices
 
-```python
-def get_invoices(self,
-                     page=None,
-                     size=None,
-                     code=None,
-                     customer_id=None,
-                     subscription_id=None,
-                     created_since=None,
-                     created_until=None,
-                     status=None,
-                     due_since=None,
-                     due_until=None)
-```
 
+```javascript
+function getInvoices(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2223,34 +2273,35 @@ def get_invoices(self,
 
 #### Example Usage
 
-```python
-page = 40
-size = 40
-code = 'code'
-customer_id = 'customer_id'
-subscription_id = 'subscription_id'
-created_since = datetime.now()
-created_until = datetime.now()
-status = 'status'
-due_since = datetime.now()
-due_until = datetime.now()
+```javascript
 
-result = invoices_controller.get_invoices(page, size, code, customer_id, subscription_id, created_since, created_until, status, due_since, due_until)
+    var page = 223;
+    var size = 223;
+    var code = 'code';
+    var customerId = customer_id;
+    var subscriptionId = subscription_id;
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+    var status = 'status';
+    var dueSince = date("D M d, Y G:i");
+    var dueUntil = date("D M d, Y G:i");
 
+    controller.getInvoices(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.update_invoice_metadata") update_invoice_metadata
+
+### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceMetadata") updateInvoiceMetadata
 
 > Updates the metadata from an invoice
 
-```python
-def update_invoice_metadata(self,
-                                invoice_id,
-                                request,
-                                idempotency_key=None)
-```
 
+```javascript
+function updateInvoiceMetadata(invoiceId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2263,25 +2314,28 @@ def update_invoice_metadata(self,
 
 #### Example Usage
 
-```python
-invoice_id = 'invoice_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = invoices_controller.update_invoice_metadata(invoice_id, request, idempotency_key)
+    var invoiceId = invoice_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateInvoiceMetadata(invoiceId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.get_partial_invoice") get_partial_invoice
+
+### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getPartialInvoice") getPartialInvoice
 
 > TODO: Add a method description
 
-```python
-def get_partial_invoice(self,
-                            subscription_id)
-```
 
+```javascript
+function getPartialInvoice(subscriptionId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2292,38 +2346,38 @@ def get_partial_invoice(self,
 
 #### Example Usage
 
-```python
-subscription_id = 'subscription_id'
+```javascript
 
-result = invoices_controller.get_partial_invoice(subscription_id)
+    var subscriptionId = subscription_id;
 
+    controller.getPartialInvoice(subscriptionId, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CustomersController") CustomersController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` CustomersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` CustomersController ``` class can be accessed from the API Client.
 
-```python
- customers_controller = client.customers
+```javascript
+var controller = lib.CustomersController;
 ```
 
-### <a name="update_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.update_card") update_card
+### <a name="update_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCard") updateCard
 
 > Updates a card
 
-```python
-def update_card(self,
-                    customer_id,
-                    card_id,
-                    request,
-                    idempotency_key=None)
-```
 
+```javascript
+function updateCard(customerId, cardId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2337,29 +2391,29 @@ def update_card(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-card_id = 'card_id'
-request = UpdateCardRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.update_card(customer_id, card_id, request, idempotency_key)
+    var customerId = customer_id;
+    var cardId = card_id;
+    var request = new UpdateCardRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateCard(customerId, cardId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.update_address") update_address
+
+### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateAddress") updateAddress
 
 > Updates an address
 
-```python
-def update_address(self,
-                       customer_id,
-                       address_id,
-                       request,
-                       idempotency_key=None)
-```
 
+```javascript
+function updateAddress(customerId, addressId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2373,26 +2427,29 @@ def update_address(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-address_id = 'address_id'
-request = UpdateAddressRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.update_address(customer_id, address_id, request, idempotency_key)
+    var customerId = customer_id;
+    var addressId = address_id;
+    var request = new UpdateAddressRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateAddress(customerId, addressId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customer") get_customer
+
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCustomer") getCustomer
 
 > Get a customer
 
-```python
-def get_customer(self,
-                     customer_id)
-```
 
+```javascript
+function getCustomer(customerId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2403,25 +2460,26 @@ def get_customer(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
+```javascript
 
-result = customers_controller.get_customer(customer_id)
+    var customerId = customer_id;
 
+    controller.getCustomer(customerId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_access_tokens") get_access_tokens
+
+### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAccessTokens") getAccessTokens
 
 > Get all access tokens from a customer
 
-```python
-def get_access_tokens(self,
-                          customer_id,
-                          page=None,
-                          size=None)
-```
 
+```javascript
+function getAccessTokens(customerId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2434,27 +2492,28 @@ def get_access_tokens(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-page = 40
-size = 40
+```javascript
 
-result = customers_controller.get_access_tokens(customer_id, page, size)
+    var customerId = customer_id;
+    var page = 223;
+    var size = 223;
 
+    controller.getAccessTokens(customerId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_addresses") get_addresses
+
+### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAddresses") getAddresses
 
 > Gets all adressess from a customer
 
-```python
-def get_addresses(self,
-                      customer_id,
-                      page=None,
-                      size=None)
-```
 
+```javascript
+function getAddresses(customerId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2467,27 +2526,28 @@ def get_addresses(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-page = 40
-size = 40
+```javascript
 
-result = customers_controller.get_addresses(customer_id, page, size)
+    var customerId = customer_id;
+    var page = 59;
+    var size = 59;
 
+    controller.getAddresses(customerId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_cards") get_cards
+
+### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCards") getCards
 
 > Get all cards from a customer
 
-```python
-def get_cards(self,
-                  customer_id,
-                  page=None,
-                  size=None)
-```
 
+```javascript
+function getCards(customerId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2500,25 +2560,28 @@ def get_cards(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-page = 40
-size = 40
+```javascript
 
-result = customers_controller.get_cards(customer_id, page, size)
+    var customerId = customer_id;
+    var page = 59;
+    var size = 59;
 
+    controller.getCards(customerId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.delete_access_tokens") delete_access_tokens
+
+### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteAccessTokens") deleteAccessTokens
 
 > Delete a Customer's access tokens
 
-```python
-def delete_access_tokens(self,
-                             customer_id)
-```
 
+```javascript
+function deleteAccessTokens(customerId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2529,24 +2592,26 @@ def delete_access_tokens(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
+```javascript
 
-result = customers_controller.delete_access_tokens(customer_id)
+    var customerId = customer_id;
 
+    controller.deleteAccessTokens(customerId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_access_token") get_access_token
+
+### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAccessToken") getAccessToken
 
 > Get a Customer's access token
 
-```python
-def get_access_token(self,
-                         customer_id,
-                         token_id)
-```
 
+```javascript
+function getAccessToken(customerId, tokenId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2558,26 +2623,27 @@ def get_access_token(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-token_id = 'token_id'
+```javascript
 
-result = customers_controller.get_access_token(customer_id, token_id)
+    var customerId = customer_id;
+    var tokenId = token_id;
 
+    controller.getAccessToken(customerId, tokenId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_access_token") create_access_token
+
+### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAccessToken") createAccessToken
 
 > Creates a access token for a customer
 
-```python
-def create_access_token(self,
-                            customer_id,
-                            request,
-                            idempotency_key=None)
-```
 
+```javascript
+function createAccessToken(customerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2590,27 +2656,28 @@ def create_access_token(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-request = CreateAccessTokenRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.create_access_token(customer_id, request, idempotency_key)
+    var customerId = customer_id;
+    var request = new CreateAccessTokenRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createAccessToken(customerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.delete_access_token") delete_access_token
+
+### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteAccessToken") deleteAccessToken
 
 > Delete a customer's access token
 
-```python
-def delete_access_token(self,
-                            customer_id,
-                            token_id,
-                            idempotency_key=None)
-```
 
+```javascript
+function deleteAccessToken(customerId, tokenId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2623,27 +2690,28 @@ def delete_access_token(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-token_id = 'token_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.delete_access_token(customer_id, token_id, idempotency_key)
+    var customerId = customer_id;
+    var tokenId = token_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteAccessToken(customerId, tokenId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.update_customer_metadata") update_customer_metadata
+
+### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomerMetadata") updateCustomerMetadata
 
 > Updates the metadata a customer
 
-```python
-def update_customer_metadata(self,
-                                 customer_id,
-                                 request,
-                                 idempotency_key=None)
-```
 
+```javascript
+function updateCustomerMetadata(customerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2656,27 +2724,28 @@ def update_customer_metadata(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.update_customer_metadata(customer_id, request, idempotency_key)
+    var customerId = customer_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateCustomerMetadata(customerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.update_customer") update_customer
+
+### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomer") updateCustomer
 
 > Updates a customer
 
-```python
-def update_customer(self,
-                        customer_id,
-                        request,
-                        idempotency_key=None)
-```
 
+```javascript
+function updateCustomer(customerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2689,26 +2758,28 @@ def update_customer(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-request = UpdateCustomerRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.update_customer(customer_id, request, idempotency_key)
+    var customerId = customer_id;
+    var request = new UpdateCustomerRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateCustomer(customerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_address") get_address
+
+### <a name="get_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAddress") getAddress
 
 > Get a customer's address
 
-```python
-def get_address(self,
-                    customer_id,
-                    address_id)
-```
 
+```javascript
+function getAddress(customerId, addressId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2720,26 +2791,27 @@ def get_address(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-address_id = 'address_id'
+```javascript
 
-result = customers_controller.get_address(customer_id, address_id)
+    var customerId = customer_id;
+    var addressId = address_id;
 
+    controller.getAddress(customerId, addressId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.delete_address") delete_address
+
+### <a name="delete_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteAddress") deleteAddress
 
 > Delete a Customer's address
 
-```python
-def delete_address(self,
-                       customer_id,
-                       address_id,
-                       idempotency_key=None)
-```
 
+```javascript
+function deleteAddress(customerId, addressId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2752,27 +2824,28 @@ def delete_address(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-address_id = 'address_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.delete_address(customer_id, address_id, idempotency_key)
+    var customerId = customer_id;
+    var addressId = address_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteAddress(customerId, addressId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.delete_card") delete_card
+
+### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteCard") deleteCard
 
 > Delete a customer's card
 
-```python
-def delete_card(self,
-                    customer_id,
-                    card_id,
-                    idempotency_key=None)
-```
 
+```javascript
+function deleteCard(customerId, cardId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2785,27 +2858,28 @@ def delete_card(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-card_id = 'card_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.delete_card(customer_id, card_id, idempotency_key)
+    var customerId = customer_id;
+    var cardId = card_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteCard(customerId, cardId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_address") create_address
+
+### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAddress") createAddress
 
 > Creates a new address for a customer
 
-```python
-def create_address(self,
-                       customer_id,
-                       request,
-                       idempotency_key=None)
-```
 
+```javascript
+function createAddress(customerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2818,26 +2892,28 @@ def create_address(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-request = CreateAddressRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.create_address(customer_id, request, idempotency_key)
+    var customerId = customer_id;
+    var request = new CreateAddressRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createAddress(customerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_card") get_card
+
+### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCard") getCard
 
 > Get a customer's card
 
-```python
-def get_card(self,
-                 customer_id,
-                 card_id)
-```
 
+```javascript
+function getCard(customerId, cardId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2849,26 +2925,27 @@ def get_card(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-card_id = 'card_id'
+```javascript
 
-result = customers_controller.get_card(customer_id, card_id)
+    var customerId = customer_id;
+    var cardId = card_id;
 
+    controller.getCard(customerId, cardId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_card") create_card
+
+### <a name="create_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCard") createCard
 
 > Creates a new card for a customer
 
-```python
-def create_card(self,
-                    customer_id,
-                    request,
-                    idempotency_key=None)
-```
 
+```javascript
+function createCard(customerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2881,30 +2958,28 @@ def create_card(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-request = CreateCardRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.create_card(customer_id, request, idempotency_key)
+    var customerId = customer_id;
+    var request = new CreateCardRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createCard(customerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.get_customers") get_customers
+
+### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCustomers") getCustomers
 
 > Get all Customers
 
-```python
-def get_customers(self,
-                      name=None,
-                      document=None,
-                      page=1,
-                      size=10,
-                      email=None,
-                      code=None)
-```
 
+```javascript
+function getCustomers(name, document, page, size, email, code, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2920,30 +2995,31 @@ def get_customers(self,
 
 #### Example Usage
 
-```python
-name = 'name'
-document = 'document'
-page = 1
-size = 10
-email = 'email'
-code = 'Code'
+```javascript
 
-result = customers_controller.get_customers(name, document, page, size, email, code)
+    var name = 'name';
+    var document = 'document';
+    var page = 59;
+    var size = 59;
+    var email = 'email';
+    var code = 'Code';
 
+    controller.getCustomers(name, document, page, size, email, code, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.renew_card") renew_card
+
+### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.renewCard") renewCard
 
 > Renew a card
 
-```python
-def renew_card(self,
-                   customer_id,
-                   card_id,
-                   idempotency_key=None)
-```
 
+```javascript
+function renewCard(customerId, cardId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2956,26 +3032,28 @@ def renew_card(self,
 
 #### Example Usage
 
-```python
-customer_id = 'customer_id'
-card_id = 'card_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.renew_card(customer_id, card_id, idempotency_key)
+    var customerId = customer_id;
+    var cardId = card_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.renewCard(customerId, cardId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.create_customer") create_customer
+
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCustomer") createCustomer
 
 > Creates a new customer
 
-```python
-def create_customer(self,
-                        request,
-                        idempotency_key=None)
-```
 
+```javascript
+function createCustomer(request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -2987,38 +3065,39 @@ def create_customer(self,
 
 #### Example Usage
 
-```python
-request = CreateCustomerRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = customers_controller.create_customer(request, idempotency_key)
+    var request = new CreateCustomerRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createCustomer(request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ChargesController") ChargesController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` ChargesController ``` class can be accessed from the API Client.
+The singleton instance of the ``` ChargesController ``` class can be accessed from the API Client.
 
-```python
- charges_controller = client.charges
+```javascript
+var controller = lib.ChargesController;
 ```
 
-### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.update_charge_card") update_charge_card
+### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeCard") updateChargeCard
 
 > Updates the card from a charge
 
-```python
-def update_charge_card(self,
-                           charge_id,
-                           request,
-                           idempotency_key=None)
-```
 
+```javascript
+function updateChargeCard(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3031,27 +3110,28 @@ def update_charge_card(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = UpdateChargeCardRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.update_charge_card(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new UpdateChargeCardRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateChargeCard(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.update_charge_payment_method") update_charge_payment_method
+
+### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargePaymentMethod") updateChargePaymentMethod
 
 > Updates a charge's payment method
 
-```python
-def update_charge_payment_method(self,
-                                     charge_id,
-                                     request,
-                                     idempotency_key=None)
-```
 
+```javascript
+function updateChargePaymentMethod(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3064,26 +3144,28 @@ def update_charge_payment_method(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = UpdateChargePaymentMethodRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.update_charge_payment_method(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new UpdateChargePaymentMethodRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateChargePaymentMethod(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.create_charge") create_charge
+
+### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.createCharge") createCharge
 
 > Creates a new charge
 
-```python
-def create_charge(self,
-                      request,
-                      idempotency_key=None)
-```
 
+```javascript
+function createCharge(request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3095,24 +3177,27 @@ def create_charge(self,
 
 #### Example Usage
 
-```python
-request = CreateChargeRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.create_charge(request, idempotency_key)
+    var request = new CreateChargeRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createCharge(request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.get_charge") get_charge
+
+### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getCharge") getCharge
 
 > Get a charge from its id
 
-```python
-def get_charge(self,
-                   charge_id)
-```
 
+```javascript
+function getCharge(chargeId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3123,24 +3208,26 @@ def get_charge(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
+```javascript
 
-result = charges_controller.get_charge(charge_id)
+    var chargeId = charge_id;
 
+    controller.getCharge(chargeId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.retry_charge") retry_charge
+
+### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.retryCharge") retryCharge
 
 > Retries a charge
 
-```python
-def retry_charge(self,
-                     charge_id,
-                     idempotency_key=None)
-```
 
+```javascript
+function retryCharge(chargeId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3152,32 +3239,27 @@ def retry_charge(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.retry_charge(charge_id, idempotency_key)
+    var chargeId = charge_id;
+    var idempotencyKey = 'idempotency-key';
 
+    controller.retryCharge(chargeId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.get_charges") get_charges
+
+### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getCharges") getCharges
 
 > Lists all charges
 
-```python
-def get_charges(self,
-                    page=None,
-                    size=None,
-                    code=None,
-                    status=None,
-                    payment_method=None,
-                    customer_id=None,
-                    order_id=None,
-                    created_since=None,
-                    created_until=None)
-```
 
+```javascript
+function getCharges(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3196,33 +3278,34 @@ def get_charges(self,
 
 #### Example Usage
 
-```python
-page = 253
-size = 253
-code = 'code'
-status = 'status'
-payment_method = 'payment_method'
-customer_id = 'customer_id'
-order_id = 'order_id'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = charges_controller.get_charges(page, size, code, status, payment_method, customer_id, order_id, created_since, created_until)
+    var page = 59;
+    var size = 59;
+    var code = 'code';
+    var status = 'status';
+    var paymentMethod = payment_method;
+    var customerId = customer_id;
+    var orderId = order_id;
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getCharges(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.update_charge_metadata") update_charge_metadata
+
+### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeMetadata") updateChargeMetadata
 
 > Updates the metadata from a charge
 
-```python
-def update_charge_metadata(self,
-                               charge_id,
-                               request,
-                               idempotency_key=None)
-```
 
+```javascript
+function updateChargeMetadata(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3235,27 +3318,28 @@ def update_charge_metadata(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.update_charge_metadata(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateChargeMetadata(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.cancel_charge") cancel_charge
+
+### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.cancelCharge") cancelCharge
 
 > Cancel a charge
 
-```python
-def cancel_charge(self,
-                      charge_id,
-                      request=None,
-                      idempotency_key=None)
-```
 
+```javascript
+function cancelCharge(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3268,27 +3352,28 @@ def cancel_charge(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = CreateCancelChargeRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.cancel_charge(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new CreateCancelChargeRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.cancelCharge(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.capture_charge") capture_charge
+
+### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.captureCharge") captureCharge
 
 > Captures a charge
 
-```python
-def capture_charge(self,
-                       charge_id,
-                       request=None,
-                       idempotency_key=None)
-```
 
+```javascript
+function captureCharge(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3301,27 +3386,28 @@ def capture_charge(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = CreateCaptureChargeRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.capture_charge(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new CreateCaptureChargeRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.captureCharge(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.update_charge_due_date") update_charge_due_date
+
+### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeDueDate") updateChargeDueDate
 
 > Updates the due date from a charge
 
-```python
-def update_charge_due_date(self,
-                               charge_id,
-                               request,
-                               idempotency_key=None)
-```
 
+```javascript
+function updateChargeDueDate(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3334,27 +3420,28 @@ def update_charge_due_date(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = UpdateChargeDueDateRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.update_charge_due_date(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new UpdateChargeDueDateRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateChargeDueDate(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="confirm_payment"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.confirm_payment") confirm_payment
+
+### <a name="confirm_payment"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.confirmPayment") confirmPayment
 
 > TODO: Add a method description
 
-```python
-def confirm_payment(self,
-                        charge_id,
-                        request=None,
-                        idempotency_key=None)
-```
 
+```javascript
+function confirmPayment(chargeId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3367,27 +3454,28 @@ def confirm_payment(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-request = CreateConfirmPaymentRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = charges_controller.confirm_payment(charge_id, request, idempotency_key)
+    var chargeId = charge_id;
+    var request = new CreateConfirmPaymentRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.confirmPayment(chargeId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.get_charge_transactions") get_charge_transactions
+
+### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getChargeTransactions") getChargeTransactions
 
 > TODO: Add a method description
 
-```python
-def get_charge_transactions(self,
-                                charge_id,
-                                page=None,
-                                size=None)
-```
 
+```javascript
+function getChargeTransactions(chargeId, page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3400,27 +3488,28 @@ def get_charge_transactions(self,
 
 #### Example Usage
 
-```python
-charge_id = 'charge_id'
-page = 253
-size = 253
+```javascript
 
-result = charges_controller.get_charge_transactions(charge_id, page, size)
+    var chargeId = charge_id;
+    var page = 59;
+    var size = 59;
 
+    controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.get_charges_summary") get_charges_summary
+
+### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getChargesSummary") getChargesSummary
 
 > TODO: Add a method description
 
-```python
-def get_charges_summary(self,
-                            status,
-                            created_since=None,
-                            created_until=None)
-```
 
+```javascript
+function getChargesSummary(status, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3433,39 +3522,40 @@ def get_charges_summary(self,
 
 #### Example Usage
 
-```python
-status = 'status'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = charges_controller.get_charges_summary(status, created_since, created_until)
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getChargesSummary(status, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png ".RecipientsController") RecipientsController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` RecipientsController ``` class can be accessed from the API Client.
+The singleton instance of the ``` RecipientsController ``` class can be accessed from the API Client.
 
-```python
- recipients_controller = client.recipients
+```javascript
+var controller = lib.RecipientsController;
 ```
 
-### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.update_recipient_metadata") update_recipient_metadata
+### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientMetadata") updateRecipientMetadata
 
 > Updates recipient metadata
 
-```python
-def update_recipient_metadata(self,
-                                  recipient_id,
-                                  request,
-                                  idempotency_key=None)
-```
 
+```javascript
+function updateRecipientMetadata(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3478,26 +3568,28 @@ def update_recipient_metadata(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.update_recipient_metadata(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateRecipientMetadata(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_transfer") get_transfer
+
+### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfer") getTransfer
 
 > Gets a transfer
 
-```python
-def get_transfer(self,
-                     recipient_id,
-                     transfer_id)
-```
 
+```javascript
+function getTransfer(recipientId, transferId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3509,29 +3601,27 @@ def get_transfer(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-transfer_id = 'transfer_id'
+```javascript
 
-result = recipients_controller.get_transfer(recipient_id, transfer_id)
+    var recipientId = recipient_id;
+    var transferId = transfer_id;
 
+    controller.getTransfer(recipientId, transferId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_transfers") get_transfers
+
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfers") getTransfers
 
 > Gets a paginated list of transfers for the recipient
 
-```python
-def get_transfers(self,
-                      recipient_id,
-                      page=None,
-                      size=None,
-                      status=None,
-                      created_since=None,
-                      created_until=None)
-```
 
+```javascript
+function getTransfers(recipientId, page, size, status, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3547,30 +3637,31 @@ def get_transfers(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-page = 253
-size = 253
-status = 'status'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = recipients_controller.get_transfers(recipient_id, page, size, status, created_since, created_until)
+    var recipientId = recipient_id;
+    var page = 59;
+    var size = 59;
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getTransfers(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.create_anticipation") create_anticipation
+
+### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createAnticipation") createAnticipation
 
 > Creates an anticipation
 
-```python
-def create_anticipation(self,
-                            recipient_id,
-                            request,
-                            idempotency_key=None)
-```
 
+```javascript
+function createAnticipation(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3583,26 +3674,28 @@ def create_anticipation(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = CreateAnticipationRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.create_anticipation(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new CreateAnticipationRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createAnticipation(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_anticipation") get_anticipation
+
+### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipation") getAnticipation
 
 > Gets an anticipation
 
-```python
-def get_anticipation(self,
-                         recipient_id,
-                         anticipation_id)
-```
 
+```javascript
+function getAnticipation(recipientId, anticipationId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3614,26 +3707,27 @@ def get_anticipation(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-anticipation_id = 'anticipation_id'
+```javascript
 
-result = recipients_controller.get_anticipation(recipient_id, anticipation_id)
+    var recipientId = recipient_id;
+    var anticipationId = anticipation_id;
 
+    controller.getAnticipation(recipientId, anticipationId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_anticipation_limits") get_anticipation_limits
+
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipationLimits") getAnticipationLimits
 
 > Gets the anticipation limits for a recipient
 
-```python
-def get_anticipation_limits(self,
-                                recipient_id,
-                                timeframe,
-                                payment_date)
-```
 
+```javascript
+function getAnticipationLimits(recipientId, timeframe, paymentDate, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3646,33 +3740,28 @@ def get_anticipation_limits(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-timeframe = 'timeframe'
-payment_date = datetime.now()
+```javascript
 
-result = recipients_controller.get_anticipation_limits(recipient_id, timeframe, payment_date)
+    var recipientId = recipient_id;
+    var timeframe = 'timeframe';
+    var paymentDate = date("D M d, Y G:i");
 
+    controller.getAnticipationLimits(recipientId, timeframe, paymentDate, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_anticipations") get_anticipations
+
+### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipations") getAnticipations
 
 > Retrieves a paginated list of anticipations from a recipient
 
-```python
-def get_anticipations(self,
-                          recipient_id,
-                          page=None,
-                          size=None,
-                          status=None,
-                          timeframe=None,
-                          payment_date_since=None,
-                          payment_date_until=None,
-                          created_since=None,
-                          created_until=None)
-```
 
+```javascript
+function getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3691,33 +3780,34 @@ def get_anticipations(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-page = 253
-size = 253
-status = 'status'
-timeframe = 'timeframe'
-payment_date_since = datetime.now()
-payment_date_until = datetime.now()
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = recipients_controller.get_anticipations(recipient_id, page, size, status, timeframe, payment_date_since, payment_date_until, created_since, created_until)
+    var recipientId = recipient_id;
+    var page = 59;
+    var size = 59;
+    var status = 'status';
+    var timeframe = 'timeframe';
+    var paymentDateSince = date("D M d, Y G:i");
+    var paymentDateUntil = date("D M d, Y G:i");
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.update_recipient") update_recipient
+
+### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipient") updateRecipient
 
 > Updates a recipient
 
-```python
-def update_recipient(self,
-                         recipient_id,
-                         request,
-                         idempotency_key=None)
-```
 
+```javascript
+function updateRecipient(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3730,27 +3820,28 @@ def update_recipient(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = UpdateRecipientRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.update_recipient(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new UpdateRecipientRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateRecipient(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.update_recipient_default_bank_account") update_recipient_default_bank_account
+
+### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientDefaultBankAccount") updateRecipientDefaultBankAccount
 
 > Updates the default bank account from a recipient
 
-```python
-def update_recipient_default_bank_account(self,
-                                              recipient_id,
-                                              request,
-                                              idempotency_key=None)
-```
 
+```javascript
+function updateRecipientDefaultBankAccount(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3763,25 +3854,28 @@ def update_recipient_default_bank_account(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = UpdateRecipientBankAccountRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.update_recipient_default_bank_account(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new UpdateRecipientBankAccountRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateRecipientDefaultBankAccount(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_recipient") get_recipient
+
+### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipient") getRecipient
 
 > Retrieves recipient information
 
-```python
-def get_recipient(self,
-                      recipient_id)
-```
 
+```javascript
+function getRecipient(recipientId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3792,24 +3886,26 @@ def get_recipient(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
+```javascript
 
-result = recipients_controller.get_recipient(recipient_id)
+    var recipientId = recipient_id;
 
+    controller.getRecipient(recipientId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_recipients") get_recipients
+
+### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipients") getRecipients
 
 > Retrieves paginated recipients information
 
-```python
-def get_recipients(self,
-                       page=None,
-                       size=None)
-```
 
+```javascript
+function getRecipients(page, size, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3821,24 +3917,27 @@ def get_recipients(self,
 
 #### Example Usage
 
-```python
-page = 253
-size = 253
+```javascript
 
-result = recipients_controller.get_recipients(page, size)
+    var page = 59;
+    var size = 59;
 
+    controller.getRecipients(page, size, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_balance") get_balance
+
+### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getBalance") getBalance
 
 > Get balance information for a recipient
 
-```python
-def get_balance(self,
-                    recipient_id)
-```
 
+```javascript
+function getBalance(recipientId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3849,25 +3948,26 @@ def get_balance(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
+```javascript
 
-result = recipients_controller.get_balance(recipient_id)
+    var recipientId = recipient_id;
 
+    controller.getBalance(recipientId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.create_transfer") create_transfer
+
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createTransfer") createTransfer
 
 > Creates a transfer for a recipient
 
-```python
-def create_transfer(self,
-                        recipient_id,
-                        request,
-                        idempotency_key=None)
-```
 
+```javascript
+function createTransfer(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3880,26 +3980,28 @@ def create_transfer(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = CreateTransferRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.create_transfer(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new CreateTransferRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createTransfer(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.create_recipient") create_recipient
+
+### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createRecipient") createRecipient
 
 > Creates a new recipient
 
-```python
-def create_recipient(self,
-                         request,
-                         idempotency_key=None)
-```
 
+```javascript
+function createRecipient(request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3911,26 +4013,27 @@ def create_recipient(self,
 
 #### Example Usage
 
-```python
-request = CreateRecipientRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.create_recipient(request, idempotency_key)
+    var request = new CreateRecipientRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createRecipient(request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.update_recipient_transfer_settings") update_recipient_transfer_settings
+
+### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientTransferSettings") updateRecipientTransferSettings
 
 > TODO: Add a method description
 
-```python
-def update_recipient_transfer_settings(self,
-                                           recipient_id,
-                                           request,
-                                           idempotency_key=None)
-```
 
+```javascript
+function updateRecipientTransferSettings(recipientId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3943,26 +4046,28 @@ def update_recipient_transfer_settings(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = UpdateTransferSettingsRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = recipients_controller.update_recipient_transfer_settings(recipient_id, request, idempotency_key)
+    var recipientId = recipient_id;
+    var request = new UpdateTransferSettingsRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateRecipientTransferSettings(recipientId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.create_withdraw") create_withdraw
+
+### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createWithdraw") createWithdraw
 
 > TODO: Add a method description
 
-```python
-def create_withdraw(self,
-                        recipient_id,
-                        request)
-```
 
+```javascript
+function createWithdraw(recipientId, request, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -3974,25 +4079,27 @@ def create_withdraw(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-request = CreateWithdrawRequest()
+```javascript
 
-result = recipients_controller.create_withdraw(recipient_id, request)
+    var recipientId = recipient_id;
+    var request = new CreateWithdrawRequest({"key":"value"});
 
+    controller.createWithdraw(recipientId, request, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_withdraw_by_id") get_withdraw_by_id
+
+### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawById") getWithdrawById
 
 > TODO: Add a method description
 
-```python
-def get_withdraw_by_id(self,
-                           recipient_id,
-                           withdrawal_id)
-```
 
+```javascript
+function getWithdrawById(recipientId, withdrawalId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4004,29 +4111,27 @@ def get_withdraw_by_id(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-withdrawal_id = 'withdrawal_id'
+```javascript
 
-result = recipients_controller.get_withdraw_by_id(recipient_id, withdrawal_id)
+    var recipientId = recipient_id;
+    var withdrawalId = withdrawal_id;
 
+    controller.getWithdrawById(recipientId, withdrawalId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.get_withdrawals") get_withdrawals
+
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
 
 > Gets a paginated list of transfers for the recipient
 
-```python
-def get_withdrawals(self,
-                        recipient_id,
-                        page=None,
-                        size=None,
-                        status=None,
-                        created_since=None,
-                        created_until=None)
-```
 
+```javascript
+function getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4042,43 +4147,45 @@ def get_withdrawals(self,
 
 #### Example Usage
 
-```python
-recipient_id = 'recipient_id'
-page = 253
-size = 253
-status = 'status'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = recipients_controller.get_withdrawals(recipient_id, page, size, status, created_since, created_until)
+    var recipientId = recipient_id;
+    var page = 59;
+    var size = 59;
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TokensController") TokensController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` TokensController ``` class can be accessed from the API Client.
+The singleton instance of the ``` TokensController ``` class can be accessed from the API Client.
 
-```python
- tokens_controller = client.tokens
+```javascript
+var controller = lib.TokensController;
 ```
 
-### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png ".TokensController.get_token") get_token
+### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png ".TokensController.getToken") getToken
 
 > *Tags:*  ``` Skips Authentication ``` 
 
 > Gets a token from its id
 
-```python
-def get_token(self,
-                  id,
-                  public_key)
-```
 
+```javascript
+function getToken(id, publicKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4090,28 +4197,29 @@ def get_token(self,
 
 #### Example Usage
 
-```python
-id = 'id'
-public_key = 'public_key'
+```javascript
 
-result = tokens_controller.get_token(id, public_key)
+    var id = 'id';
+    var publicKey = public_key;
 
+    controller.getToken(id, publicKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png ".TokensController.create_token") create_token
+
+### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png ".TokensController.createToken") createToken
 
 > *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
-```python
-def create_token(self,
-                     public_key,
-                     request,
-                     idempotency_key=None)
-```
 
+```javascript
+function createToken(publicKey, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4124,37 +4232,40 @@ def create_token(self,
 
 #### Example Usage
 
-```python
-public_key = 'public_key'
-request = CreateTokenRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = tokens_controller.create_token(public_key, request, idempotency_key)
+    var publicKey = public_key;
+    var request = new CreateTokenRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createToken(publicKey, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SellersController") SellersController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` SellersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` SellersController ``` class can be accessed from the API Client.
 
-```python
- sellers_controller = client.sellers
+```javascript
+var controller = lib.SellersController;
 ```
 
-### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.get_seller_by_id") get_seller_by_id
+### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellerById") getSellerById
 
 > TODO: Add a method description
 
-```python
-def get_seller_by_id(self,
-                         id)
-```
 
+```javascript
+function getSellerById(id, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4165,24 +4276,26 @@ def get_seller_by_id(self,
 
 #### Example Usage
 
-```python
-id = 'id'
+```javascript
 
-result = sellers_controller.get_seller_by_id(id)
+    var id = 'id';
 
+    controller.getSellerById(id, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.delete_seller") delete_seller
+
+### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.deleteSeller") deleteSeller
 
 > TODO: Add a method description
 
-```python
-def delete_seller(self,
-                      seller_id,
-                      idempotency_key=None)
-```
 
+```javascript
+function deleteSeller(sellerId, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4194,25 +4307,27 @@ def delete_seller(self,
 
 #### Example Usage
 
-```python
-seller_id = 'sellerId'
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = sellers_controller.delete_seller(seller_id, idempotency_key)
+    var sellerId = 'sellerId';
+    var idempotencyKey = 'idempotency-key';
 
+    controller.deleteSeller(sellerId, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.create_seller") create_seller
+
+### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.createSeller") createSeller
 
 > TODO: Add a method description
 
-```python
-def create_seller(self,
-                      request,
-                      idempotency_key=None)
-```
 
+```javascript
+function createSeller(request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4224,32 +4339,27 @@ def create_seller(self,
 
 #### Example Usage
 
-```python
-request = CreateSellerRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = sellers_controller.create_seller(request, idempotency_key)
+    var request = new CreateSellerRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.createSeller(request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.get_sellers") get_sellers
+
+### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellers") getSellers
 
 > TODO: Add a method description
 
-```python
-def get_sellers(self,
-                    page=None,
-                    size=None,
-                    name=None,
-                    document=None,
-                    code=None,
-                    status=None,
-                    mtype=None,
-                    created_since=None,
-                    created_until=None)
-```
 
+```javascript
+function getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4260,7 +4370,7 @@ def get_sellers(self,
 | document |  ``` Optional ```  | TODO: Add a parameter description |
 | code |  ``` Optional ```  | TODO: Add a parameter description |
 | status |  ``` Optional ```  | TODO: Add a parameter description |
-| mtype |  ``` Optional ```  | TODO: Add a parameter description |
+| type |  ``` Optional ```  | TODO: Add a parameter description |
 | createdSince |  ``` Optional ```  | TODO: Add a parameter description |
 | createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
 
@@ -4268,33 +4378,34 @@ def get_sellers(self,
 
 #### Example Usage
 
-```python
-page = 253
-size = 253
-name = 'name'
-document = 'document'
-code = 'code'
-status = 'status'
-mtype = 'type'
-created_since = datetime.now()
-created_until = datetime.now()
+```javascript
 
-result = sellers_controller.get_sellers(page, size, name, document, code, status, mtype, created_since, created_until)
+    var page = 59;
+    var size = 59;
+    var name = 'name';
+    var document = 'document';
+    var code = 'code';
+    var status = 'status';
+    var type = 'type';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
 
+    controller.getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.update_seller") update_seller
+
+### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSeller") updateSeller
 
 > TODO: Add a method description
 
-```python
-def update_seller(self,
-                      id,
-                      request,
-                      idempotency_key=None)
-```
 
+```javascript
+function updateSeller(id, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4307,27 +4418,28 @@ def update_seller(self,
 
 #### Example Usage
 
-```python
-id = 'id'
-request = UpdateSellerRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = sellers_controller.update_seller(id, request, idempotency_key)
+    var id = 'id';
+    var request = new UpdateSellerRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSeller(id, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.update_seller_metadata") update_seller_metadata
+
+### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSellerMetadata") updateSellerMetadata
 
 > TODO: Add a method description
 
-```python
-def update_seller_metadata(self,
-                               seller_id,
-                               request,
-                               idempotency_key=None)
-```
 
+```javascript
+function updateSellerMetadata(sellerId, request, idempotencyKey, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4340,37 +4452,40 @@ def update_seller_metadata(self,
 
 #### Example Usage
 
-```python
-seller_id = 'seller_id'
-request = UpdateMetadataRequest()
-idempotency_key = 'idempotency-key'
+```javascript
 
-result = sellers_controller.update_seller_metadata(seller_id, request, idempotency_key)
+    var sellerId = seller_id;
+    var request = new UpdateMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
+    controller.updateSellerMetadata(sellerId, request, idempotencyKey, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransactionsController") TransactionsController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` TransactionsController ``` class can be accessed from the API Client.
+The singleton instance of the ``` TransactionsController ``` class can be accessed from the API Client.
 
-```python
- transactions_controller = client.transactions
+```javascript
+var controller = lib.TransactionsController;
 ```
 
-### <a name="get_transaction"></a>![Method: ](https://apidocs.io/img/method.png ".TransactionsController.get_transaction") get_transaction
+### <a name="get_transaction"></a>![Method: ](https://apidocs.io/img/method.png ".TransactionsController.getTransaction") getTransaction
 
 > TODO: Add a method description
 
-```python
-def get_transaction(self,
-                        transaction_id)
-```
 
+```javascript
+function getTransaction(transactionId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4381,35 +4496,38 @@ def get_transaction(self,
 
 #### Example Usage
 
-```python
-transaction_id = 'transaction_id'
+```javascript
 
-result = transactions_controller.get_transaction(transaction_id)
+    var transactionId = transaction_id;
 
+    controller.getTransaction(transactionId, function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransfersController") TransfersController
 
-### Get controller instance
+### Get singleton instance
 
-An instance of the ``` TransfersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
 
-```python
- transfers_controller = client.transfers
+```javascript
+var controller = lib.TransfersController;
 ```
 
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.create_transfer") create_transfer
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.createTransfer") createTransfer
 
 > TODO: Add a method description
 
-```python
-def create_transfer(self,
-                        request)
-```
 
+```javascript
+function createTransfer(request, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4420,23 +4538,26 @@ def create_transfer(self,
 
 #### Example Usage
 
-```python
-request = CreateTransfer()
+```javascript
 
-result = transfers_controller.create_transfer(request)
+    var request = new CreateTransfer({"key":"value"});
 
+    controller.createTransfer(request, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.get_transfer_by_id") get_transfer_by_id
+
+### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransferById") getTransferById
 
 > TODO: Add a method description
 
-```python
-def get_transfer_by_id(self,
-                           transfer_id)
-```
 
+```javascript
+function getTransferById(transferId, callback)
+```
 #### Parameters
 
 | Parameter | Tags | Description |
@@ -4447,29 +4568,38 @@ def get_transfer_by_id(self,
 
 #### Example Usage
 
-```python
-transfer_id = 'transfer_id'
+```javascript
 
-result = transfers_controller.get_transfer_by_id(transfer_id)
+    var transferId = transfer_id;
 
+    controller.getTransferById(transferId, function(error, response, context) {
+
+    
+    });
 ```
 
 
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.get_transfers") get_transfers
+
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransfers") getTransfers
 
 > Gets all transfers
 
-```python
-def get_transfers(self)
+
+```javascript
+function getTransfers(callback)
 ```
 
 #### Example Usage
 
-```python
+```javascript
 
-result = transfers_controller.get_transfers()
 
+    controller.getTransfers(function(error, response, context) {
+
+    
+    });
 ```
+
 
 
 [Back to List of Controllers](#list_of_controllers)
