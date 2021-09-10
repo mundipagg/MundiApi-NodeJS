@@ -1,17 +1,3 @@
-### DEPRECATED | CHECK NEW VERSION > https://github.com/pagarme/pagarme-core-api-nodejs
-
-# Mundipagg agora é Pagar.me
-
-Buscando trazer a melhor experiência para os nossos clientes, a Mundipagg agora é parte do Pagar.me.
-
-Somamos nossas funcionalidades e agora você tem acesso a uma plataforma financeira completa, que oferece o melhor das duas soluções em uma experiência unificada.
-
-Você pode customizar nossos produtos e serviços da forma que for melhor para o seu e-commerce. Ficou curioso para saber o que muda? Preparamos um FAQ completo explicando tudo.
-
-[Saiba mais](https://mundipagg.zendesk.com/hc/pt-br/categories/4404432249876-Incorpora%C3%A7%C3%A3o-Mundipagg-pelo-Pagar-me)
-
------------------------------------------------------------------------------------------------------------------------------
-
 # Getting started
 
 Mundipagg API
@@ -309,8 +295,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 19;
-    var size = 19;
+    var page = 74;
+    var size = 74;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -543,8 +529,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -681,8 +667,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -753,8 +739,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var email = 'email';
     var code = 'Code';
 
@@ -1004,8 +990,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1279,8 +1265,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -1457,8 +1443,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -1527,8 +1513,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -1700,8 +1686,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -1938,8 +1924,8 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2391,8 +2377,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 19;
-    var page = 19;
+    var size = 238;
+    var page = 238;
     var itemId = item_id;
     var group = 'group';
 
@@ -2595,8 +2581,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -2705,8 +2691,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, u
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 19;
-    var size = 19;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var group = 'group';
     var usedSince = date("D M d, Y G:i");
@@ -3045,8 +3031,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -3121,8 +3107,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -3203,8 +3189,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -3524,8 +3510,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3682,8 +3668,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -4002,8 +3988,8 @@ function getSellers(page, size, name, document, code, status, type, createdSince
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var name = 'name';
     var document = 'document';
     var code = 'code';
@@ -4306,8 +4292,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 111;
-    var size = 111;
+    var page = 238;
+    var size = 238;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
