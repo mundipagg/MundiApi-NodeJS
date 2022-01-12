@@ -1,17 +1,3 @@
-### DEPRECATED | CHECK NEW VERSION > https://github.com/pagarme/pagarme-core-api-nodejs
-
-# Mundipagg agora é Pagar.me
-
-Buscando trazer a melhor experiência para os nossos clientes, a Mundipagg agora é parte do Pagar.me.
-
-Somamos nossas funcionalidades e agora você tem acesso a uma plataforma financeira completa, que oferece o melhor das duas soluções em uma experiência unificada.
-
-Você pode customizar nossos produtos e serviços da forma que for melhor para o seu e-commerce. Ficou curioso para saber o que muda? Preparamos um FAQ completo explicando tudo.
-
-[Saiba mais](https://mundipagg.zendesk.com/hc/pt-br/categories/4404432249876-Incorpora%C3%A7%C3%A3o-Mundipagg-pelo-Pagar-me)
-
------------------------------------------------------------------------------------------------------------------------------
-
 # Getting started
 
 Mundipagg API
@@ -142,7 +128,6 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [SubscriptionsController](#subscriptions_controller)
 * [InvoicesController](#invoices_controller)
 * [OrdersController](#orders_controller)
-* [SellersController](#sellers_controller)
 * [TokensController](#tokens_controller)
 * [PlansController](#plans_controller)
 * [TransactionsController](#transactions_controller)
@@ -309,8 +294,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 74;
-    var size = 74;
+    var page = 120;
+    var size = 120;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -543,8 +528,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -681,8 +666,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -753,8 +738,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var email = 'email';
     var code = 'Code';
 
@@ -1004,8 +989,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1279,8 +1264,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -1457,8 +1442,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -1527,8 +1512,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -1700,8 +1685,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -1938,8 +1923,8 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2391,8 +2376,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 238;
-    var page = 238;
+    var size = 120;
+    var page = 120;
     var itemId = item_id;
     var group = 'group';
 
@@ -2595,8 +2580,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -2705,8 +2690,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, u
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var code = 'code';
     var group = 'group';
     var usedSince = date("D M d, Y G:i");
@@ -3045,8 +3030,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -3121,8 +3106,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -3203,8 +3188,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -3524,8 +3509,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 120;
+    var size = 120;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3682,8 +3667,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 79;
+    var size = 79;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -3898,226 +3883,6 @@ function updateOrderItem(orderId, itemId, request, idempotencyKey, callback)
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SellersController") SellersController
-
-### Get singleton instance
-
-The singleton instance of the ``` SellersController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.SellersController;
-```
-
-### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.createSeller") createSeller
-
-> TODO: Add a method description
-
-
-```javascript
-function createSeller(request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| request |  ``` Required ```  | Seller Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var request = new CreateSellerRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createSeller(request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSeller") updateSeller
-
-> TODO: Add a method description
-
-
-```javascript
-function updateSeller(id, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Update Seller model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var id = 'id';
-    var request = new UpdateSellerRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSeller(id, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellers") getSellers
-
-> TODO: Add a method description
-
-
-```javascript
-function getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | TODO: Add a parameter description |
-| document |  ``` Optional ```  | TODO: Add a parameter description |
-| code |  ``` Optional ```  | TODO: Add a parameter description |
-| status |  ``` Optional ```  | TODO: Add a parameter description |
-| type |  ``` Optional ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var page = 238;
-    var size = 238;
-    var name = 'name';
-    var document = 'document';
-    var code = 'code';
-    var status = 'status';
-    var type = 'type';
-    var createdSince = date("D M d, Y G:i");
-    var createdUntil = date("D M d, Y G:i");
-
-    controller.getSellers(page, size, name, document, code, status, type, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSellerMetadata") updateSellerMetadata
-
-> TODO: Add a method description
-
-
-```javascript
-function updateSellerMetadata(sellerId, request, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| sellerId |  ``` Required ```  | Seller Id |
-| request |  ``` Required ```  | Request for updating the charge metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var sellerId = seller_id;
-    var request = new UpdateMetadataRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSellerMetadata(sellerId, request, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.deleteSeller") deleteSeller
-
-> TODO: Add a method description
-
-
-```javascript
-function deleteSeller(sellerId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| sellerId |  ``` Required ```  | Seller Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var sellerId = 'sellerId';
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteSeller(sellerId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellerById") getSellerById
-
-> TODO: Add a method description
-
-
-```javascript
-function getSellerById(id, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Seller Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var id = 'id';
-
-    controller.getSellerById(id, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
 ## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TokensController") TokensController
 
 ### Get singleton instance
@@ -4306,8 +4071,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 238;
-    var size = 238;
+    var page = 79;
+    var size = 79;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
