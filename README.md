@@ -294,8 +294,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -528,8 +528,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -666,8 +666,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -738,8 +738,8 @@ function getCustomers(name, document, page, size, email, code, callback)
 
     var name = 'name';
     var document = 'document';
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
     var email = 'email';
     var code = 'Code';
 
@@ -989,8 +989,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -1264,8 +1264,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -1442,8 +1442,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -1512,8 +1512,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 120;
-    var size = 120;
+    var page = 73;
+    var size = 73;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -1685,8 +1685,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -1923,8 +1923,8 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -2376,8 +2376,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 120;
-    var page = 120;
+    var size = 164;
+    var page = 164;
     var itemId = item_id;
     var group = 'group';
 
@@ -2580,8 +2580,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -2690,8 +2690,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, u
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var code = 'code';
     var group = 'group';
     var usedSince = date("D M d, Y G:i");
@@ -3030,8 +3030,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -3106,8 +3106,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -3188,8 +3188,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -3264,6 +3264,38 @@ function getUsageReport(subscriptionId, periodId, callback)
     var periodId = period_id;
 
     controller.getUsageReport(subscriptionId, periodId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="update_split_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSplitSubscription") updateSplitSubscription
+
+> TODO: Add a method description
+
+
+```javascript
+function updateSplitSubscription(id, request, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Subscription's id |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var id = 'id';
+    var request = new UpdateSubscriptionSplitRequest({"key":"value"});
+
+    controller.updateSplitSubscription(id, request, function(error, response, context) {
 
     
     });
@@ -3509,8 +3541,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 120;
-    var size = 120;
+    var page = 164;
+    var size = 164;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3667,8 +3699,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 79;
-    var size = 79;
+    var page = 164;
+    var size = 164;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -4071,8 +4103,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 79;
-    var size = 79;
+    var page = 164;
+    var size = 164;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
