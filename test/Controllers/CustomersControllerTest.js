@@ -15,23 +15,23 @@ const testConfiguration = require("../TestBootstrap");
 const baseController = require("../../lib/Controllers/BaseController");
 
 const controller = testerlib.CustomersController;
-const CustomersAccessTokensResponse = testerlib.CustomersAccessTokensResponse;
-const CustomersAccessTokensRequest = testerlib.CustomersAccessTokensRequest;
-const CustomersAccessTokensResponse1 = testerlib.CustomersAccessTokensResponse1;
 const CustomersResponse = testerlib.CustomersResponse;
-const CustomersRequest = testerlib.CustomersRequest;
-const CustomersAddressesResponse = testerlib.CustomersAddressesResponse;
+const CustomersAccessTokensResponse1 = testerlib.CustomersAccessTokensResponse1;
 const CustomersAddressesResponse1 = testerlib.CustomersAddressesResponse1;
 const CustomersAddressesRequest = testerlib.CustomersAddressesRequest;
 const CustomersAddressesRequest1 = testerlib.CustomersAddressesRequest1;
-const CustomersCardsResponse = testerlib.CustomersCardsResponse;
-const CustomersCardsRequest = testerlib.CustomersCardsRequest;
 const CustomersCardsResponse1 = testerlib.CustomersCardsResponse1;
-const CustomersCardsRenewResponse = testerlib.CustomersCardsRenewResponse;
 const CustomersRequest1 = testerlib.CustomersRequest1;
-const CustomersResponse3 = testerlib.CustomersResponse3;
 const CustomersMetadataResponse = testerlib.CustomersMetadataResponse;
 const CustomersMetadataRequest = testerlib.CustomersMetadataRequest;
+const CustomersCardsResponse = testerlib.CustomersCardsResponse;
+const CustomersRequest = testerlib.CustomersRequest;
+const CustomersCardsRenewResponse = testerlib.CustomersCardsRenewResponse;
+const CustomersResponse3 = testerlib.CustomersResponse3;
+const CustomersAccessTokensResponse = testerlib.CustomersAccessTokensResponse;
+const CustomersAccessTokensRequest = testerlib.CustomersAccessTokensRequest;
+const CustomersAddressesResponse = testerlib.CustomersAddressesResponse;
+const CustomersCardsRequest = testerlib.CustomersCardsRequest;
 const CustomersCardsRequest1 = testerlib.CustomersCardsRequest1;
 
 describe("CustomersController Tests", function tests() {

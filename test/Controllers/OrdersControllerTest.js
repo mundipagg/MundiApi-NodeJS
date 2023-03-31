@@ -15,17 +15,17 @@ const testConfiguration = require("../TestBootstrap");
 const baseController = require("../../lib/Controllers/BaseController");
 
 const controller = testerlib.OrdersController;
-const OrdersClosedResponse = testerlib.OrdersClosedResponse;
-const UpdateOrderStatusRequest = testerlib.UpdateOrderStatusRequest;
-const OrdersItemsResponse = testerlib.OrdersItemsResponse;
-const OrdersItemsResponse1 = testerlib.OrdersItemsResponse1;
-const OrdersItemsRequest = testerlib.OrdersItemsRequest;
-const OrdersMetadataResponse = testerlib.OrdersMetadataResponse;
-const OrdersMetadataRequest = testerlib.OrdersMetadataRequest;
-const OrdersResponse = testerlib.OrdersResponse;
 const OrdersResponse1 = testerlib.OrdersResponse1;
 const OrdersRequest = testerlib.OrdersRequest;
+const OrdersItemsResponse1 = testerlib.OrdersItemsResponse1;
+const OrdersItemsRequest = testerlib.OrdersItemsRequest;
 const OrdersItemsRequest1 = testerlib.OrdersItemsRequest1;
+const OrdersItemsResponse = testerlib.OrdersItemsResponse;
+const OrdersMetadataResponse = testerlib.OrdersMetadataResponse;
+const OrdersMetadataRequest = testerlib.OrdersMetadataRequest;
+const OrdersClosedResponse = testerlib.OrdersClosedResponse;
+const UpdateOrderStatusRequest = testerlib.UpdateOrderStatusRequest;
+const OrdersResponse = testerlib.OrdersResponse;
 
 describe("OrdersController Tests", function tests() {
     this.timeout(testConfiguration.TEST_TIMEOUT);
