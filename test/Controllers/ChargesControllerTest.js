@@ -15,25 +15,25 @@ const testConfiguration = require("../TestBootstrap");
 const baseController = require("../../lib/Controllers/BaseController");
 
 const controller = testerlib.ChargesController;
+const ChargesResponse = testerlib.ChargesResponse;
+const ChargesRequest = testerlib.ChargesRequest;
 const ChargesConfirmPaymentResponse = testerlib.ChargesConfirmPaymentResponse;
 const CreateConfirmPaymentRequest = testerlib.CreateConfirmPaymentRequest;
-const ChargesResponse2 = testerlib.ChargesResponse2;
-const ChargesMetadataResponse = testerlib.ChargesMetadataResponse;
-const ChargesMetadataRequest = testerlib.ChargesMetadataRequest;
-const ChargesDueDateResponse = testerlib.ChargesDueDateResponse;
-const ChargesDueDateRequest = testerlib.ChargesDueDateRequest;
-const ChargesResponse = testerlib.ChargesResponse;
-const ChargesRequest1 = testerlib.ChargesRequest1;
-const ChargesRetryResponse = testerlib.ChargesRetryResponse;
-const ChargesTransactionsResponse = testerlib.ChargesTransactionsResponse;
-const GetChargesSummaryResponse = testerlib.GetChargesSummaryResponse;
-const ChargesCaptureResponse = testerlib.ChargesCaptureResponse;
-const ChargesCaptureRequest = testerlib.ChargesCaptureRequest;
-const ChargesRequest = testerlib.ChargesRequest;
 const ChargesCardResponse = testerlib.ChargesCardResponse;
 const ChargesCardRequest = testerlib.ChargesCardRequest;
+const ChargesResponse2 = testerlib.ChargesResponse2;
+const ChargesRetryResponse = testerlib.ChargesRetryResponse;
 const ChargesPaymentMethodResponse = testerlib.ChargesPaymentMethodResponse;
 const ChargesPaymentMethodRequest = testerlib.ChargesPaymentMethodRequest;
+const ChargesMetadataResponse = testerlib.ChargesMetadataResponse;
+const ChargesMetadataRequest = testerlib.ChargesMetadataRequest;
+const ChargesCaptureResponse = testerlib.ChargesCaptureResponse;
+const ChargesCaptureRequest = testerlib.ChargesCaptureRequest;
+const ChargesDueDateResponse = testerlib.ChargesDueDateResponse;
+const ChargesDueDateRequest = testerlib.ChargesDueDateRequest;
+const ChargesRequest1 = testerlib.ChargesRequest1;
+const ChargesTransactionsResponse = testerlib.ChargesTransactionsResponse;
+const GetChargesSummaryResponse = testerlib.GetChargesSummaryResponse;
 
 describe("ChargesController Tests", function tests() {
     this.timeout(testConfiguration.TEST_TIMEOUT);

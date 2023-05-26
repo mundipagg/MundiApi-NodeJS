@@ -16,12 +16,12 @@ const baseController = require("../../lib/Controllers/BaseController");
 
 const controller = testerlib.PlansController;
 const PlansItemsResponse = testerlib.PlansItemsResponse;
+const PlansItemsRequest = testerlib.PlansItemsRequest;
 const PlansItemsRequest1 = testerlib.PlansItemsRequest1;
 const PlansResponse = testerlib.PlansResponse;
 const PlansResponse1 = testerlib.PlansResponse1;
 const PlansRequest = testerlib.PlansRequest;
 const PlansRequest1 = testerlib.PlansRequest1;
-const PlansItemsRequest = testerlib.PlansItemsRequest;
 const PlansMetadataResponse = testerlib.PlansMetadataResponse;
 const PlansMetadataRequest = testerlib.PlansMetadataRequest;
 
