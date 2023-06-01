@@ -18,11 +18,11 @@ const controller = testerlib.InvoicesController;
 const SubscriptionsCyclesPayResponse = testerlib.SubscriptionsCyclesPayResponse;
 const SubscriptionsCyclesPayRequest = testerlib.SubscriptionsCyclesPayRequest;
 const SubscriptionsPartialInvoiceResponse = testerlib.SubscriptionsPartialInvoiceResponse;
+const InvoicesStatusResponse = testerlib.InvoicesStatusResponse;
+const UpdateCurrentCycleStatusRequest = testerlib.UpdateCurrentCycleStatusRequest;
 const InvoicesResponse = testerlib.InvoicesResponse;
 const InvoicesMetadataResponse = testerlib.InvoicesMetadataResponse;
 const InvoicesMetadataRequest = testerlib.InvoicesMetadataRequest;
-const InvoicesStatusResponse = testerlib.InvoicesStatusResponse;
-const UpdateCurrentCycleStatusRequest = testerlib.UpdateCurrentCycleStatusRequest;
 const InvoicesResponse2 = testerlib.InvoicesResponse2;
 
 describe("InvoicesController Tests", function tests() {

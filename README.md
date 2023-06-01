@@ -129,9 +129,9 @@ lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to us
 * [CustomersController](#customers_controller)
 * [ChargesController](#charges_controller)
 * [RecipientsController](#recipients_controller)
-* [TransfersController](#transfers_controller)
 * [TokensController](#tokens_controller)
 * [TransactionsController](#transactions_controller)
+* [TransfersController](#transfers_controller)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
 
@@ -142,6 +142,52 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 ```javascript
 var controller = lib.SubscriptionsController;
 ```
+
+### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createDiscount") createDiscount
+
+> Creates a discount
+
+
+```javascript
+function createDiscount(subscriptionId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| body |  ``` Required ```  | Request for creating a discount |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var body = new SubscriptionsDiscountsRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createDiscount(subscriptionId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 
 ### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionItem") getSubscriptionItem
 
@@ -235,6 +281,188 @@ function updateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey, ca
 
 
 
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
+
+> Deletes a usage
+
+
+```javascript
+function deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var usageId = usage_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
+
+> Cancels a subscription
+
+
+```javascript
+function cancelSubscription(subscriptionId, idempotencyKey, body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a subscription |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var idempotencyKey = 'idempotency-key';
+    var body = new SubscriptionsRequest({"key":"value"});
+
+    controller.cancelSubscription(subscriptionId, idempotencyKey, body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
+
+> Gets a subscription
+
+
+```javascript
+function getSubscription(subscriptionId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+
+    controller.getSubscription(subscriptionId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
+
+> Deletes a increment
+
+
+```javascript
+function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| incrementId |  ``` Required ```  | Increment id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var incrementId = increment_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteIncrement(subscriptionId, incrementId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
 
 > GetIncrementById
@@ -304,248 +532,6 @@ function getSubscriptionCycleById(subscriptionId, cycleId, callback)
     var cycleId = 'cycleId';
 
     controller.getSubscriptionCycleById(subscriptionId, cycleId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
-
-> UpdateCurrentCycleStatus
-
-
-```javascript
-function updateCurrentCycleStatus(subscriptionId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| body |  ``` Required ```  | Request for updating the end date of the subscription current status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var body = new UpdateCurrentCycleStatusRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateCurrentCycleStatus(subscriptionId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
-
-> Lists all usages from a subscription item
-
-
-```javascript
-function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Identification code in the client system |
-| group |  ``` Optional ```  | Identification group in the client system |
-| usedSince |  ``` Optional ```  | TODO: Add a parameter description |
-| usedUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var page = 89;
-    var size = 89;
-    var code = 'code';
-    var group = 'group';
-    var usedSince = date("D M d, Y G:i");
-    var usedUntil = date("D M d, Y G:i");
-
-    controller.getUsages(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
-
-> UpdateSubscriptionAffiliationId
-
-
-```javascript
-function updateSubscriptionAffiliationId(subscriptionId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | Request for updating a subscription affiliation id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var body = new SubscriptionsGatewayAffiliationIdRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionAffiliationId(subscriptionId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createDiscount") createDiscount
-
-> Creates a discount
-
-
-```javascript
-function createDiscount(subscriptionId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| body |  ``` Required ```  | Request for creating a discount |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var body = new SubscriptionsDiscountsRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createDiscount(subscriptionId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteUsage") deleteUsage
-
-> Deletes a usage
-
-
-```javascript
-function deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| usageId |  ``` Required ```  | The usage id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var itemId = item_id;
-    var usageId = usage_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteUsage(subscriptionId, itemId, usageId, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -657,21 +643,21 @@ function updateSubscriptionPaymentMethod(subscriptionId, body, idempotencyKey, c
 
 
 
-### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycles") getSubscriptionCycles
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateCurrentCycleStatus") updateCurrentCycleStatus
 
-> GetSubscriptionCycles
+> UpdateCurrentCycleStatus
 
 
 ```javascript
-function getSubscriptionCycles(subscriptionId, page, size, callback)
+function updateCurrentCycleStatus(subscriptionId, body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
+| body |  ``` Required ```  | Request for updating the end date of the subscription current status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -680,10 +666,10 @@ function getSubscriptionCycles(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 'page';
-    var size = 'size';
+    var body = new UpdateCurrentCycleStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getSubscriptionCycles(subscriptionId, page, size, function(error, response, context) {
+    controller.updateCurrentCycleStatus(subscriptionId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -703,20 +689,19 @@ function getSubscriptionCycles(subscriptionId, page, size, callback)
 
 
 
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
 
-> Deletes a discount
+> Creates a new subscription
 
 
 ```javascript
-function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
+function createSubscription(body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount Id |
+| body |  ``` Required ```  | Request for creating a subscription |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -725,57 +710,10 @@ function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
 
 ```javascript
 
-    var subscriptionId = subscription_id;
-    var discountId = discount_id;
+    var body = new SubscriptionsRequest1({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.deleteDiscount(subscriptionId, discountId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteIncrement") deleteIncrement
-
-> Deletes a increment
-
-
-```javascript
-function deleteIncrement(subscriptionId, incrementId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| incrementId |  ``` Required ```  | Increment id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var incrementId = increment_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteIncrement(subscriptionId, incrementId, idempotencyKey, function(error, response, context) {
+    controller.createSubscription(body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -826,8 +764,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 89;
-    var size = 89;
+    var page = 124;
+    var size = 124;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -886,8 +824,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 89;
-    var page = 89;
+    var size = 124;
+    var page = 124;
     var itemId = item_id;
     var group = 'group';
 
@@ -955,21 +893,21 @@ function renewSubscription(subscriptionId, idempotencyKey, callback)
 
 
 
-### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
+### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscriptionCycles") getSubscriptionCycles
 
-> GetIncrements
+> GetSubscriptionCycles
 
 
 ```javascript
-function getIncrements(subscriptionId, page, size, callback)
+function getSubscriptionCycles(subscriptionId, page, size, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
 
 
 
@@ -978,188 +916,10 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 89;
-    var size = 89;
+    var page = 'page';
+    var size = 'size';
 
-    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
-
-> UpdateLatestPeriodEndAt
-
-
-```javascript
-function updateLatestPeriodEndAt(subscriptionId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | Request for updating the end date of the current signature cycle |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var body = new SubscriptionsPeriodsLatestEndAtRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateLatestPeriodEndAt(subscriptionId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.cancelSubscription") cancelSubscription
-
-> Cancels a subscription
-
-
-```javascript
-function cancelSubscription(subscriptionId, idempotencyKey, body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-| body |  ``` Optional ```  | Request for cancelling a subscription |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var idempotencyKey = 'idempotency-key';
-    var body = new SubscriptionsRequest({"key":"value"});
-
-    controller.cancelSubscription(subscriptionId, idempotencyKey, body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getSubscription") getSubscription
-
-> Gets a subscription
-
-
-```javascript
-function getSubscription(subscriptionId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-
-    controller.getSubscription(subscriptionId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
-
-> Creates a new subscription
-
-
-```javascript
-function createSubscription(body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new SubscriptionsRequest1({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createSubscription(body, idempotencyKey, function(error, response, context) {
+    controller.getSubscriptionCycles(subscriptionId, page, size, function(error, response, context) {
 
     
     });
@@ -1206,6 +966,154 @@ function createAnUsage(subscriptionId, itemId, idempotencyKey, callback)
     var idempotencyKey = 'idempotency-key';
 
     controller.createAnUsage(subscriptionId, itemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsages") getUsages
+
+> Lists all usages from a subscription item
+
+
+```javascript
+function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Identification code in the client system |
+| group |  ``` Optional ```  | Identification group in the client system |
+| usedSince |  ``` Optional ```  | TODO: Add a parameter description |
+| usedUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var itemId = item_id;
+    var page = 124;
+    var size = 124;
+    var code = 'code';
+    var group = 'group';
+    var usedSince = date("D M d, Y G:i");
+    var usedUntil = date("D M d, Y G:i");
+
+    controller.getUsages(subscriptionId, itemId, page, size, code, group, usedSince, usedUntil, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
+
+> Deletes a discount
+
+
+```javascript
+function deleteDiscount(subscriptionId, discountId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| discountId |  ``` Required ```  | Discount Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = discount_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteDiscount(subscriptionId, discountId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrements") getIncrements
+
+> GetIncrements
+
+
+```javascript
+function getIncrements(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 124;
+    var size = 124;
+
+    controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
     
     });
@@ -1300,8 +1208,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 89;
-    var size = 89;
+    var page = 124;
+    var size = 124;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1356,6 +1264,98 @@ function updateSubscriptionBillingDate(subscriptionId, body, idempotencyKey, cal
     var idempotencyKey = 'idempotency-key';
 
     controller.updateSubscriptionBillingDate(subscriptionId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateLatestPeriodEndAt") updateLatestPeriodEndAt
+
+> UpdateLatestPeriodEndAt
+
+
+```javascript
+function updateLatestPeriodEndAt(subscriptionId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | Request for updating the end date of the current signature cycle |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var body = new SubscriptionsPeriodsLatestEndAtRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateLatestPeriodEndAt(subscriptionId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionAffiliationId") updateSubscriptionAffiliationId
+
+> UpdateSubscriptionAffiliationId
+
+
+```javascript
+function updateSubscriptionAffiliationId(subscriptionId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | Request for updating a subscription affiliation id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var body = new SubscriptionsGatewayAffiliationIdRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateSubscriptionAffiliationId(subscriptionId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1467,52 +1467,6 @@ function updateSubscriptionCard(subscriptionId, body, idempotencyKey, callback)
 
 
 
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
-
-> GetDiscounts
-
-
-```javascript
-function getDiscounts(subscriptionId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var page = 89;
-    var size = 89;
-
-    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMetadata") updateSubscriptionMetadata
 
 > Updates the metadata from a subscription
@@ -1559,20 +1513,21 @@ function updateSubscriptionMetadata(subscriptionId, body, idempotencyKey, callba
 
 
 
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
+### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionDueDays") updateSubscriptionDueDays
 
-> GetDiscountById
+> Updates the boleto due days from a subscription
 
 
 ```javascript
-function getDiscountById(subscriptionId, discountId, callback)
+function updateSubscriptionDueDays(subscriptionId, body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -1581,9 +1536,56 @@ function getDiscountById(subscriptionId, discountId, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var discountId = 'discountId';
+    var body = new UpdateSubscriptionDueDaysRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
+    controller.updateSubscriptionDueDays(subscriptionId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
+
+> GetDiscounts
+
+
+```javascript
+function getDiscounts(subscriptionId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var page = 215;
+    var size = 215;
+
+    controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
     
     });
@@ -1649,6 +1651,50 @@ function createIncrement(subscriptionId, body, idempotencyKey, callback)
 
 
 
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
+
+> GetDiscountById
+
+
+```javascript
+function getDiscountById(subscriptionId, discountId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var subscriptionId = subscription_id;
+    var discountId = 'discountId';
+
+    controller.getDiscountById(subscriptionId, discountId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionMiniumPrice") updateSubscriptionMiniumPrice
 
 > Atualização do valor mínimo da assinatura
@@ -1676,52 +1722,6 @@ function updateSubscriptionMiniumPrice(subscriptionId, body, idempotencyKey, cal
     var idempotencyKey = 'idempotency-key';
 
     controller.updateSubscriptionMiniumPrice(subscriptionId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionDueDays") updateSubscriptionDueDays
-
-> Updates the boleto due days from a subscription
-
-
-```javascript
-function updateSubscriptionDueDays(subscriptionId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var subscriptionId = subscription_id;
-    var body = new UpdateSubscriptionDueDaysRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateSubscriptionDueDays(subscriptionId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1841,19 +1841,20 @@ The singleton instance of the ``` OrdersController ``` class can be accessed fro
 var controller = lib.OrdersController;
 ```
 
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
+### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
 
-> Creates a new Order
+> UpdateOrderStatus
 
 
 ```javascript
-function createOrder(body, idempotencyKey, callback)
+function updateOrderStatus(id, body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating an order |
+| id |  ``` Required ```  | Order Id |
+| body |  ``` Required ```  | Update Order Model |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1862,10 +1863,11 @@ function createOrder(body, idempotencyKey, callback)
 
 ```javascript
 
-    var body = new OrdersRequest({"key":"value"});
+    var id = 'id';
+    var body = new UpdateOrderStatusRequest({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.createOrder(body, idempotencyKey, function(error, response, context) {
+    controller.updateOrderStatus(id, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1885,19 +1887,20 @@ function createOrder(body, idempotencyKey, callback)
 
 
 
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
 
-> Gets an order
+> DeleteAllOrderItems
 
 
 ```javascript
-function getOrder(orderId, callback)
+function deleteAllOrderItems(orderId, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | Order id |
+| orderId |  ``` Required ```  | Order Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -1905,9 +1908,10 @@ function getOrder(orderId, callback)
 
 ```javascript
 
-    var orderId = order_id;
+    var orderId = 'orderId';
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getOrder(orderId, function(error, response, context) {
+    controller.deleteAllOrderItems(orderId, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -1973,98 +1977,6 @@ function createOrderItem(orderId, body, idempotencyKey, callback)
 
 
 
-### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
-
-> UpdateOrderItem
-
-
-```javascript
-function updateOrderItem(orderId, itemId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| itemId |  ``` Required ```  | Item Id |
-| body |  ``` Required ```  | Item Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var itemId = 'itemId';
-    var body = new OrdersItemsRequest1({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateOrderItem(orderId, itemId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
-
-> DeleteAllOrderItems
-
-
-```javascript
-function deleteAllOrderItems(orderId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var orderId = 'orderId';
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteAllOrderItems(orderId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderMetadata") updateOrderMetadata
 
 > Updates the metadata from an order
@@ -2111,52 +2023,6 @@ function updateOrderMetadata(orderId, body, idempotencyKey, callback)
 
 
 
-### <a name="update_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderStatus") updateOrderStatus
-
-> UpdateOrderStatus
-
-
-```javascript
-function updateOrderStatus(id, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Order Id |
-| body |  ``` Required ```  | Update Order Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var id = 'id';
-    var body = new UpdateOrderStatusRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateOrderStatus(id, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrders") getOrders
 
 > Gets all orders
@@ -2183,8 +2049,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 89;
-    var size = 89;
+    var page = 215;
+    var size = 215;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -2192,6 +2058,50 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
     var customerId = customer_id;
 
     controller.getOrders(page, size, code, status, createdSince, createdUntil, customerId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.createOrder") createOrder
+
+> Creates a new Order
+
+
+```javascript
+function createOrder(body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating an order |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new OrdersRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createOrder(body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -2301,6 +2211,96 @@ function getOrderItem(orderId, itemId, callback)
 
 
 
+### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.updateOrderItem") updateOrderItem
+
+> UpdateOrderItem
+
+
+```javascript
+function updateOrderItem(orderId, itemId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| itemId |  ``` Required ```  | Item Id |
+| body |  ``` Required ```  | Item Model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = 'orderId';
+    var itemId = 'itemId';
+    var body = new OrdersItemsRequest1({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateOrderItem(orderId, itemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.getOrder") getOrder
+
+> Gets an order
+
+
+```javascript
+function getOrder(orderId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var orderId = order_id;
+
+    controller.getOrder(orderId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PlansController") PlansController
@@ -2312,6 +2312,144 @@ The singleton instance of the ``` PlansController ``` class can be accessed from
 ```javascript
 var controller = lib.PlansController;
 ```
+
+### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.updatePlanItem") updatePlanItem
+
+> Updates a plan item
+
+
+```javascript
+function updatePlanItem(planId, planItemId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+| body |  ``` Required ```  | Request for updating the plan item |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var planId = plan_id;
+    var planItemId = plan_item_id;
+    var body = new PlansItemsRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updatePlanItem(planId, planItemId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlanItem") deletePlanItem
+
+> Removes an item from a plan
+
+
+```javascript
+function deletePlanItem(planId, planItemId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var planId = plan_id;
+    var planItemId = plan_item_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deletePlanItem(planId, planItemId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlanItem") getPlanItem
+
+> Gets a plan item
+
+
+```javascript
+function getPlanItem(planId, planItemId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var planId = plan_id;
+    var planItemId = plan_item_id;
+
+    controller.getPlanItem(planId, planItemId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 
 ### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.createPlanItem") createPlanItem
 
@@ -2385,8 +2523,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 89;
-    var size = 89;
+    var page = 215;
+    var size = 215;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -2394,94 +2532,6 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
     var createdUntil = date("D M d, Y G:i");
 
     controller.getPlans(page, size, name, status, billingType, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlan") getPlan
-
-> Gets a plan
-
-
-```javascript
-function getPlan(planId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var planId = plan_id;
-
-    controller.getPlan(planId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlanItem") deletePlanItem
-
-> Removes an item from a plan
-
-
-```javascript
-function deletePlanItem(planId, planItemId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var planId = plan_id;
-    var planItemId = plan_item_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deletePlanItem(planId, planItemId, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -2526,6 +2576,48 @@ function createPlan(body, idempotencyKey, callback)
     var idempotencyKey = 'idempotency-key';
 
     controller.createPlan(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlan") getPlan
+
+> Gets a plan
+
+
+```javascript
+function getPlan(planId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var planId = plan_id;
+
+    controller.getPlan(planId, function(error, response, context) {
 
     
     });
@@ -2616,98 +2708,6 @@ function deletePlan(planId, idempotencyKey, callback)
     var idempotencyKey = 'idempotency-key';
 
     controller.deletePlan(planId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.updatePlanItem") updatePlanItem
-
-> Updates a plan item
-
-
-```javascript
-function updatePlanItem(planId, planItemId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-| body |  ``` Required ```  | Request for updating the plan item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var planId = plan_id;
-    var planItemId = plan_item_id;
-    var body = new PlansItemsRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updatePlanItem(planId, planItemId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.getPlanItem") getPlanItem
-
-> Gets a plan item
-
-
-```javascript
-function getPlanItem(planId, planItemId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var planId = plan_id;
-    var planItemId = plan_item_id;
-
-    controller.getPlanItem(planId, planItemId, function(error, response, context) {
 
     
     });
@@ -2875,6 +2875,94 @@ function getPartialInvoice(subscriptionId, callback)
 
 
 
+### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceStatus") updateInvoiceStatus
+
+> Updates the status from an invoice
+
+
+```javascript
+function updateInvoiceStatus(invoiceId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+| body |  ``` Required ```  | Request for updating an invoice's status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var invoiceId = invoice_id;
+    var body = new UpdateCurrentCycleStatusRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateInvoiceStatus(invoiceId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoice") getInvoice
+
+> Gets an invoice
+
+
+```javascript
+function getInvoice(invoiceId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var invoiceId = invoice_id;
+
+    controller.getInvoice(invoiceId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.cancelInvoice") cancelInvoice
 
 > Cancels an invoice
@@ -2965,94 +3053,6 @@ function updateInvoiceMetadata(invoiceId, body, idempotencyKey, callback)
 
 
 
-### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceStatus") updateInvoiceStatus
-
-> Updates the status from an invoice
-
-
-```javascript
-function updateInvoiceStatus(invoiceId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-| body |  ``` Required ```  | Request for updating an invoice's status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var invoiceId = invoice_id;
-    var body = new UpdateCurrentCycleStatusRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateInvoiceStatus(invoiceId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoice") getInvoice
-
-> Gets an invoice
-
-
-```javascript
-function getInvoice(invoiceId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var invoiceId = invoice_id;
-
-    controller.getInvoice(invoiceId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoices") getInvoices
 
 > Gets all invoices
@@ -3083,8 +3083,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 89;
-    var size = 89;
+    var page = 215;
+    var size = 215;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3126,6 +3126,144 @@ The singleton instance of the ``` CustomersController ``` class can be accessed 
 ```javascript
 var controller = lib.CustomersController;
 ```
+
+### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAccessToken") createAccessToken
+
+> Creates a access token for a customer
+
+
+```javascript
+function createAccessToken(customerId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| body |  ``` Required ```  | Request for creating a access token |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var body = new CustomersAccessTokensRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createAccessToken(customerId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAccessTokens") getAccessTokens
+
+> Get all access tokens from a customer
+
+
+```javascript
+function getAccessTokens(customerId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var page = 215;
+    var size = 215;
+
+    controller.getAccessTokens(customerId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomer") updateCustomer
+
+> Updates a customer
+
+
+```javascript
+function updateCustomer(customerId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| body |  ``` Required ```  | Request for updating a customer |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var body = new CustomersRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateCustomer(customerId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 
 ### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCustomer") getCustomer
 
@@ -3211,6 +3349,52 @@ function deleteAccessTokens(customerId, callback)
 
 
 
+### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAddresses") getAddresses
+
+> Gets all adressess from a customer
+
+
+```javascript
+function getAddresses(customerId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var page = 215;
+    var size = 215;
+
+    controller.getAddresses(customerId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAddress") createAddress
 
 > Creates a new address for a customer
@@ -3238,562 +3422,6 @@ function createAddress(customerId, body, idempotencyKey, callback)
     var idempotencyKey = 'idempotency-key';
 
     controller.createAddress(customerId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateAddress") updateAddress
-
-> Updates an address
-
-
-```javascript
-function updateAddress(customerId, addressId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| addressId |  ``` Required ```  | Address Id |
-| body |  ``` Required ```  | Request for updating an address |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var addressId = address_id;
-    var body = new CustomersAddressesRequest1({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateAddress(customerId, addressId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCards") getCards
-
-> Get all cards from a customer
-
-
-```javascript
-function getCards(customerId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var page = 89;
-    var size = 89;
-
-    controller.getCards(customerId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCustomer") createCustomer
-
-> Creates a new customer
-
-
-```javascript
-function createCustomer(body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a customer |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new CustomersRequest1({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createCustomer(body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomerMetadata") updateCustomerMetadata
-
-> Updates the metadata a customer
-
-
-```javascript
-function updateCustomerMetadata(customerId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | The customer id |
-| body |  ``` Required ```  | Request for updating the customer metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var body = new CustomersMetadataRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateCustomerMetadata(customerId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteCard") deleteCard
-
-> Delete a customer's card
-
-
-```javascript
-function deleteCard(customerId, cardId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| cardId |  ``` Required ```  | Card Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var cardId = card_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.deleteCard(customerId, cardId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCard") getCard
-
-> Get a customer's card
-
-
-```javascript
-function getCard(customerId, cardId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| cardId |  ``` Required ```  | Card id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var cardId = card_id;
-
-    controller.getCard(customerId, cardId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAccessTokens") getAccessTokens
-
-> Get all access tokens from a customer
-
-
-```javascript
-function getAccessTokens(customerId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var page = 89;
-    var size = 89;
-
-    controller.getAccessTokens(customerId, page, size, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomer") updateCustomer
-
-> Updates a customer
-
-
-```javascript
-function updateCustomer(customerId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| body |  ``` Required ```  | Request for updating a customer |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var body = new CustomersRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateCustomer(customerId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.renewCard") renewCard
-
-> Renew a card
-
-
-```javascript
-function renewCard(customerId, cardId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| cardId |  ``` Required ```  | Card Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var cardId = card_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.renewCard(customerId, cardId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCustomers") getCustomers
-
-> Get all Customers
-
-
-```javascript
-function getCustomers(name, document, page, size, email, code, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Name of the Customer |
-| document |  ``` Optional ```  | Document of the Customer |
-| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
-| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
-| email |  ``` Optional ```  | Customer's email |
-| code |  ``` Optional ```  | Customer's code |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var name = 'name';
-    var document = 'document';
-    var page = 1;
-    var size = 10;
-    var email = 'email';
-    var code = 'Code';
-
-    controller.getCustomers(name, document, page, size, email, code, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAccessToken") createAccessToken
-
-> Creates a access token for a customer
-
-
-```javascript
-function createAccessToken(customerId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| body |  ``` Required ```  | Request for creating a access token |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var body = new CustomersAccessTokensRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createAccessToken(customerId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAddresses") getAddresses
-
-> Gets all adressess from a customer
-
-
-```javascript
-function getAddresses(customerId, page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var customerId = customer_id;
-    var page = 89;
-    var size = 89;
-
-    controller.getAddresses(customerId, page, size, function(error, response, context) {
 
     
     });
@@ -3947,6 +3575,54 @@ function getAddress(customerId, addressId, callback)
 
 
 
+### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateAddress") updateAddress
+
+> Updates an address
+
+
+```javascript
+function updateAddress(customerId, addressId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| addressId |  ``` Required ```  | Address Id |
+| body |  ``` Required ```  | Request for updating an address |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var addressId = address_id;
+    var body = new CustomersAddressesRequest1({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateAddress(customerId, addressId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="delete_address"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteAddress") deleteAddress
 
 > Delete a Customer's address
@@ -4039,6 +3715,240 @@ function createCard(customerId, body, idempotencyKey, callback)
 
 
 
+### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCards") getCards
+
+> Get all cards from a customer
+
+
+```javascript
+function getCards(customerId, page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var page = 215;
+    var size = 215;
+
+    controller.getCards(customerId, page, size, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.renewCard") renewCard
+
+> Renew a card
+
+
+```javascript
+function renewCard(customerId, cardId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| cardId |  ``` Required ```  | Card Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var cardId = card_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.renewCard(customerId, cardId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCustomer") createCustomer
+
+> Creates a new customer
+
+
+```javascript
+function createCustomer(body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a customer |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CustomersRequest1({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.createCustomer(body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCustomers") getCustomers
+
+> Get all Customers
+
+
+```javascript
+function getCustomers(name, document, page, size, email, code, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| name |  ``` Optional ```  | Name of the Customer |
+| document |  ``` Optional ```  | Document of the Customer |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Current page the the search |
+| size |  ``` Optional ```  ``` DefaultValue ```  | Quantity pages of the search |
+| email |  ``` Optional ```  | Customer's email |
+| code |  ``` Optional ```  | Customer's code |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var name = 'name';
+    var document = 'document';
+    var page = 1;
+    var size = 10;
+    var email = 'email';
+    var code = 'Code';
+
+    controller.getCustomers(name, document, page, size, email, code, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCustomerMetadata") updateCustomerMetadata
+
+> Updates the metadata a customer
+
+
+```javascript
+function updateCustomerMetadata(customerId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | The customer id |
+| body |  ``` Required ```  | Request for updating the customer metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var body = new CustomersMetadataRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateCustomerMetadata(customerId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="update_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.updateCard") updateCard
 
 > Updates a card
@@ -4087,6 +3997,96 @@ function updateCard(customerId, cardId, body, idempotencyKey, callback)
 
 
 
+### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.deleteCard") deleteCard
+
+> Delete a customer's card
+
+
+```javascript
+function deleteCard(customerId, cardId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| cardId |  ``` Required ```  | Card Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var cardId = card_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.deleteCard(customerId, cardId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getCard") getCard
+
+> Get a customer's card
+
+
+```javascript
+function getCard(customerId, cardId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| cardId |  ``` Required ```  | Card id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var customerId = customer_id;
+    var cardId = card_id;
+
+    controller.getCard(customerId, cardId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ChargesController") ChargesController
@@ -4098,6 +4098,94 @@ The singleton instance of the ``` ChargesController ``` class can be accessed fr
 ```javascript
 var controller = lib.ChargesController;
 ```
+
+### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getCharge") getCharge
+
+> Get a charge from its id
+
+
+```javascript
+function getCharge(chargeId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+
+    controller.getCharge(chargeId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.cancelCharge") cancelCharge
+
+> Cancel a charge
+
+
+```javascript
+function cancelCharge(chargeId, idempotencyKey, body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a charge |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var idempotencyKey = 'idempotency-key';
+    var body = new ChargesRequest({"key":"value"});
+
+    controller.cancelCharge(chargeId, idempotencyKey, body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
 
 ### <a name="confirm_payment"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.confirmPayment") confirmPayment
 
@@ -4145,6 +4233,52 @@ function confirmPayment(chargeId, idempotencyKey, body, callback)
 
 
 
+### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeCard") updateChargeCard
+
+> Updates the card from a charge
+
+
+```javascript
+function updateChargeCard(chargeId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| body |  ``` Required ```  | Request for updating a charge's card |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var body = new ChargesCardRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateChargeCard(chargeId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getCharges") getCharges
 
 > Lists all charges
@@ -4173,8 +4307,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 89;
-    var size = 89;
+    var page = 215;
+    var size = 215;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -4184,6 +4318,96 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
     var createdUntil = date("D M d, Y G:i");
 
     controller.getCharges(page, size, code, status, paymentMethod, customerId, orderId, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.retryCharge") retryCharge
+
+> Retries a charge
+
+
+```javascript
+function retryCharge(chargeId, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var idempotencyKey = 'idempotency-key';
+
+    controller.retryCharge(chargeId, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargePaymentMethod") updateChargePaymentMethod
+
+> Updates a charge's payment method
+
+
+```javascript
+function updateChargePaymentMethod(chargeId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| body |  ``` Required ```  | Request for updating the payment method from a charge |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var body = new ChargesPaymentMethodRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
+
+    controller.updateChargePaymentMethod(chargeId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -4230,6 +4454,52 @@ function updateChargeMetadata(chargeId, body, idempotencyKey, callback)
     var idempotencyKey = 'idempotency-key';
 
     controller.updateChargeMetadata(chargeId, body, idempotencyKey, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.captureCharge") captureCharge
+
+> Captures a charge
+
+
+```javascript
+function captureCharge(chargeId, idempotencyKey, body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for capturing a charge |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var chargeId = charge_id;
+    var idempotencyKey = 'idempotency-key';
+    var body = new ChargesCaptureRequest({"key":"value"});
+
+    controller.captureCharge(chargeId, idempotencyKey, body, function(error, response, context) {
 
     
     });
@@ -4339,50 +4609,6 @@ function createCharge(body, idempotencyKey, callback)
 
 
 
-### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.retryCharge") retryCharge
-
-> Retries a charge
-
-
-```javascript
-function retryCharge(chargeId, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-    var idempotencyKey = 'idempotency-key';
-
-    controller.retryCharge(chargeId, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getChargeTransactions") getChargeTransactions
 
 > GetChargeTransactions
@@ -4406,8 +4632,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 47;
-    var size = 47;
+    var page = 215;
+    var size = 215;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -4456,232 +4682,6 @@ function getChargesSummary(status, createdSince, createdUntil, callback)
     var createdUntil = date("D M d, Y G:i");
 
     controller.getChargesSummary(status, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.captureCharge") captureCharge
-
-> Captures a charge
-
-
-```javascript
-function captureCharge(chargeId, idempotencyKey, body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-| body |  ``` Optional ```  | Request for capturing a charge |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-    var idempotencyKey = 'idempotency-key';
-    var body = new ChargesCaptureRequest({"key":"value"});
-
-    controller.captureCharge(chargeId, idempotencyKey, body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.getCharge") getCharge
-
-> Get a charge from its id
-
-
-```javascript
-function getCharge(chargeId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-
-    controller.getCharge(chargeId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.cancelCharge") cancelCharge
-
-> Cancel a charge
-
-
-```javascript
-function cancelCharge(chargeId, idempotencyKey, body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-| body |  ``` Optional ```  | Request for cancelling a charge |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-    var idempotencyKey = 'idempotency-key';
-    var body = new ChargesRequest({"key":"value"});
-
-    controller.cancelCharge(chargeId, idempotencyKey, body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargeCard") updateChargeCard
-
-> Updates the card from a charge
-
-
-```javascript
-function updateChargeCard(chargeId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Required ```  | Request for updating a charge's card |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-    var body = new ChargesCardRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateChargeCard(chargeId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.updateChargePaymentMethod") updateChargePaymentMethod
-
-> Updates a charge's payment method
-
-
-```javascript
-function updateChargePaymentMethod(chargeId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| body |  ``` Required ```  | Request for updating the payment method from a charge |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var chargeId = charge_id;
-    var body = new ChargesPaymentMethodRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateChargePaymentMethod(chargeId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -4805,6 +4805,94 @@ function updateRecipientTransferSettings(recipientId, body, idempotencyKey, call
 
 
 
+### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipation") getAnticipation
+
+> Gets an anticipation
+
+
+```javascript
+function getAnticipation(recipientId, anticipationId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| anticipationId |  ``` Required ```  | Anticipation id |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var anticipationId = anticipation_id;
+
+    controller.getAnticipation(recipientId, anticipationId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipients") getRecipients
+
+> Retrieves paginated recipients information
+
+
+```javascript
+function getRecipients(page, size, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var page = 215;
+    var size = 215;
+
+    controller.getRecipients(page, size, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createRecipient") createRecipient
 
 > Creates a new recipient
@@ -4849,24 +4937,19 @@ function createRecipient(body, idempotencyKey, callback)
 
 
 
-### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
+### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getBalance") getBalance
 
-> Gets a paginated list of transfers for the recipient
+> Get balance information for a recipient
 
 
 ```javascript
-function getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, callback)
+function getBalance(recipientId, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| page |  ``` Optional ```  | TODO: Add a parameter description |
-| size |  ``` Optional ```  | TODO: Add a parameter description |
-| status |  ``` Optional ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+| recipientId |  ``` Required ```  | Recipient id |
 
 
 
@@ -4875,13 +4958,8 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 47;
-    var size = 47;
-    var status = 'status';
-    var createdSince = date("D M d, Y G:i");
-    var createdUntil = date("D M d, Y G:i");
 
-    controller.getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
+    controller.getBalance(recipientId, function(error, response, context) {
 
     
     });
@@ -4901,20 +4979,78 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 
 
 
-### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateAutomaticAnticipationSettings") updateAutomaticAnticipationSettings
+### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipations") getAnticipations
 
-> Updates recipient metadata
+> Retrieves a paginated list of anticipations from a recipient
 
 
 ```javascript
-function updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, callback)
+function getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Metadata |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| status |  ``` Optional ```  | Filter for anticipation status |
+| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
+| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
+| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
+| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
+| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var page = 215;
+    var size = 215;
+    var status = 'status';
+    var timeframe = 'timeframe';
+    var paymentDateSince = date("D M d, Y G:i");
+    var paymentDateUntil = date("D M d, Y G:i");
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+
+    controller.getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createAnticipation") createAnticipation
+
+> Creates an anticipation
+
+
+```javascript
+function createAnticipation(recipientId, body, idempotencyKey, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| body |  ``` Required ```  | Anticipation data |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -4924,10 +5060,10 @@ function updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, 
 ```javascript
 
     var recipientId = recipient_id;
-    var body = new UpdateAutomaticAnticipationSettingsRequest({"key":"value"});
+    var body = new RecipientsAnticipationsRequest({"key":"value"});
     var idempotencyKey = 'idempotency-key';
 
-    controller.updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, function(error, response, context) {
+    controller.createAnticipation(recipientId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -4947,62 +5083,21 @@ function updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, 
 
 
 
-### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipientByCode") getRecipientByCode
+### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientDefaultBankAccount") updateRecipientDefaultBankAccount
 
-> Retrieves recipient information
-
-
-```javascript
-function getRecipientByCode(code, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| code |  ``` Required ```  | Recipient code |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var code = 'code';
-
-    controller.getRecipientByCode(code, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipation") getAnticipation
-
-> Gets an anticipation
+> Updates the default bank account from a recipient
 
 
 ```javascript
-function getAnticipation(recipientId, anticipationId, callback)
+function updateRecipientDefaultBankAccount(recipientId, body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | recipientId |  ``` Required ```  | Recipient id |
-| anticipationId |  ``` Required ```  | Anticipation id |
+| body |  ``` Required ```  | Bank account data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -5011,9 +5106,10 @@ function getAnticipation(recipientId, anticipationId, callback)
 ```javascript
 
     var recipientId = recipient_id;
-    var anticipationId = anticipation_id;
+    var body = new RecipientsDefaultBankAccountRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getAnticipation(recipientId, anticipationId, function(error, response, context) {
+    controller.updateRecipientDefaultBankAccount(recipientId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -5165,140 +5261,6 @@ function getTransfer(recipientId, transferId, callback)
 
 
 
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipationLimits") getAnticipationLimits
-
-> Gets the anticipation limits for a recipient
-
-
-```javascript
-function getAnticipationLimits(recipientId, timeframe, paymentDate, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| timeframe |  ``` Required ```  | Timeframe |
-| paymentDate |  ``` Required ```  | Anticipation payment date |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var recipientId = recipient_id;
-    var timeframe = 'timeframe';
-    var paymentDate = date("D M d, Y G:i");
-
-    controller.getAnticipationLimits(recipientId, timeframe, paymentDate, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getBalance") getBalance
-
-> Get balance information for a recipient
-
-
-```javascript
-function getBalance(recipientId, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var recipientId = recipient_id;
-
-    controller.getBalance(recipientId, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createAnticipation") createAnticipation
-
-> Creates an anticipation
-
-
-```javascript
-function createAnticipation(recipientId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Anticipation data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var recipientId = recipient_id;
-    var body = new RecipientsAnticipationsRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.createAnticipation(recipientId, body, idempotencyKey, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
 ### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfers") getTransfers
 
 > Gets a paginated list of transfers for the recipient
@@ -5325,161 +5287,13 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 47;
-    var size = 47;
+    var page = 215;
+    var size = 215;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
 
     controller.getTransfers(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipients") getRecipients
-
-> Retrieves paginated recipients information
-
-
-```javascript
-function getRecipients(page, size, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var page = 47;
-    var size = 47;
-
-    controller.getRecipients(page, size, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipations") getAnticipations
-
-> Retrieves a paginated list of anticipations from a recipient
-
-
-```javascript
-function getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| status |  ``` Optional ```  | Filter for anticipation status |
-| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
-| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
-| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
-| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
-| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var recipientId = recipient_id;
-    var page = 47;
-    var size = 47;
-    var status = 'status';
-    var timeframe = 'timeframe';
-    var paymentDateSince = date("D M d, Y G:i");
-    var paymentDateUntil = date("D M d, Y G:i");
-    var createdSince = date("D M d, Y G:i");
-    var createdUntil = date("D M d, Y G:i");
-
-    controller.getAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientDefaultBankAccount") updateRecipientDefaultBankAccount
-
-> Updates the default bank account from a recipient
-
-
-```javascript
-function updateRecipientDefaultBankAccount(recipientId, body, idempotencyKey, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| body |  ``` Required ```  | Bank account data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var recipientId = recipient_id;
-    var body = new RecipientsDefaultBankAccountRequest({"key":"value"});
-    var idempotencyKey = 'idempotency-key';
-
-    controller.updateRecipientDefaultBankAccount(recipientId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -5545,6 +5359,52 @@ function createTransfer(recipientId, body, idempotencyKey, callback)
 
 
 
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipationLimits") getAnticipationLimits
+
+> Gets the anticipation limits for a recipient
+
+
+```javascript
+function getAnticipationLimits(recipientId, timeframe, paymentDate, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| timeframe |  ``` Required ```  | Timeframe |
+| paymentDate |  ``` Required ```  | Anticipation payment date |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var timeframe = 'timeframe';
+    var paymentDate = date("D M d, Y G:i");
+
+    controller.getAnticipationLimits(recipientId, timeframe, paymentDate, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
 ### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createWithdraw") createWithdraw
 
 > CreateWithdraw
@@ -5570,6 +5430,58 @@ function createWithdraw(recipientId, body, callback)
     var body = new CreateWithdrawRequest({"key":"value"});
 
     controller.createWithdraw(recipientId, body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
+
+> Gets a paginated list of transfers for the recipient
+
+
+```javascript
+function getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| page |  ``` Optional ```  | TODO: Add a parameter description |
+| size |  ``` Optional ```  | TODO: Add a parameter description |
+| status |  ``` Optional ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var recipientId = recipient_id;
+    var page = 52;
+    var size = 52;
+    var status = 'status';
+    var createdSince = date("D M d, Y G:i");
+    var createdUntil = date("D M d, Y G:i");
+
+    controller.getWithdrawals(recipientId, page, size, status, createdSince, createdUntil, function(error, response, context) {
 
     
     });
@@ -5633,31 +5545,21 @@ function getWithdrawById(recipientId, withdrawalId, callback)
 
 
 
-[Back to List of Controllers](#list_of_controllers)
+### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateAutomaticAnticipationSettings") updateAutomaticAnticipationSettings
 
-## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransfersController") TransfersController
-
-### Get singleton instance
-
-The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.TransfersController;
-```
-
-### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransferById") getTransferById
-
-> GetTransferById
+> Updates recipient metadata
 
 
 ```javascript
-function getTransferById(transferId, callback)
+function updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| transferId |  ``` Required ```  | TODO: Add a parameter description |
+| recipientId |  ``` Required ```  | Recipient id |
+| body |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
@@ -5665,9 +5567,11 @@ function getTransferById(transferId, callback)
 
 ```javascript
 
-    var transferId = transfer_id;
+    var recipientId = recipient_id;
+    var body = new UpdateAutomaticAnticipationSettingsRequest({"key":"value"});
+    var idempotencyKey = 'idempotency-key';
 
-    controller.getTransferById(transferId, function(error, response, context) {
+    controller.updateAutomaticAnticipationSettings(recipientId, body, idempotencyKey, function(error, response, context) {
 
     
     });
@@ -5687,19 +5591,19 @@ function getTransferById(transferId, callback)
 
 
 
-### <a name="post_create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.postCreateTransfer") postCreateTransfer
+### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipientByCode") getRecipientByCode
 
-> CreateTransfer
+> Retrieves recipient information
 
 
 ```javascript
-function postCreateTransfer(body, callback)
+function getRecipientByCode(code, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| code |  ``` Required ```  | Recipient code |
 
 
 
@@ -5707,43 +5611,9 @@ function postCreateTransfer(body, callback)
 
 ```javascript
 
-    var body = new CreateTransfer({"key":"value"});
+    var code = 'code';
 
-    controller.postCreateTransfer(body, function(error, response, context) {
-
-    
-    });
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid request |
-| 401 | Invalid API key |
-| 404 | An informed resource was not found |
-| 412 | Business validation error |
-| 422 | Contract validation error |
-| 500 | Internal server error |
-
-
-
-
-### <a name="get_transfers1"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransfers1") getTransfers1
-
-> Gets all transfers
-
-
-```javascript
-function getTransfers1(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getTransfers1(function(error, response, context) {
+    controller.getRecipientByCode(code, function(error, response, context) {
 
     
     });
@@ -5908,6 +5778,136 @@ function getTransaction(transactionId, callback)
     var transactionId = transaction_id;
 
     controller.getTransaction(transactionId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TransfersController") TransfersController
+
+### Get singleton instance
+
+The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.TransfersController;
+```
+
+### <a name="post_create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.postCreateTransfer") postCreateTransfer
+
+> CreateTransfer
+
+
+```javascript
+function postCreateTransfer(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new CreateTransfer({"key":"value"});
+
+    controller.postCreateTransfer(body, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransferById") getTransferById
+
+> GetTransferById
+
+
+```javascript
+function getTransferById(transferId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| transferId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var transferId = transfer_id;
+
+    controller.getTransferById(transferId, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | Invalid request |
+| 401 | Invalid API key |
+| 404 | An informed resource was not found |
+| 412 | Business validation error |
+| 422 | Contract validation error |
+| 500 | Internal server error |
+
+
+
+
+### <a name="get_transfers1"></a>![Method: ](https://apidocs.io/img/method.png ".TransfersController.getTransfers1") getTransfers1
+
+> Gets all transfers
+
+
+```javascript
+function getTransfers1(callback)
+```
+
+#### Example Usage
+
+```javascript
+
+
+    controller.getTransfers1(function(error, response, context) {
 
     
     });
