@@ -100,6 +100,7 @@ In order to setup authentication in the API client, you need the following infor
 
 | Parameter | Description |
 |-----------|-------------|
+| serviceRefererName | TODO: add a description |
 | basicAuthUserName | The username to use with basic authentication |
 | basicAuthPassword | The password to use with basic authentication |
 
@@ -111,6 +112,7 @@ API client can be initialized as following:
 const lib = require('lib');
 
 // Configuration parameters and credentials
+lib.Configuration.serviceRefererName = "serviceRefererName";
 lib.Configuration.basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
 lib.Configuration.basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
@@ -764,8 +766,8 @@ function getSubscriptions(page, size, code, billingType, customerId, planId, car
 
 ```javascript
 
-    var page = 124;
-    var size = 124;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var billingType = billing_type;
     var customerId = customer_id;
@@ -824,8 +826,8 @@ function getUsagesDetails(subscriptionId, cycleId, size, page, itemId, group, ca
 
     var subscriptionId = subscription_id;
     var cycleId = cycle_id;
-    var size = 124;
-    var page = 124;
+    var size = 238;
+    var page = 238;
     var itemId = item_id;
     var group = 'group';
 
@@ -1014,8 +1016,8 @@ function getUsages(subscriptionId, itemId, page, size, code, group, usedSince, u
 
     var subscriptionId = subscription_id;
     var itemId = item_id;
-    var page = 124;
-    var size = 124;
+    var page = 238;
+    var size = 238;
     var code = 'code';
     var group = 'group';
     var usedSince = date("D M d, Y G:i");
@@ -1110,8 +1112,8 @@ function getIncrements(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 124;
-    var size = 124;
+    var page = 238;
+    var size = 238;
 
     controller.getIncrements(subscriptionId, page, size, function(error, response, context) {
 
@@ -1208,8 +1210,8 @@ function getSubscriptionItems(subscriptionId, page, size, name, code, status, de
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 124;
-    var size = 124;
+    var page = 74;
+    var size = 74;
     var name = 'name';
     var code = 'code';
     var status = 'status';
@@ -1582,8 +1584,8 @@ function getDiscounts(subscriptionId, page, size, callback)
 ```javascript
 
     var subscriptionId = subscription_id;
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
 
     controller.getDiscounts(subscriptionId, page, size, function(error, response, context) {
 
@@ -2049,8 +2051,8 @@ function getOrders(page, size, code, status, createdSince, createdUntil, custome
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
     var code = 'code';
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
@@ -2523,8 +2525,8 @@ function getPlans(page, size, name, status, billingType, createdSince, createdUn
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
     var name = 'name';
     var status = 'status';
     var billingType = billing_type;
@@ -3083,8 +3085,8 @@ function getInvoices(page, size, code, customerId, subscriptionId, createdSince,
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
     var code = 'code';
     var customerId = customer_id;
     var subscriptionId = subscription_id;
@@ -3196,8 +3198,8 @@ function getAccessTokens(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
 
     controller.getAccessTokens(customerId, page, size, function(error, response, context) {
 
@@ -3372,8 +3374,8 @@ function getAddresses(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
 
     controller.getAddresses(customerId, page, size, function(error, response, context) {
 
@@ -3738,8 +3740,8 @@ function getCards(customerId, page, size, callback)
 ```javascript
 
     var customerId = customer_id;
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
 
     controller.getCards(customerId, page, size, function(error, response, context) {
 
@@ -4307,8 +4309,8 @@ function getCharges(page, size, code, status, paymentMethod, customerId, orderId
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
     var code = 'code';
     var status = 'status';
     var paymentMethod = payment_method;
@@ -4632,8 +4634,8 @@ function getChargeTransactions(chargeId, page, size, callback)
 ```javascript
 
     var chargeId = charge_id;
-    var page = 215;
-    var size = 215;
+    var page = 74;
+    var size = 74;
 
     controller.getChargeTransactions(chargeId, page, size, function(error, response, context) {
 
@@ -4870,8 +4872,8 @@ function getRecipients(page, size, callback)
 
 ```javascript
 
-    var page = 215;
-    var size = 215;
+    var page = 33;
+    var size = 33;
 
     controller.getRecipients(page, size, function(error, response, context) {
 
@@ -5008,8 +5010,8 @@ function getAnticipations(recipientId, page, size, status, timeframe, paymentDat
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 215;
-    var size = 215;
+    var page = 33;
+    var size = 33;
     var status = 'status';
     var timeframe = 'timeframe';
     var paymentDateSince = date("D M d, Y G:i");
@@ -5287,8 +5289,8 @@ function getTransfers(recipientId, page, size, status, createdSince, createdUnti
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 215;
-    var size = 215;
+    var page = 33;
+    var size = 33;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
@@ -5475,8 +5477,8 @@ function getWithdrawals(recipientId, page, size, status, createdSince, createdUn
 ```javascript
 
     var recipientId = recipient_id;
-    var page = 52;
-    var size = 52;
+    var page = 33;
+    var size = 33;
     var status = 'status';
     var createdSince = date("D M d, Y G:i");
     var createdUntil = date("D M d, Y G:i");
